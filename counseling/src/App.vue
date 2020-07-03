@@ -1,37 +1,19 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">首頁</router-link> |
-      <router-link to="/service">服務介紹</router-link> |
-      <router-link to="/team">團隊介紹</router-link> |
-      <router-link to="/column">專欄</router-link> |
-      <router-link to="/reserve">我要預約</router-link> |
-    </div>
-    <keep-alive>
-      <router-view/>
-    </keep-alive>
-  </div>
+<template lang="pug">
+#app
+  b-navbar(toggleable='lg' type='light' variant='info')
+    b-navbar-brand(to='/service') NavBar
+    b-navbar-toggle(target='nav-collapse')
+    b-collapse#nav-collapse(is-nav)
+      b-navbar-nav.ml-auto
+        b-nav-item(to='/service') 服務介紹
+        b-nav-item(to='/team') 團隊介紹
+        b-nav-item(to='/column') 專欄介紹
+        b-nav-item(to='/reserve') 我要預約
+        b-nav-form
+          b-form-input.mr-sm-2(size='sm' placeholder='Search')
+          b-button.my-2.my-sm-0(size='sm' type='submit') Search
+  keep-alive
+    router-view
 </template>
-
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
