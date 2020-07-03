@@ -1,10 +1,15 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/">首頁</router-link> |
+      <router-link to="/service">服務介紹</router-link> |
+      <router-link to="/team">團隊介紹</router-link> |
+      <router-link to="/column">專欄</router-link> |
+      <router-link to="/reserve">我要預約</router-link> |
     </div>
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
