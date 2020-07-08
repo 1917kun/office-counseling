@@ -1,7 +1,27 @@
-#app{
-  b-navbar{
-    display: flex;
-    flex-direction: column;
-    justify-items: end;
-  }
+@import "_functions.scss";
+@import "_mixins.scss";
+@import "_variables.scss";
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: 0.5s;
+}
+html,body{
+  width: 100vw;
+  height: 100vh; 
+}
+body{
+  background: var(--babyblue);
+}
+// app---------------------------------
+.homeimg{
+  width: 100%;
+  height: 100vh;
+  background: url(/img/homemainimg.jpg)no-repeat  fixed center/cover;
+}
+.about{
+  background: rgb(235, 104, 104);
+  text-align: center;
 }

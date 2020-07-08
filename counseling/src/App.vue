@@ -1,7 +1,7 @@
 <template lang="pug">
 #app
-  b-navbar(toggleable='lg' type='light' variant='info')
-    b-navbar-brand(to='/service') NavBar
+  b-navbar(toggleable='lg' type='light' variant='warning' ).fixed-top.py-3
+    b-navbar-brand(to='/') 心理諮商診所
     b-navbar-toggle(target='nav-collapse')
     b-collapse#nav-collapse(is-nav)
       b-navbar-nav.ml-auto
@@ -12,8 +12,16 @@
         b-nav-form
           b-form-input.mr-sm-2(size='sm' placeholder='Search')
           b-button.my-2.my-sm-0(size='sm' type='submit') Search
+  .p-0.homeimg
+  section.about
+    p 關於我們
+    p fdjsalfjdskla;fjkdlsjl;
+
   keep-alive
     router-view
 </template>
-<style lang="scss">
-</style>
+
+<script>
+export default {
+}
+</script>
