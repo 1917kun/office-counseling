@@ -31,16 +31,86 @@ html, body {
 }
 
 body {
-  background: var(--babyblue);
+  background: #DBF1FF;
+}
+
+#nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  height: 12.5vh;
+}
+
+#nav p {
+  margin-bottom: 0;
 }
 
 .homeimg {
   width: 100%;
   height: 100vh;
-  background: url(/img/homemainimg.jpg) no-repeat fixed center/cover;
+  background: url(/img/homemainimg2.jpg) no-repeat fixed center/cover;
+  position: relative;
+}
+
+.homeimg div {
+  position: absolute;
+  top: 18vh;
+  left: 20vw;
 }
 
 .about {
-  background: #eb6868;
+  background: #eaebec;
   text-align: center;
+}
+
+#homeserviceitem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#homeserviceitem div {
+  width: 30vw;
+}
+
+#homeservicebtn a {
+  text-decoration: none;
+}
+
+.homeimg2 {
+  width: 100%;
+  height: 50vh;
+  background: url(/img/homemainimg2.jpg) no-repeat fixed center/cover;
+  position: relative;
+}
+
+.homeimg2 div:first-child {
+  width: 50%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  position: absolute;
+  left: 50%;
+}
+
+.homeimg2 div:last-child {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  background: #7fc50e;
 }
