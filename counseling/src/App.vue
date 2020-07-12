@@ -1,66 +1,39 @@
 <template lang="pug">
 #app
-  nav
-    #nav.container
-      img(src="../public/img/heart.jpg" width="84" height="57")
-      a(to="/home") 服務項目
-      p 心理師團隊
-      p 活動&講座
-      p 初診預約
-      p 診所專線 02-89416928
-
-  .p-0.homeimg
-    div
-      img(src="../public/img/homemainimg.jpg" width="351")
-      p 傾心諮商，讓你的煩惱與憂愁得以安放。
-      button.btn.btn-primary.btn-lg(type='button') 傾心服務
-      button.btn.btn-secondary.btn-lg.ml-lg-5(type='button') 線上預約
-  section.about
-    h2 OUR SERVICE
-    p 傾心服務項目
-    p 接受真正的自己，<br>擁有接受不完美的勇氣
-    div#homeserviceitem.container
-      div.col-6.col-lg-4
-        span 憂鬱症
-        p lfdsafdsafdsafdsafdsafdsafdsafds
-      div.col-6.col-lg-4
-        span 憂鬱症
-        p lfdsafdsafdsafdsafdsafdsafdsafds
-      div.col-6.col-lg-4
-        span 憂鬱症
-        p lfdsafdsafdsafdsafdsafdsafdsafds
-      div.col-6.col-lg-4
-        span 憂鬱症
-        p lfdsafdsafdsafdsafdsafdsafdsafds
-      div.col-6.col-lg-4
-        span 憂鬱症
-        p lfdsafdsafdsafdsafdsafdsafdsafds
-      div.col-6.col-lg-4
-        span 憂鬱症
-        p lfdsafdsafdsafdsafdsafdsafdsafds
-    //- div
-    //-   button.btn.btn-outline-dark(type='button') 了解更多
-    //-   button.btn.btn-outline-dark(type='button') 線上預約
-    div#homeservicebtn.container.d-flex.justify-content-center.align-items-center
-      div.border-primary
-        a(href="#") 了解更多
-      div.border-primary
-        a(href="#") 線上預約
-    .p-0.homeimg2
+  nav#nav.container
+      img(src="https://picsum.photos/1920/1080/?random=1" width="84" height="57" @click="redirect" :style="{cursor:'pointer'}")
+      b-link(v-for="(link,index) in links" :key="index" :to='link.link') {{ link.text }}
       div
-      div
-          span fjdsalf;jdsaf
-          h3 fdsafdsafdsafds
-          p dsfsdafdsfsdfdsafdsaffdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsa
-          p fdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsafdsa
-          button.btn.btn-primary.btn-lg(type='button') 傾心服務
+        p 診所專線
+        p 02-89416928
   keep-alive
-    router-view
+    router-view(:style="{height:'calc(100vh - 90px)'}")
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      links: [
+        {
+          link: '/service', text: '服務項目'
+        },
+        {
+          link: '/team', text: '團隊介紹'
+        },
+        {
+          link: '/column', text: '活動&講座'
+        },
+        {
+          link: '/reserve', text: '初診預約'
+        }
+      ]
+    }
+  },
+  methods: {
+    redirect () {
+      this.$router.push('/')
+    }
+  }
 }
 </script>
-
-button.btn.btn-outline-dark(type='button') Dark
