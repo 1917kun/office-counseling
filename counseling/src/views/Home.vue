@@ -42,17 +42,19 @@
           div 多元諮商
           p 為因應當今世代已慢慢走向多元社會,考慮有些族群需要心理師的幫助,傾心在此方面也不落人後,建立了相當完善的諮商體系。
     b-container
-      b-row
+      b-row.b2
         b-col.d-flex.justify-content-center.w-100
           .btn2 了解更多
           .btn2 線上預約
-    //- b-container
-    //-   b-row
-    //-     b-col(cols="6")
-    //-       p ABOUT US
-    //-       p 關於傾心
-    //-       p
-
+    b-container.about(fluid)
+      b-row.justify-content-end.h-100
+        b-col(cols="6").aboutimg
+        b-col(cols="6").abouttext.w-100
+          span ABOUT US
+          span 關於傾心
+          p 每個人內心都是一個小小孩,在面對這洶湧湍急的社會,往往不知所措。長輩、家人、朋友、情人、等各種在你身邊的人,卻沒有一個能在夜深人靜的時刻裡,靜靜聽你訴說你的苦,而傾心,能給予你最剛好的照顧,照顧你/妳那徬徨不安的心。
+          p 無論是進行心理諮商治療、藥物治療、伴侶與婚姻等的團體課程，我們都能以最適合您的方式來幫助您，還請您仔細閱讀我們的網站，如有需要請在頁面預約我們的團隊。
+          .btn3 了解更多
 </template>
 
 <script>
