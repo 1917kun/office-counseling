@@ -59,15 +59,30 @@
   //     font-size: 14px;
   //   }
   // }
-  .navtext{
-    justify-content:space-around;
+  .navtext {
+    justify-content: space-around;
     align-items: center;
     color: #a9a9a9;
-    span:nth-child(1){
+    padding-top: 0.5rem;
+    span:nth-child(1) {
       color: #b5c7d3;
     }
   }
-  @include lg{}
+  @include md{
+    .navtext{
+      padding-top: 0;
+    }
+  }
+  @include sm {
+    li {
+      font-size: 12px;
+    }
+  }
+  @include md{
+    li{
+      font-size: 14px;
+    }
+  }
 }
 // ---home--------------------------------------------
 #home {
@@ -170,7 +185,7 @@
     justify-content: center;
     &:nth-child(odd) {
       width: 30%;
-      padding:12px;
+      padding: 12px;
       margin-right: 2rem;
       align-items: center;
       border: 1px solid #b5c7d3;
@@ -196,7 +211,7 @@
     }
     &:nth-child(even) {
       width: 30%;
-      padding:12px;
+      padding: 12px;
       background-color: #b5c7d3;
       color: white;
       transition: 0.5s;

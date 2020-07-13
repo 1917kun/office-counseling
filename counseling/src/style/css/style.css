@@ -36,10 +36,29 @@
       -ms-flex-align: center;
           align-items: center;
   color: #a9a9a9;
+  padding-top: 0.5rem;
 }
 
 #nav .navtext span:nth-child(1) {
   color: #b5c7d3;
+}
+
+@media (min-width: 768px) {
+  #nav .navtext {
+    padding-top: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  #nav li {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 768px) {
+  #nav li {
+    font-size: 14px;
+  }
 }
 
 #home {
