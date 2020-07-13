@@ -1,13 +1,13 @@
 @import "_functions.scss";
 @import "_mixins.scss";
 @import "_variables.scss";
-
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   transition: 0.5s;
   box-sizing: border-box;
+  font-family: "微軟正黑體", "Microsoft JhengHei", Arial, Helvetica, sans-serif;
 }
 // RWD size------------------------------
 @mixin sm {
@@ -30,38 +30,46 @@
     @content;
   }
 }
-// app---------------------------------
+// app------------------------------------------------
 #nav {
-  width: 100%;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  a {
-    text-decoration: none;
+  // width: 100%;
+  // font-size: 14px;
+  // display: flex;
+  // justify-content: space-evenly;
+  // align-items: center;
+  // margin-top: 1rem;
+  // margin-bottom: 1rem;
+  // img {
+  //   object-fit: cover;
+  //   max-width: 100%;
+  //   object-position: center;
+  // }
+  // .navtext {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //   padding-top: 3rem;
+  //   font-size: 18px;
+  //   @include sm {
+  //     flex-direction: row;
+  //     justify-content: space-evenly;
+  //     align-items: center;
+  //     padding-top: 0;
+  //     font-size: 14px;
+  //   }
+  // }
+  .navtext{
+    justify-content:space-around;
+    align-items: center;
     color: #a9a9a9;
+    span:nth-child(1){
+      color: #b5c7d3;
+    }
   }
-  p:nth-of-type(1) {
-    color: #b5c7d3;
-  }
-  p:nth-of-type(2) {
-    color: #a9a9a9;
-  }
-  img {
-    object-fit: cover;
-    max-width: 100%;
-    object-position: center;
-  }
-  p {
-    padding: 0;
-    margin: 0;
-  }
-  div {
-    display: flex;
-  }
+  @include lg{}
 }
+// ---home--------------------------------------------
 #home {
   height: 100%;
   background: url(/img/heart.jpg/) no-repeat fixed center/cover;
@@ -81,76 +89,135 @@
       color: white;
     }
   }
-  .box2{
-    span:nth-child(1){
+  .box2 {
+    padding: 8rem 0 6rem 0;
+    span:nth-child(1) {
       font-size: 18px;
       color: rgb(233, 160, 64);
     }
-    span:nth-child(2){
+    span:nth-child(2) {
       font-size: 38px;
       color: rgb(75, 127, 201);
+      padding-bottom: 1rem;
     }
-    span:nth-child(3){
+    span:nth-child(3) {
       font-size: 14px;
       color: #a9a9a9;
     }
   }
-  .btn{
-    &:nth-child(1){
-      border: 1px solid #B5C7D3;
+  .btn {
+    &:nth-child(odd) {
+      border: 1px solid #b5c7d3;
       color: var(--classblue);
-      &:hover{
+      transition: 0.5s;
+      &:hover {
         background-color: var(--comhusk);
         border: 1px solid var(--comhusk);
+        transition: 0.5s;
       }
     }
-    &:nth-child(2){
-      background-color: #B5C7D3;
+    &:nth-child(even) {
+      background-color: #b5c7d3;
       color: white;
-      &:hover{
+      transition: 0.5s;
+      &:hover {
         background-color: var(--dark5);
         border: 1px solid var(--dark5);
         color: var(--comhusk);
+        transition: 0.5s;
+      }
+    }
+  }
+  .box3 {
+    color: #4b7fc9;
+    padding: 6rem;
+    padding-bottom: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    div {
+      position: absolute;
+    }
+    div:nth-child(1) {
+      font-size: 100px;
+      color: #809ec9;
+      opacity: 0.2;
+      font-family: fantasy;
+      top: 1.75rem;
+      vertical-align: baseline;
+    }
+    div:nth-child(2) {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    p {
+      text-justify: inter-word;
+      padding-top: 5rem;
+      color: #a9a9a9;
+    }
+    @include sm {
+      padding: 2rem;
+    }
+    @include md {
+      padding: 4rem;
+    }
+    @include lg {
+      padding: 6rem;
+    }
+  }
+  .btn2 {
+    display: flex;
+    justify-content: center;
+    &:nth-child(odd) {
+      width: 30%;
+      padding:12px;
+      margin-right: 2rem;
+      align-items: center;
+      border: 1px solid #b5c7d3;
+      color: var(--classblue);
+      transition: 0.5s;
+      &:hover {
+        background-color: var(--comhusk);
+        border: 1px solid var(--comhusk);
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      @include sm {
+        width: 25%;
+        padding: 10px;
+        margin-right: 2rem;
+        justify-content: center;
+        align-items: center;
+      }
+      @include md {
+        width: 15%;
+        padding: 10px;
+      }
+    }
+    &:nth-child(even) {
+      width: 30%;
+      padding:12px;
+      background-color: #b5c7d3;
+      color: white;
+      transition: 0.5s;
+      &:hover {
+        background-color: var(--dark5);
+        border: 1px solid var(--dark5);
+        color: var(--comhusk);
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      @include sm {
+        width: 25%;
+        padding: 10px;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+      }
+      @include md {
+        width: 15%;
+        padding: 10px;
       }
     }
   }
 }
-// .about {
-//   background: rgb(234, 235, 236);
-//   text-align: center;
-// }
-// #homeserviceitem{
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   align-items: center;
-//     div{
-//       width: 30vw;
-//     }
-// }
-// #homeservicebtn{
-//   a{
-//     text-decoration: none;
-//   }
-// }
-
-// .homeimg2 {
-//   width: 100%;
-//   height: 50vh;
-//   background: url(/img/heart.jpg/)no-repeat fixed center/cover;
-//   position: relative;
-//     div:first-child{
-//       width: 50%;
-//       height: 100%;
-//       background: rgb(219, 241, 255);
-//       position: absolute;
-//       left: 50%;
-//     }
-//     div:last-child{
-//       position: absolute;
-//       top: 50%;
-//       left: 60%;
-//       background: rgb(127, 197, 14);
-//     }
-// }
-// "https://picsum.photos/1920/1080/?random=1"
