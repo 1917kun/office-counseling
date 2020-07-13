@@ -1,11 +1,24 @@
 <template lang="pug">
 #app
-  nav#nav.container
+  //- b-navbar#nav.container(toggleable='sm' type='light')
+  //-   img(src="https://picsum.photos/1920/1080/?random=1" width="84" height="57" @click="redirect" :style="{cursor:'pointer'}")
+  //-   b-navbar-toggle(target='nav-text-collapse')
+  //-   b-collapse#nav-text-collapse.navtext(is-nav)
+  //-     b-navbar-nav.w-100
+  //-       b-link(v-for="(link,index) in links" :key="index" :to='link.link') {{ link.text }}
+  //-       div
+  //-         p 診所專線
+  //-         p 02-89416928
+  b-navbar#nav.container(toggleable='sm' type='light')
+    b-navbar-brand
       img(src="https://picsum.photos/1920/1080/?random=1" width="84" height="57" @click="redirect" :style="{cursor:'pointer'}")
-      b-link(v-for="(link,index) in links" :key="index" :to='link.link') {{ link.text }}
-      div
-        p 診所專線
-        p 02-89416928
+    b-navbar-toggle(target='nav-text-collapse')
+    b-collapse#nav-text-collapse.thenavtexttop(is-nav)
+      b-navbar-nav.w-100.navtext
+        b-nav-item(v-for="(link,index) in links" :key="index" :to='link.link') {{ link.text }}
+        b-nav-text
+          span 診所專線
+          span 02-89416928
   keep-alive
     router-view(:style="{height:'calc(100vh - 90px)'}")
 </template>
