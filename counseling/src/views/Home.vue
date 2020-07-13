@@ -15,14 +15,44 @@
           span OUR SERVICES
           span 傾心專業服務
           span.text-center 溫柔的傾聽,讓你接受真正的自己，<br>並擁有接受不完美的勇氣
+    b-container#homeservice
+      b-row.justify-content-center.text-center
+        b-col.box3(cols="12" sm="4" md="4")
+          div 1
+          div 憂鬱症
+          p 憂鬱情緒持續過久使生活受到影響，藉由評估給予心理、藥物治療，能夠改善憂鬱症的影響，並提升生活品質。
+        b-col.box3(cols="12" sm="4" md="4")
+          div 2
+          div 壓力與失眠
+          p 難以入睡、多夢或是睡眠品質不佳，傾心會了解困擾你的是生理或心理因素並提供藥物或正念訓練。
+        b-col.box3(cols="12" sm="4" md="4")
+          div 3
+          div 兒童與青少年
+          p 學習與學業是華人社會的重點，在傾心診所裡的諮商師，將會與家長與學生一起面對這個重大議題。
+        b-col.box3(cols="12" sm="4" md="4")
+          div 4
+          div 伴侶及婚姻
+          p 在伴侶/夫妻之間，因各式各樣的問題發生衝突,伴侶諮商就是要協助雙方打破負向循環，找出核心問題後打造更健康的關係。
+        b-col.box3(cols="12" sm="4" md="4")
+          div 5
+          div 心理諮商
+          p 針對個案的各種困擾，同時提供藥物、心理諮商、團體諮商甚至是卡片探索，結合各種方式，進行恰當精準的治心理療。
+        b-col.box3(cols="12" sm="4" md="4")
+          div 6
+          div 多元諮商
+          p 為因應當今世代已慢慢走向多元社會,考慮有些族群需要心理師的幫助,傾心在此方面也不落人後,建立了相當完善的諮商體系。
     b-container
-      b-row.flex-column.justify-content-center.align-items-center
-        b-col(cols="4" sm="6") 憂鬱症
-        b-col(cols="4" sm="6") 失眠
-        b-col(cols="4" sm="6") 兒童與青少年
-        b-col(cols="4" sm="6") 伴侶及婚姻
-        b-col(cols="4" sm="6") 多元議題
-        b-col(cols="4" sm="6") 心理諮商
+      b-row
+        b-col.d-flex.justify-content-center.w-100
+          .btn2 了解更多
+          .btn2 線上預約
+    //- b-container
+    //-   b-row
+    //-     b-col(cols="6")
+    //-       p ABOUT US
+    //-       p 關於傾心
+    //-       p
+
 </template>
 
 <script>
@@ -31,3 +61,8 @@
 export default {
 }
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+</style>
