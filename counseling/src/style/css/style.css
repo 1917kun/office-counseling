@@ -29,6 +29,11 @@
   font-family: "微軟正黑體", "Microsoft JhengHei", Arial, Helvetica, sans-serif;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 #nav .navtext {
   -ms-flex-pack: distribute;
       justify-content: space-around;
@@ -306,21 +311,16 @@
 
 #home .aboutrow {
   height: 100%;
+  padding-top: 1rem;
 }
 
 #home .aboutimg {
-  height: 30vh;
+  height: 50%;
   background: url(/img/homecounseling2.jpg) no-repeat fixed center/cover;
 }
 
-@media (min-width: 768px) {
-  #home .aboutimg {
-    height: 100%;
-  }
-}
-
 #home .abouttext {
-  width: 100%;
+  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,91 +334,19 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 2rem;
-  background: #809ec93d;
-}
-
-#home .abouttext div:nth-child(1) {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-@media (min-width: 768px) {
-  #home .abouttext {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-@media (min-width: 992px) {
-  #home .abouttext {
-    padding: 0 5rem 0 5rem;
-  }
 }
 
 #home .abouttext span:nth-child(1) {
-  font-size: 18px;
   color: #e9a040;
 }
 
-@media (min-width: 768px) {
-  #home .abouttext span:nth-child(1) {
-    font-size: 18px;
-  }
-}
-
 #home .abouttext span:nth-child(2) {
-  font-size: 38px;
   color: #4b7fc9;
 }
 
-@media (min-width: 768px) {
-  #home .abouttext span:nth-child(2) {
-    font-size: 38px;
-  }
-}
-
-#home .abouttext p:nth-child(1),
-#home .abouttext p:nth-child(2) {
-  font-size: 16px;
+#home .abouttext p {
   color: #7f7f7f;
-  width: 30vw;
-}
-
-@media (min-width: 768px) {
-  #home .abouttext p:nth-child(1),
-  #home .abouttext p:nth-child(2) {
-    font-size: 14px;
-  }
-}
-
-@media (min-width: 992px) {
-  #home .abouttext p:nth-child(1),
-  #home .abouttext p:nth-child(2) {
-    margin: 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  #home .abouttext p:nth-child(1),
-  #home .abouttext p:nth-child(2) {
-    width: 70% !important;
-    padding-bottom: 2rem;
-    margin: auto;
-  }
+  margin: 0;
 }
 
 #home .btn3 {

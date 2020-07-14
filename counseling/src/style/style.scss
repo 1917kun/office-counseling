@@ -9,6 +9,10 @@
   box-sizing: border-box;
   font-family: "微軟正黑體", "Microsoft JhengHei", Arial, Helvetica, sans-serif;
 }
+html,
+body {
+  height: 100%;
+}
 // RWD size------------------------------
 @mixin sm {
   @media (min-width: 576px) {
@@ -223,69 +227,86 @@
   }
   .aboutrow {
     height: 100%;
+    padding-top: 1rem;
   }
   .aboutimg {
-    height: 30vh;
+    height: 50%;
     background: url(/img/homecounseling2.jpg) no-repeat fixed center/cover;
-    // background-size: 70% 70%;
-    // background-position: -45% 165%;
-    @include md{
-      height: 100%;
-    }
+    // @include md {
+    //   height: 100%;
+    // }
   }
   .abouttext {
-    width: 100%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 2rem;
-    background: #809ec93d;
-    div:nth-child(1){
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    @include md{
-      align-items: center;
-    }
-    @include lg{
-      padding: 0 5rem 0 5rem ;
-    }
-    span:nth-child(1) {
-      font-size: 18px;
+    span:nth-child(1){
       color: #e9a040;
-      @include md {
-        font-size: 18px;
-      }
     }
-    span:nth-child(2) {
-      font-size: 38px;
+    span:nth-child(2){
       color: #4b7fc9;
-      @include md {
-        font-size: 38px;
-      }
     }
-    p:nth-child(1),
-    p:nth-child(2) {
-      font-size: 16px;
+    p{
       color: #7f7f7f;
-      width: 30vw;
-      @include md {
-        font-size: 14px;
-      }
-      @include lg{
-        margin:0;
-      }
-      @include xl{
-        width: 70% !important;
-        padding-bottom: 2rem;
-        margin: auto;
-      }
+      margin: 0;
     }
   }
+  // .abouttext {
+  //   width: 100%;
+  //   height: 50%;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+  //   padding-top: 2rem;
+  //   background: #809ec93d;
+  //   div:nth-child(1) {
+  //     width: 100%;
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: center;
+  //     align-items: center;
+  //   }
+  //   @include md {
+  //     align-items: center;
+  //   }
+  //   @include lg {
+  //     padding: 0 5rem 0 5rem;
+  //   }
+  //   span:nth-child(1) {
+  //     font-size: 18px;
+  //     color: #e9a040;
+  //     @include md {
+  //       font-size: 18px;
+  //     }
+  //   }
+  //   span:nth-child(2) {
+  //     font-size: 38px;
+  //     color: #4b7fc9;
+  //     @include md {
+  //       font-size: 38px;
+  //     }
+  //   }
+  //   p:nth-child(1),
+  //   p:nth-child(2) {
+  //     font-size: 16px;
+  //     color: #7f7f7f;
+  //     width: 30vw;
+  //     @include md {
+  //       font-size: 14px;
+  //     }
+  //     @include lg {
+  //       margin: 0;
+  //     }
+  //     @include xl {
+  //       width: 70% !important;
+  //       padding-bottom: 2rem;
+  //       margin: auto;
+  //     }
+  //   }
+  // }
   .btn3 {
     width: 50%;
     display: flex;
@@ -313,11 +334,14 @@
       width: 25%;
       padding: 10px;
     }
-    @include lg{
+    @include lg {
       width: 50%;
     }
-    @include xl{
+    @include xl {
       width: 25%;
     }
   }
+
+  // carousel------------------------------------------------------------------------
+  // #homecarousel{
 }
