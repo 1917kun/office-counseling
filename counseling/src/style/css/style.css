@@ -301,16 +301,26 @@
 }
 
 #home .about {
-  height: 50vh;
+  height: 60vh;
+}
+
+#home .aboutrow {
+  height: 100%;
 }
 
 #home .aboutimg {
-  background: url(/img/homecounseling2.jpg) no-repeat fixed;
-  background-size: 70% 70%;
-  background-position: -45% 165%;
+  height: 30vh;
+  background: url(/img/homecounseling2.jpg) no-repeat fixed center/cover;
+}
+
+@media (min-width: 768px) {
+  #home .aboutimg {
+    height: 100%;
+  }
 }
 
 #home .abouttext {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -321,7 +331,42 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2rem;
   background: #809ec93d;
+}
+
+#home .abouttext div:nth-child(1) {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 768px) {
+  #home .abouttext {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  #home .abouttext {
+    padding: 0 5rem 0 5rem;
+  }
 }
 
 #home .abouttext span:nth-child(1) {
@@ -348,7 +393,7 @@
 
 #home .abouttext p:nth-child(1),
 #home .abouttext p:nth-child(2) {
-  font-size: 7px;
+  font-size: 16px;
   color: #7f7f7f;
   width: 30vw;
 }
@@ -360,14 +405,30 @@
   }
 }
 
+@media (min-width: 992px) {
+  #home .abouttext p:nth-child(1),
+  #home .abouttext p:nth-child(2) {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  #home .abouttext p:nth-child(1),
+  #home .abouttext p:nth-child(2) {
+    width: 70% !important;
+    padding-bottom: 2rem;
+    margin: auto;
+  }
+}
+
 #home .btn3 {
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 50%;
   padding: 12px;
   background-color: #b5c7d3;
   color: white;
@@ -403,5 +464,17 @@
   #home .btn3 {
     width: 25%;
     padding: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  #home .btn3 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #home .btn3 {
+    width: 25%;
   }
 }

@@ -214,51 +214,82 @@
       }
     }
   }
-  .b2{
+  .b2 {
     margin-bottom: 5rem;
   }
-  .about{
-    height: 50vh;
+  //----------- about-------------------------------------------------------------------------
+  .about {
+    height: 60vh;
   }
-  .aboutimg{
-    // background: linear-gradient(to right,transparent 50%,#b1bdcc 50%,#b1bdcc 100%);
-    background: url(/img/homecounseling2.jpg) no-repeat fixed;
-    background-size: 70% 70%;
-    background-position: -45% 165%;
+  .aboutrow {
+    height: 100%;
+  }
+  .aboutimg {
+    height: 30vh;
+    background: url(/img/homecounseling2.jpg) no-repeat fixed center/cover;
+    // background-size: 70% 70%;
+    // background-position: -45% 165%;
+    @include md{
+      height: 100%;
+    }
   }
   .abouttext {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
     background: #809ec93d;
+    div:nth-child(1){
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    @include md{
+      align-items: center;
+    }
+    @include lg{
+      padding: 0 5rem 0 5rem ;
+    }
     span:nth-child(1) {
       font-size: 18px;
       color: #e9a040;
-      @include md{
+      @include md {
         font-size: 18px;
       }
     }
     span:nth-child(2) {
       font-size: 38px;
       color: #4b7fc9;
-      @include md{
+      @include md {
         font-size: 38px;
       }
     }
     p:nth-child(1),
     p:nth-child(2) {
-      font-size: 7px;
+      font-size: 16px;
       color: #7f7f7f;
       width: 30vw;
-      @include md{
-      font-size: 14px;
+      @include md {
+        font-size: 14px;
+      }
+      @include lg{
+        margin:0;
+      }
+      @include xl{
+        width: 70% !important;
+        padding-bottom: 2rem;
+        margin: auto;
       }
     }
   }
   .btn3 {
+    width: 50%;
     display: flex;
     justify-content: center;
-    width: 50%;
     padding: 12px;
     background-color: #b5c7d3;
     color: white;
@@ -281,6 +312,12 @@
     @include md {
       width: 25%;
       padding: 10px;
+    }
+    @include lg{
+      width: 50%;
+    }
+    @include xl{
+      width: 25%;
     }
   }
 }
