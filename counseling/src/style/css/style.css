@@ -305,22 +305,19 @@ body {
   margin-bottom: 5rem;
 }
 
-#home .about {
-  height: 60vh;
-}
-
 #home .aboutrow {
   height: 100%;
   padding-top: 1rem;
 }
 
 #home .aboutimg {
-  height: 50%;
   background: url(/img/homecounseling2.jpg) no-repeat fixed center/cover;
+  height: 80vmin;
+  max-height: 55vmax;
 }
 
 #home .abouttext {
-  height: 50%;
+  background: #809ec925;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,23 +331,38 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
 }
 
 #home .abouttext span:nth-child(1) {
   color: #e9a040;
+  font-size: 18px;
 }
 
 #home .abouttext span:nth-child(2) {
   color: #4b7fc9;
+  font-size: 38px;
+  padding-bottom: 1rem;
 }
 
 #home .abouttext p {
   color: #7f7f7f;
   margin: 0;
+  padding-bottom: 1rem;
+  font-size: 14px;
 }
 
-#home .btn3 {
-  width: 50%;
+@media (min-width: 576px) {
+  #home .abouttext div {
+    width: 70%;
+  }
+}
+
+#home .abouttext .btn3 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -365,7 +377,7 @@ body {
   border: 1px solid transparent;
 }
 
-#home .btn3:hover {
+#home .abouttext .btn3:hover {
   background-color: var(--dark5);
   border: 1px solid var(--dark5);
   color: var(--comhusk);
@@ -375,8 +387,8 @@ body {
 }
 
 @media (min-width: 576px) {
-  #home .btn3 {
-    width: 25%;
+  #home .abouttext .btn3 {
+    width: 20%;
     padding: 10px;
     margin: 0;
     -webkit-box-pack: center;
@@ -389,20 +401,20 @@ body {
 }
 
 @media (min-width: 768px) {
-  #home .btn3 {
-    width: 25%;
+  #home .abouttext .btn3 {
+    width: 20%;
     padding: 10px;
   }
 }
 
 @media (min-width: 992px) {
-  #home .btn3 {
-    width: 50%;
+  #home .abouttext .btn3 {
+    width: 20%;
   }
 }
 
 @media (min-width: 1200px) {
-  #home .btn3 {
-    width: 25%;
+  #home .abouttext .btn3 {
+    width: 20%;
   }
 }
