@@ -36,7 +36,7 @@
         b-col.box3(cols="12" sm="4" md="4")
           div 5
           div 心理諮商
-          p 針對個案的各種困擾，同時提供藥物、心理諮商、團體諮商甚至是卡片探索，結合各種方式，進行恰當精準的治心理療。
+          p 針對個案的各種困擾，同時提供藥物、心理諮商、團體諮商甚至是卡片探索，結合各種方式，進行恰當精準的心理治療。
         b-col.box3(cols="12" sm="4" md="4")
           div 6
           div 多元諮商
@@ -54,24 +54,38 @@
           span ABOUT US
           span 關於傾心
           div
-            p 每個人內心都是一個小小孩,在面對這洶湧湍急的社會,往往不知所措。長輩、家人、朋友、情人、等各種在你身邊的人,卻沒有一個能在夜深人靜的時刻裡,靜靜聽你訴說你的苦,而傾心,能給予你最剛好的照顧,照顧你/妳那徬徨不安的心。
+            p 每個人內心都是一個小小孩,在面對這洶湧湍急的社會,往往不知所措。長輩、家人、朋友、情人、等各種在你身邊的人,有時卻沒有一個能在夜深人靜的時刻裡,靜靜聽你訴說你的苦,而傾心,能給予你最剛好的照顧,照顧你/妳那徬徨不安的心。
             p 無論是進行心理諮商治療、藥物治療、伴侶與婚姻等的團體課程，我們都能以最適合您的方式來幫助您，還請您仔細閱讀我們的網站，如有需要請在頁面預約我們的團隊。
           .btn3 了解更多
     //- carousel-------------------------------------------------------------
     div
-      p 1231231231 2213
-      p 1231231231 2213
-      p 1231231231 2213
-      p 1231231231 2213
-      p 1231231231 2213
-      p 1231231231 2213
-      p 1231231231 2213
-      p 1231231231 2213
+      b-carousel#carousel-1(v-model='slide' :interval='4000' controls indicators background='#ababab' img-width='1024' img-height='480' style='text-shadow: 1px 1px 2px #333;' @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
+        b-carousel-slide(caption='First slide' text='Nulla vitae elit libero, a pharetra augue mollis interdum.' img-src='https://picsum.photos/1024/480/?image=52')
+        b-carousel-slide(img-src='https://picsum.photos/1024/480/?image=54')
+          h1 Hello world!
+        b-carousel-slide(img-src='https://picsum.photos/1024/480/?image=58')
+        b-carousel-slide(caption='Blank Image' img-blank img-alt='Blank image')
+          p.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
 </template>
 
 <script>
 
 export default {
+  data () {
+    return {
+      slide: 0,
+      sliding: null
+    }
+  },
+  methods: {
+    onSlideStart (slide) {
+      this.sliding = true
+    },
+    onSlideEnd (slide) {
+      this.sliding = false
+    }
+  }
 }
 </script>
 
