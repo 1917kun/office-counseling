@@ -58,15 +58,56 @@
             p 無論是進行心理諮商治療、藥物治療、伴侶與婚姻等的團體課程，我們都能以最適合您的方式來幫助您，還請您仔細閱讀我們的網站，如有需要請在頁面預約我們的團隊。
           .btn3 了解更多
     //- carousel-------------------------------------------------------------
-    div
-      b-carousel#carousel-1(v-model='slide' :interval='4000' controls indicators background='#ababab' img-width='1024' img-height='480' style='text-shadow: 1px 1px 2px #333;' @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
-        b-carousel-slide(caption='First slide' text='Nulla vitae elit libero, a pharetra augue mollis interdum.' img-src='https://picsum.photos/1024/480/?image=52')
-        b-carousel-slide(img-src='https://picsum.photos/1024/480/?image=54')
-          h1 Hello world!
-        b-carousel-slide(img-src='https://picsum.photos/1024/480/?image=58')
-        b-carousel-slide(caption='Blank Image' img-blank img-alt='Blank image')
-          p.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eros felis, tincidunt a tincidunt eget, convallis vel est. Ut pellentesque ut lacus vel interdum.
+    .container
+      b-carousel#carousel-1(v-model='slide' :interval='0' controls indicators background='#e7e7e7' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
+        b-carousel-slide
+          p 傾心診所醫師&心理師
+          hr
+          p xxx心理師醫師
+          img.carousimg(src="https://picsum.photos/1902/1080/?random=4" width="200" height="200")
+          p 主治項目
+          p 憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索
+          .btn4 了解更多
+        b-carousel-slide
+          p 傾心診所醫師&心理師
+          hr
+          p xxx心理師醫師
+          img(src="https://picsum.photos/1902/1080/?random=5" width="200" height="200")
+          p 主治項目
+          p 憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索
+          .btn4 了解更多
+        b-carousel-slide
+          p 傾心診所醫師&心理師
+          hr
+          p xxx心理師醫師
+          img(src="https://picsum.photos/1902/1080/?random=6" width="200" height="200")
+          p 主治項目
+          p 憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索
+          .btn4 了解更多
+        b-carousel-slide
+          p 傾心診所醫師&心理師
+          hr
+          p xxx心理師醫師
+          img(src="https://picsum.photos/1902/1080/?random=7" width="200" height="200")
+          p 主治項目
+          p 憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索
+          .btn4 了解更多
+    //-homenews-------------------------------------------------------
+    //- b-container
+    //-   b-row.m-0
+    //-     b-col.homenewsimg(cols="12" sm="6")
+    //-     b-col(cols="12" sm="6")
+    //-       div 傾心<br>2020年7月16日．1分鐘
+    //-       div 2020/8/7薩提爾模式伴侶及婚姻治療
+    //-       div 報名連結 <br>http://localhost:8080/#/column'
+    //-       div 456次瀏覽 寫一則留言
+          //----------------------------------------------------------
+    .container
+      p 456545456465446
+      p 456545456465446
+      p 456545456465446
+      p 456545456465446
+      p 456545456465446
 </template>
 
 <script>
