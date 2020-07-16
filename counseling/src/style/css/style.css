@@ -522,3 +522,24 @@ body {
     width: 15%;
   }
 }
+
+#home .homenews p:nth-child(1) {
+  color: #e9a040;
+}
+
+#home .homenews p:nth-child(2) {
+  color: #4b7fc9;
+}
+
+#home .homenewsimg {
+  max-width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+#home .a {
+  font-size: 2rem;
+}
