@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Source+Sans+Pro&display=swap");
 :root {
   --classblue:#0F4C81 !important;
   --provence:#658DC6 !important;
@@ -479,7 +480,7 @@ body {
 
 @media (min-width: 576px) {
   #home .carousel-item {
-    height: 45vh;
+    height: 54vh;
   }
 }
 
@@ -523,12 +524,18 @@ body {
   }
 }
 
+#home .news {
+  height: 80vh;
+}
+
 #home .homenews p:nth-child(1) {
   color: #e9a040;
+  font-size: 18px;
 }
 
 #home .homenews p:nth-child(2) {
   color: #4b7fc9;
+  font-size: 38px;
 }
 
 #home .homenewsimg {
@@ -540,6 +547,39 @@ body {
      object-position: center;
 }
 
-#home .a {
-  font-size: 2rem;
+#home .homenewstext p {
+  font-family: "Mulish", sans-serif;
+  margin: 0;
+  font-size: 10px;
+}
+
+#home .homenewstext div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 992px) {
+  #home .homenewstext div:nth-child(1) p {
+    font-size: 12px;
+  }
+  #home .homenewstext div:nth-child(2) p {
+    font-size: 28px;
+  }
+  #home .homenewstext div:nth-child(3) p {
+    font-size: 16px;
+  }
+  #home .homenewstext div:nth-child(4) p {
+    font-size: 12px;
+  }
+}
+
+#home .homenewstext svg {
+  font-size: 1rem;
 }

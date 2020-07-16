@@ -49,31 +49,35 @@
           p {{homecarousel.p2}}
           .btn4 了解更多
     //-homenews-------------------------------------------------------
-    .container.d-flex.flex-column.align-items-center.p-5
+    .container.d-flex.flex-column.align-items-center.p-5.news
       div.homenews.text-center
-        p NEWS
+        p.m-0 NEWS
         p 最新消息
-      b-card.overflow-hidden(no-body style='max-width: 540px;')
-        b-row(no-gutters)
+      b-card.overflow-hidden(no-body style='max-width: 80%; height: 70%;')
+        b-row(no-gutters).h-100
           b-col(md='6')
             b-card-img.homenewsimg.rounded-0(src='https://picsum.photos/1920/1080/?image=20' alt='Image')
           b-col(md='6')
-            b-card-body(title='')
+            b-card-body.homenewstext(title='')
               div
-                b-card-text.
-                  大心<br>2020年7月16日．1分鐘
+                b-card-text
+                  h6 大心
+                  h6.d-flex.align-items-center
+                    |2020年7月16日．1分鐘
+                    font-awesome-icon(:icon="['fas', 'crown']")
               div
                 b-card-text.
                   2020/8/7薩提爾模式婚姻伴侶治療
               div
                 b-card-text.
                   報名連結:<br>
-                  https://www.satier.couseling.org.tw/paid 匯款<br>
-                  https://www.satier.couseling.org.tw/linepaiding 線上支付
+                  https://www.satier.couseling/paid 匯款<br>
+                  https://www.satier.couseling/linepaiding 線上支付
               div
                 b-card-text.
                   456次瀏覽 <a>寫一則留言</a>
-                font-awesome-icon(:icon="['fab', 'gratipay']")
+                span
+                  font-awesome-icon(:icon="['fab', 'gratipay']")
 
     //----------------------------------------------------------
     .container
@@ -152,9 +156,6 @@ export default {
           p1: '主治項目',
           p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
         }
-      ],
-      homenews: [
-
       ]
     }
   },

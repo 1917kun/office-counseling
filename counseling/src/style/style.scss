@@ -1,6 +1,7 @@
 @import "_functions.scss";
 @import "_mixins.scss";
 @import "_variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@500&family=Source+Sans+Pro&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -335,7 +336,7 @@ body {
       background: rgba(0, 52, 72, 0.164);
     }
     @include sm {
-      height: 45vh;
+      height: 54vh;
     }
   }
   .btn4 {
@@ -363,12 +364,17 @@ body {
     }
   }
   // homenews----------------------------------------------------------
+  .news {
+    height: 80vh;
+  }
   .homenews {
     p:nth-child(1) {
       color: #e9a040;
+      font-size: 18px;
     }
     p:nth-child(2) {
       color: #4b7fc9;
+      font-size: 38px;
     }
   }
   .homenewsimg {
@@ -377,7 +383,33 @@ body {
     object-fit: cover;
     object-position: center;
   }
-  .a{
-    font-size: 2rem;
+  .homenewstext {
+    p {
+      font-family: "Mulish", sans-serif;
+      margin: 0;
+      font-size: 10px;
+    }
+    div{
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+    @include lg {
+      div:nth-child(1) p{
+        font-size: 12px;
+      }
+      div:nth-child(2) p{
+        font-size: 28px;
+      }
+      div:nth-child(3) p{
+        font-size: 16px;
+      }
+      div:nth-child(4) p{
+        font-size: 12px;
+      }
+    }
+    svg{
+      font-size: 1rem;
+    }
   }
 }
