@@ -93,15 +93,18 @@
           p 憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索
           .btn4 了解更多
     //-homenews-------------------------------------------------------
-    //- b-container
-    //-   b-row.m-0
-    //-     b-col.homenewsimg(cols="12" sm="6")
-    //-     b-col(cols="12" sm="6")
-    //-       div 傾心<br>2020年7月16日．1分鐘
-    //-       div 2020/8/7薩提爾模式伴侶及婚姻治療
-    //-       div 報名連結 <br>http://localhost:8080/#/column'
-    //-       div 456次瀏覽 寫一則留言
-          //----------------------------------------------------------
+    .container
+      p NEWS
+      p 最新消息
+      b-card.overflow-hidden(no-body style='max-width: 540px;')
+        b-row(no-gutters)
+          b-col(md='6')
+            b-card-img.rounded-0(src='https://picsum.photos/400/400/?image=20' alt='Image')
+          b-col(md='6')
+            b-card-body(title='Horizontal Card')
+              b-card-text.
+                This is a wider card with supporting text as a natural lead-in to additional content. This content is a little bit longer.
+    //----------------------------------------------------------
     .container
       p 456545456465446
       p 456545456465446
