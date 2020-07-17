@@ -26,7 +26,7 @@
         b-col.d-flex.justify-content-center.w-100
           .btn2 了解更多
           .btn2 線上預約
-    //-about----------------------------------------------------------------
+      //-about----------------------------------------------------------------
     b-container.about(fluid).p-o
       b-row.aboutrow
         b-col(cols="12" lg="6").aboutimg
@@ -37,7 +37,7 @@
             p 每個人內心都是一個小小孩,在面對這洶湧湍急的社會,往往不知所措。長輩、家人、朋友、情人、等各種在你身邊的人,有時卻沒有一個能在夜深人靜的時刻裡,靜靜聽你訴說你的苦,而傾心,能給予你最剛好的照顧,照顧你/妳那徬徨不安的心。
             p 無論是進行心理諮商治療、藥物治療、伴侶與婚姻等的團體課程，我們都能以最適合您的方式來幫助您，還請您仔細閱讀我們的網站，如有需要請在頁面預約我們的團隊。
           .btn3 了解更多
-    //- carousel-------------------------------------------------------------
+      //- carousel-------------------------------------------------------------
     .container
       b-carousel#carousel-1(v-model='slide' :interval='4000' controls indicators background='#e7e7e7' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
         b-carousel-slide(v-for="(homecarousel,index) in homecarousels" :key="index")
@@ -48,58 +48,54 @@
           p {{homecarousel.p1}}
           p {{homecarousel.p2}}
           .btn4 了解更多
-    //-homenews-------------------------------------------------------
-    .container.d-flex.flex-column.align-items-center.mt-5
-      div.homenews.text-center
-        p.m-0 NEWS
-        p 最新消息
-      b-card.overflow-hidden(no-body v-for="(homenew,index) in homenews" :key="index" style='max-width: 85%;')
-        b-row(no-gutters)
-          b-col(md='6')
-            b-card-img.homenewsimg(:src='homenew.newssrc')
-          b-col(md='6')
-            b-card-body.homenewstext(title='').d-flex.flex-column.justify-content-center
-              div
-                b-card-text.
-                  {{homenew.title}}
-              div
-                b-card-text.
-                  報名連結:<br>
-                  https://www.satier.couseling/paid 匯款<br>
-                  https://www.satier.couseling/linepaiding 線上支付
-              div.justify-content-end.mt-5
-                b-card-text.d-flex
-                  //- p 傾心
-                  //-   font-awesome-icon(:icon="['fas', 'crown']")
-                  p.d-flex.align-items-center.
-                    {{homenew.time}}
-              hr
-              div.justify-content-between
-                b-card-text.
-                  {{homenew.sta}}
-                  <a href="#" style="text-decoration:none;color:#003448;">寫一則留言</a>
+      //-homenews-------------------------------------------------------
+    div(style="background:#809ec925")
+      .container.d-flex.flex-column.align-items-center.mt-5.homenewsback
+        div.homenews.text-center
+          p.m-0 NEWS
+          p 最新消息
+        b-card.overflow-hidden(no-body v-for="(homenew,index) in homenews" :key="index" style='max-width: 85%;')
+          b-row(no-gutters)
+            b-col(md='6')
+              b-card-img.homenewsimg(:src='homenew.newssrc')
+            b-col(md='6')
+              b-card-body.homenewstext(title='').d-flex.flex-column.justify-content-center
+                div
+                  b-card-text.
+                    {{homenew.title}}
+                div
+                  b-card-text.
+                    報名連結:<br>
+                    https://www.satier.couseling/paid 匯款<br>
+                    https://www.satier.couseling/linepaiding 線上支付
+                div.justify-content-end.mt-5
+                  b-card-text.d-flex
+                    p.d-flex.align-items-center.
+                      {{homenew.time}}
+                hr
+                div.justify-content-between
+                  b-card-text.
+                    {{homenew.sta}}
+                    <a href="#" style="text-decoration:none;color:#003448;">寫一則留言</a>
+                  span
+                    font-awesome-icon(:icon="['fab', 'gratipay']")
+      //- homearticle-------------------------------------------
+      .container.d-flex.flex-column.align-items-center.mt-5.homearticleback
+        div.homenews.text-center
+          p.m-0 Posts
+          p 熱門文章
+        div.homearticle
+          b-card-group(deck)
+            b-card(title='' v-for="(homearticle,index) in homearticles" :key="index" :img-src='homearticle.src' img-top )
+              b-card-text.
+                {{homearticle.title}}
+              template(v-slot:footer)
+                span.homearticlefooter
+                  font-awesome-icon(:icon="['fas', 'eye']")
+                  span {{homearticle.sta}}
+                  span 留言
                 span
                   font-awesome-icon(:icon="['fab', 'gratipay']")
-    //----------------------------------------------------------
-    .container.d-flex.flex-column.align-items-center.mt-5
-      div.homenews.text-center
-        p.m-0 Posts
-        p 熱門文章
-      //- b-card.mb-2(title='Card Title' img-src='https://picsum.photos/600/300/?image=25' img-top tag='article' style='max-width: 20rem;')
-      //-   b-card-text.
-      //-     Some quick example text to build on the card title and make up the bulk of the card's content.
-      div.homearticle
-        b-card-group(deck)
-          b-card(title='' v-for="(homearticle,index) in homearticles" :key="index" :img-src='homearticle.src' img-top )
-            b-card-text.
-              {{homearticle.title}}
-            template(v-slot:footer)
-              span.homearticlefooter
-                font-awesome-icon(:icon="['fas', 'eye']")
-                span {{homearticle.sta}}
-                span 留言
-              span
-                font-awesome-icon(:icon="['fab', 'gratipay']")
     //- footer---------------------------------------------------
 </template>
 
