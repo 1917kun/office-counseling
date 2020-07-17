@@ -392,26 +392,26 @@ body {
       align-items: center;
     }
     div:nth-child(1) p {
-      font-size: 8px;
-    }
-    div:nth-child(2) p {
       font-size: 15px;
     }
-    div:nth-child(3) p {
+    div:nth-child(2) p {
       font-size: 12px;
+    }
+    div:nth-child(3) p {
+      font-size: 8px;
     }
     div:nth-child(4) p {
       font-size: 8px;
     }
     @include sm {
       div:nth-child(1) p {
-        font-size: 12px;
-      }
-      div:nth-child(2) p {
         font-size: 25px;
       }
-      div:nth-child(3) p {
+      div:nth-child(2) p {
         font-size: 16px;
+      }
+      div:nth-child(3) p {
+        font-size: 12px;
       }
       div:nth-child(4) p {
         font-size: 12px;
@@ -419,25 +419,46 @@ body {
     }
     @include lg {
       div:nth-child(1) p {
-        font-size: 12px;
-      }
-      div:nth-child(2) p {
         font-size: 28px;
       }
-      div:nth-child(3) p {
+      div:nth-child(2) p {
         font-size: 16px;
+      }
+      div:nth-child(3) p {
+        font-size: 12px;
       }
       div:nth-child(4) p {
         font-size: 12px;
       }
     }
-    hr {
-      margin-top: 3rem;
-    }
+    // hr {
+    //   margin-top: 3rem;
+    // }
     svg {
       @include lg {
         font-size: 1rem;
       }
     }
+  }
+  // homearticle--------------------------------------------------------
+  .homearticle {
+    width: 85%;
+    @include sm {
+      width: 105%;
+    }
+    @include lg {
+      width: 85%;
+    }
+  }
+  .card-footer {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+  }
+  .homearticlefooter span:nth-of-type(1) {
+    padding-left: 0.2rem;
+  }
+  .homearticlefooter span:nth-of-type(2) {
+    padding-left: 0.5rem;
   }
 }

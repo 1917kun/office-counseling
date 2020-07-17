@@ -565,15 +565,15 @@ body {
 }
 
 #home .homenewstext div:nth-child(1) p {
-  font-size: 8px;
-}
-
-#home .homenewstext div:nth-child(2) p {
   font-size: 15px;
 }
 
-#home .homenewstext div:nth-child(3) p {
+#home .homenewstext div:nth-child(2) p {
   font-size: 12px;
+}
+
+#home .homenewstext div:nth-child(3) p {
+  font-size: 8px;
 }
 
 #home .homenewstext div:nth-child(4) p {
@@ -582,13 +582,13 @@ body {
 
 @media (min-width: 576px) {
   #home .homenewstext div:nth-child(1) p {
-    font-size: 12px;
-  }
-  #home .homenewstext div:nth-child(2) p {
     font-size: 25px;
   }
-  #home .homenewstext div:nth-child(3) p {
+  #home .homenewstext div:nth-child(2) p {
     font-size: 16px;
+  }
+  #home .homenewstext div:nth-child(3) p {
+    font-size: 12px;
   }
   #home .homenewstext div:nth-child(4) p {
     font-size: 12px;
@@ -597,25 +597,55 @@ body {
 
 @media (min-width: 992px) {
   #home .homenewstext div:nth-child(1) p {
-    font-size: 12px;
-  }
-  #home .homenewstext div:nth-child(2) p {
     font-size: 28px;
   }
-  #home .homenewstext div:nth-child(3) p {
+  #home .homenewstext div:nth-child(2) p {
     font-size: 16px;
+  }
+  #home .homenewstext div:nth-child(3) p {
+    font-size: 12px;
   }
   #home .homenewstext div:nth-child(4) p {
     font-size: 12px;
   }
 }
 
-#home .homenewstext hr {
-  margin-top: 3rem;
-}
-
 @media (min-width: 992px) {
   #home .homenewstext svg {
     font-size: 1rem;
   }
+}
+
+#home .homearticle {
+  width: 85%;
+}
+
+@media (min-width: 576px) {
+  #home .homearticle {
+    width: 105%;
+  }
+}
+
+@media (min-width: 992px) {
+  #home .homearticle {
+    width: 85%;
+  }
+}
+
+#home .card-footer {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#home .homearticlefooter span:nth-of-type(1) {
+  padding-left: 0.2rem;
+}
+
+#home .homearticlefooter span:nth-of-type(2) {
+  padding-left: 0.5rem;
 }
