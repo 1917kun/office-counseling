@@ -49,22 +49,22 @@
           p {{homecarousel.p2}}
           .btn4 了解更多
     //-homenews-------------------------------------------------------
-    .container.d-flex.flex-column.align-items-center.p-5.news
+    .container.d-flex.flex-column.align-items-center.mt-5
       div.homenews.text-center
         p.m-0 NEWS
         p 最新消息
-      b-card.overflow-hidden(no-body style='max-width: 80%; height: 70%;')
-        b-row(no-gutters).h-100
+      b-card.overflow-hidden(no-body v-for="(homenew,index) in homenews" :key="index" style='max-width: 85%;')
+        b-row(no-gutters)
           b-col(md='6')
-            b-card-img.homenewsimg.rounded-0(src='https://picsum.photos/1920/1080/?image=20' alt='Image')
+            b-card-img.homenewsimg(:src='homenew.newssrc')
           b-col(md='6')
-            b-card-body.homenewstext(title='')
+            b-card-body.homenewstext(title='').d-flex.flex-column.justify-content-center
               div
                 b-card-text
-                  h6 大心
-                  h6.d-flex.align-items-center
-                    |2020年7月16日．1分鐘
+                  p 傾心
                     font-awesome-icon(:icon="['fas', 'crown']")
+                  p.d-flex.align-items-center
+                    |2020年7月16日．1分鐘
               div
                 b-card-text.
                   2020/8/7薩提爾模式婚姻伴侶治療
@@ -73,14 +73,20 @@
                   報名連結:<br>
                   https://www.satier.couseling/paid 匯款<br>
                   https://www.satier.couseling/linepaiding 線上支付
-              div
+              hr
+              div.justify-content-between
                 b-card-text.
-                  456次瀏覽 <a>寫一則留言</a>
+                  456次瀏覽
+                  <a href="#" style="text-decoration:none;color:#003448;">寫一則留言</a>
                 span
                   font-awesome-icon(:icon="['fab', 'gratipay']")
-
     //----------------------------------------------------------
     .container
+      p 456545456465446
+      p 456545456465446
+      p 456545456465446
+      p 456545456465446
+      p 456545456465446
       p 456545456465446
       p 456545456465446
       p 456545456465446
@@ -131,30 +137,35 @@ export default {
         {
           title: '傾心診所醫師&心理師',
           doctor: 'xxx心理師醫師',
-          src: 'https://picsum.photos/1902/1080/?random=6',
+          src: 'https://picsum.photos/1920/1080/?random=6',
           p1: '主治項目',
           p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
         },
         {
           title: '傾心診所醫師&心理師',
           doctor: 'xxx心理師醫師',
-          src: 'https://picsum.photos/1902/1080/?random=7',
+          src: 'https://picsum.photos/1920/1080/?random=7',
           p1: '主治項目',
           p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
         },
         {
           title: '傾心診所醫師&心理師',
           doctor: 'xxx心理師醫師',
-          src: 'https://picsum.photos/1902/1080/?random=8',
+          src: 'https://picsum.photos/1920/1080/?random=8',
           p1: '主治項目',
           p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
         },
         {
           title: '傾心診所醫師&心理師',
           doctor: 'xxx心理師醫師',
-          src: 'https://picsum.photos/1902/1080/?random=9',
+          src: 'https://picsum.photos/1920/1080/?random=9',
           p1: '主治項目',
           p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
+        }
+      ],
+      homenews: [
+        {
+          newssrc: 'https://picsum.photos/1920/1080/?random=10'
         }
       ]
     }
