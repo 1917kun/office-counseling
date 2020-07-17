@@ -97,6 +97,17 @@
                 span
                   font-awesome-icon(:icon="['fab', 'gratipay']")
     //- footer---------------------------------------------------
+    .container
+      div
+        img(src="https://picsum.photos/1920/1080/?random=14" width="271px")
+      div
+        p 電子信箱
+        p 傾心診所(金門縣金湖鎮)
+        p 聯絡專線 02-23651675
+        p 診所地址 金門縣金湖鎮蓮庵里3鄰東村21號
+        b-input
+      div
+
 </template>
 
 <script>
