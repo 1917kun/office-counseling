@@ -52,8 +52,8 @@
     div(style="background:#809ec925")
       .container.d-flex.flex-column.align-items-center.mt-5.homenewsback
         div.homenews.text-center
-          p.m-0 NEWS
-          p 最新消息
+          //- p.m-0 NEWS
+          p.thenew 最新消息
         b-card.overflow-hidden(no-body v-for="(homenew,index) in homenews" :key="index" style='max-width: 85%;')
           b-row(no-gutters)
             b-col(md='6')
@@ -82,8 +82,8 @@
       //- homearticle-------------------------------------------
       .container.d-flex.flex-column.align-items-center.mt-5.homearticleback
         div.homenews.text-center
-          p.m-0 Posts
-          p 熱門文章
+          span.m-0(style='color: #e9a040;') Posts
+          p.thearticle 熱門文章
         div.homearticle
           b-card-group(deck)
             b-card(title='' v-for="(homearticle,index) in homearticles" :key="index" :img-src='homearticle.src' img-top )

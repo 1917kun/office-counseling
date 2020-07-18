@@ -524,14 +524,22 @@ body {
   }
 }
 
-#home .homenews p:nth-child(1) {
-  color: #e9a040;
-  font-size: 18px;
-}
-
-#home .homenews p:nth-child(2) {
+#home .homenews p {
   color: #4b7fc9;
   font-size: 38px;
+}
+
+#home .homenews .thenew {
+  position: relative;
+}
+
+#home .homenews .thenew::before {
+  content: "";
+  width: 100%;
+  height: 25%;
+  background: #e9a040b2;
+  position: absolute;
+  bottom: 10%;
 }
 
 #home .homenewsimg {

@@ -365,13 +365,28 @@ body {
   }
   // homenews----------------------------------------------------------
   .homenews {
-    p:nth-child(1) {
-      color: #e9a040;
-      font-size: 18px;
-    }
-    p:nth-child(2) {
+    // p:nth-child(1) {
+    //   color: #e9a040;
+    //   font-size: 18px;
+    // }
+    // p:nth-child(2) {
+    //   color: #4b7fc9;
+    //   font-size: 38px;
+    // }
+    p {
       color: #4b7fc9;
       font-size: 38px;
+    }
+    .thenew {
+      position: relative;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 25%;
+        background: #e9a040b2;
+        position: absolute;
+        bottom: 10%;
+      }
     }
   }
   .homenewsimg {
@@ -462,4 +477,3 @@ body {
     padding-left: 0.5rem;
   }
 }
-
