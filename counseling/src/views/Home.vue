@@ -101,13 +101,19 @@
       div
         img(src="https://picsum.photos/1920/1080/?random=14" width="271px")
       div
-        p 電子信箱
-        p 傾心診所(金門縣金湖鎮)
-        p 聯絡專線 02-23651675
-        p 診所地址 金門縣金湖鎮蓮庵里3鄰東村21號
-        b-input
-      div
-
+        p
+          span 電子信箱
+        p
+          span 傾心診所
+          span (金門縣金湖鎮)
+        p
+          span 聯絡專線
+          span 02-23651675
+        p
+          span 診所地址
+          span 金門縣金湖鎮蓮庵里3鄰東村21號
+        b-input(placeholder="電子信箱 ")
+        b-button(squared variant="info") 訂閱
 </template>
 
 <script>
