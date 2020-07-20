@@ -426,11 +426,17 @@ body {
 
 #home .carousel {
   padding: 3rem 0;
+  margin-bottom: 2rem;
+}
+
+#home .carousel-indicators li {
+  background-color: #4b7fc9;
 }
 
 #home .carousel-item {
   height: 57vh;
   text-shadow: none;
+  background: white !important;
 }
 
 #home .carousel-item .carousel-caption {
@@ -524,6 +530,10 @@ body {
   }
 }
 
+#home .homenews {
+  padding-bottom: 2rem;
+}
+
 #home .homenews p {
   color: #4b7fc9;
   font-size: 38px;
@@ -544,7 +554,7 @@ body {
 }
 
 #home .homenews .thenew::after {
-  content: 'NEWS';
+  content: "NEWS";
   position: absolute;
   bottom: 10%;
   right: -19%;
@@ -668,7 +678,95 @@ body {
   padding-left: 0.5rem;
 }
 
-#home .form-control {
-  width: 20%;
+#home .bi-wifi, #home .bi-cup {
+  color: #809ec9;
+  border: 1px solid #809ec9;
+}
+
+#home .fa-facebook, #home .fa-line, #home .fa-instagram {
+  color: #b9b7b7;
+  font-size: 2rem;
+}
+
+@media (min-width: 576px) {
+  #home .homefooterrow {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+#home .homefootercol1 .homefootertext span:nth-child(odd) {
+  color: #4b7fc9;
+}
+
+#home .homefootercol1 .homefootertext span:nth-child(even) {
+  color: #a9a9a9;
+}
+
+#home .homefootercol1 .homefootersubscription {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (min-width: 576px) {
+  #home .homefootercol1 .homefootersubscription {
+    width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  #home .homefootercol1 .homefootersubscription {
+    width: 60%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+#home .homefootercol1 .form-control {
+  width: 70%;
   border-radius: 0;
+}
+
+#home .homefootercol2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#home .homefootercol2 span {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+@media (min-width: 576px) {
+  #home .homefootercol2 span {
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+  }
+}
+
+#home .homefootercol2 .homefootercol2-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }

@@ -39,7 +39,7 @@
           .btn3 了解更多
       //- carousel-------------------------------------------------------------
     .container
-      b-carousel#carousel-1(v-model='slide' :interval='4000' controls indicators background='#e7e7e7' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
+      b-carousel#carousel-1(v-model='slide' :interval='4000' controls indicators background='white' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
         b-carousel-slide(v-for="(homecarousel,index) in homecarousels" :key="index")
           p {{homecarousel.title}}
           hr
@@ -49,7 +49,7 @@
           p {{homecarousel.p2}}
           .btn4 了解更多
       //-homenews-------------------------------------------------------
-    div(style="background:#809ec925")
+    div(style="background:#809ec925; padding-bottom:6rem; padding-top:2rem;")
       .container.d-flex.flex-column.align-items-center.mt-5.homenewsback
         div.homenews.text-center
           //- p.m-0 NEWS
@@ -97,23 +97,48 @@
                 span
                   font-awesome-icon(:icon="['fab', 'gratipay']")
     //- footer---------------------------------------------------
-    .container
-      div
-        img(src="https://picsum.photos/1920/1080/?random=14" width="271px")
-      div
-        p
-          span 電子信箱
-        p
-          span 傾心診所
-          span (金門縣金湖鎮)
-        p
-          span 聯絡專線
-          span 02-23651675
-        p
-          span 診所地址
-          span 金門縣金湖鎮蓮庵里3鄰東村21號
-        b-input(placeholder="電子信箱 ")
-        b-button(squared variant="info") 訂閱
+    b-container
+      b-row.homefooterrow
+        b-col.homefootercol2(cols="12" sm="6")
+          div.homefootercol2-icon
+            .h2.mb-0
+                b-icon(icon='wifi')
+                b-icon(icon='cup')
+            div
+              font-awesome-icon(:icon="['fab', 'facebook']")
+              font-awesome-icon(:icon="['fab', 'line']")
+              font-awesome-icon(:icon="['fab', 'instagram']")
+          .embed-responsive.embed-responsive-21by9(v-for="(homefooter,index) in homefooters" :key="index")
+            iframe(:src='homefooter.imgsrc' width='' frameborder='0' allowfullscreen)
+          span Copyright © 2020 傾心診所
+        b-col.homefootercol1(cols="12" sm="6" v-for="(homefooter,index) in homefooters" :key="index")
+          div.homefooterimg
+            img(:src='homefooter.src' width="100%")
+          div.homefootertext
+            p
+              span 電子信箱
+              span anleader911@gmai.com
+            p
+              span 傾心診所
+              span (新北市泰山區)
+            p
+              span 聯絡專線
+              span 02-23651675
+            p
+              span 診所地址
+              span 新北市泰山區貴子里致遠新村55之1號
+            p(style="color:#a9a9a9;") 傾心電子報
+            div.homefootersubscription
+              b-input(placeholder="電子信箱")
+              b-button(squared ) 訂閱
+    //- p 454564456454654564564654664545
+    //- p 454564456454654564564654664545
+    //- p 454564456454654564564654664545
+    //- p 454564456454654564564654664545
+    //- p 454564456454654564564654664545
+    //- p 454564456454654564564654664545
+    //- p 454564456454654564564654664545
+  </div>
 </template>
 
 <script>
@@ -208,6 +233,12 @@ export default {
           src: 'https://picsum.photos/1920/1080/?random=13',
           title: '我就是不想說，因為你不會懂：怎樣應對「逃避依附」的沉默',
           sta: '4825'
+        }
+      ],
+      homefooters: [
+        {
+          src: 'https://picsum.photos/1920/1080/?random=14',
+          imgsrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7080213475365!2d121.41715431500656!3d25.043980983967728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1591237554076!5m2!1szh-TW!2stw'
         }
       ]
     }
