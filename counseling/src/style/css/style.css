@@ -57,6 +57,10 @@ body {
   color: #a9a9a9;
 }
 
+#nav .navtext a:hover {
+  color: #76b0d4;
+}
+
 @media (min-width: 768px) {
   #nav .navtext {
     padding-top: 0;

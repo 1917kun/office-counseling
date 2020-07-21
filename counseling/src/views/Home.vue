@@ -34,12 +34,12 @@
           span ABOUT US
           span 關於傾心
           div
-            p 每個人內心都是一個小小孩,在面對這洶湧湍急的社會,往往不知所措。長輩、家人、朋友、情人、等各種在你身邊的人,有時卻沒有一個能在夜深人靜的時刻裡,靜靜聽你訴說你的苦,而傾心,能給予你最剛好的照顧,照顧你/妳那徬徨不安的心。
+            p 每個人內心都是一個小小孩,在面對這洶湧湍急的社會,往往不知所措。長輩、家人、朋友、情人、等各種在你身邊的人,有時沒有一個人能在夜深人靜的時刻裡,靜靜聽你訴說你的苦,然而傾心,能給予你最剛好的照顧,照顧你/妳那徬徨不安的心。
             p 無論是進行心理諮商治療、藥物治療、伴侶與婚姻等的團體課程，我們都能以最適合您的方式來幫助您，還請您仔細閱讀我們的網站，如有需要請在頁面預約我們的團隊。
           .btn3 了解更多
       //- carousel-------------------------------------------------------------
     .container
-      b-carousel#carousel-1(v-model='slide' :interval='4000' controls indicators background='white' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
+      b-carousel#carousel-1(v-model='slide' :interval='3000' controls indicators background='white' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
         b-carousel-slide(v-for="(homecarousel,index) in homecarousels" :key="index")
           p {{homecarousel.title}}
           hr
