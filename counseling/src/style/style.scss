@@ -418,7 +418,7 @@ body {
     }
     div {
       display: flex;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: center;
     }
     div:nth-child(1) p {
@@ -515,65 +515,95 @@ body {
   .fa-instagram {
     @extend %faicon;
   }
-  // row--------------------------
+
+  @include sm{
+    .homemap{
+      height: 63%;
+    }
+  }
+  @include md{
+    .homemap{
+      height: 55%;
+    }
+  }
+  @include lg{
+    .homemap{
+      height: 59%;
+    }
+  }
+  @include xl{
+    .homemap{
+      height: 52%;
+    }
+  }
+  .homefooter {
+    font-size: 14px;
+    padding-top: 2rem;
+    @include sm {
+      max-width: 80%;
+    }
+    @include lg{
+      max-width: 60%;
+    }
+  }
   .homefooterrow {
     @include sm {
       flex-direction: row-reverse;
-      justify-content: center;
     }
   }
-  // col1-------------------------
   .homefootercol1 {
-    @include sm {
+    display: flex;
+    flex-direction: column;
+    div:nth-child(1) {
+      display: flex;
+      justify-content: space-between;
     }
-    @include md {
-    }
-    .homefooterimg {
-      img {
+    .homefootericon {
+      @include sm {
+        padding-top: 5rem;
+      }
+      @include md {
+        padding-top: 7rem;
+      }
+      @include lg {
+        padding-top: 6rem;
+      }
+      @include xl {
+        padding-top: 6rem;
       }
     }
-    .homefootertext {
+  }
+  .homefootercol2 {
+    .homefooterimg {
+      object-fit: cover;
+      object-position: center;
+      height: 30%;
     }
-    .homefootertext span:nth-child(odd) {
+    .homefootertext span:nth-of-type(odd) {
       color: #4b7fc9;
     }
-    .homefootertext span:nth-child(even) {
+    .homefootertext span:nth-of-type(even) {
       color: #a9a9a9;
     }
     .homefootersubscription {
-      width: 70%;
       display: flex;
-      justify-content: space-between;
-      @include sm {
-        width: 100%;
-      }
-      @include lg {
-        width: 60%;
-        justify-content: space-between;
+      .form-control {
+        width: 70%;
       }
     }
-    .form-control {
-      width: 70%;
-      border-radius: 0;
+    .lab {
+      display: block;
+      text-align: center;
+      padding-top: 1rem;
+      @include sm {
+        display: none;
+      }
     }
   }
-  // col2------------------------
-  .homefootercol2 {
-    display: flex;
-    flex-direction: column;
-    @include sm {
-    }
-    span {
-      align-self: center;
-      @include sm {
-        align-self: start;
-      }
-    }
-    .homefootercol2-icon {
-      display: flex;
-      justify-content: space-between;
-      @include sm {
-      }
+  .span1{
+    display: none;
+    @include sm{
+      display: block;
     }
   }
 }

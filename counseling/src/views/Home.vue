@@ -97,10 +97,10 @@
                 span
                   font-awesome-icon(:icon="['fab', 'gratipay']")
     //- footer---------------------------------------------------
-    b-container
+    b-container.homefooter
       b-row.homefooterrow
-        b-col.homefootercol2(cols="12" sm="6")
-          div.homefootercol2-icon
+        b-col.homefootercol1(cols="12" sm="6")
+          .homefootericon
             .h2.mb-0
                 b-icon(icon='wifi')
                 b-icon(icon='cup')
@@ -108,13 +108,11 @@
               font-awesome-icon(:icon="['fab', 'facebook']")
               font-awesome-icon(:icon="['fab', 'line']")
               font-awesome-icon(:icon="['fab', 'instagram']")
-          .embed-responsive.embed-responsive-21by9(v-for="(homefooter,index) in homefooters" :key="index")
+          .embed-responsive.embed-responsive-21by9.homemap(v-for="(homefooter,index) in homefooters" :key="index")
             iframe(:src='homefooter.imgsrc' width='' frameborder='0' allowfullscreen)
-          span Copyright © 2020 傾心診所
-        b-col.homefootercol1(cols="12" sm="6" v-for="(homefooter,index) in homefooters" :key="index")
-          div.homefooterimg
-            img(:src='homefooter.src' width="100%")
-          div.homefootertext
+        b-col.homefootercol2(cols="12" sm="6" v-for="(homefooter,index) in homefooters" :key="index")
+          img.homefooterimg(:src='homefooter.src' width="100%")
+          .homefootertext
             p
               span 電子信箱
               span anleader911@gmai.com
@@ -128,17 +126,13 @@
               span 診所地址
               span 新北市泰山區貴子里致遠新村55之1號
             p(style="color:#a9a9a9;") 傾心電子報
-            div.homefootersubscription
-              b-input(placeholder="電子信箱")
-              b-button(squared ) 訂閱
-    //- p 454564456454654564564654664545
-    //- p 454564456454654564564654664545
-    //- p 454564456454654564564654664545
-    //- p 454564456454654564564654664545
-    //- p 454564456454654564564654664545
-    //- p 454564456454654564564654664545
-    //- p 454564456454654564564654664545
-  </div>
+          .homefootersubscription
+            b-input(placeholder="電子信箱")
+            b-button(squared ) 訂閱
+          span.lab Copyright © 2020 傾心診所
+    b-container
+      .row.justify-content-center
+        span.span1 Copyright © 2020 傾心診所
 </template>
 
 <script>
