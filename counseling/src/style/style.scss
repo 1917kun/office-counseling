@@ -35,6 +35,11 @@ body {
     @content;
   }
 }
+@mixin xxl {
+  @media (min-width: 1500px) {
+    @content;
+  }
+}
 // app------------------------------------------------
 #nav {
   .navtext {
@@ -50,7 +55,7 @@ body {
     }
     a {
       color: #a9a9a9;
-      &:hover{
+      &:hover {
         color: #76b0d4;
       }
     }
@@ -81,7 +86,7 @@ body {
       align-items: flex-start;
       transform: translate(7%, -3%);
     }
-    img { 
+    img {
       object-fit: cover;
       max-width: 80%;
     }
@@ -519,24 +524,29 @@ body {
     @extend %faicon;
   }
 
-  @include sm{
-    .homemap{
+  @include sm {
+    .homemap {
       height: 63%;
     }
   }
-  @include md{
-    .homemap{
+  @include md {
+    .homemap {
       height: 55%;
     }
   }
-  @include lg{
-    .homemap{
+  @include lg {
+    .homemap {
       height: 59%;
     }
   }
-  @include xl{
-    .homemap{
-      height: 52%;
+  @include xl {
+    .homemap {
+      height: 52.5%;
+    }
+  }
+  @include xxl {
+    .homemap {
+      height: 47.5%;
     }
   }
   .homefooter {
@@ -545,7 +555,7 @@ body {
     @include sm {
       max-width: 80%;
     }
-    @include lg{
+    @include lg {
       max-width: 60%;
     }
   }
@@ -603,10 +613,15 @@ body {
       }
     }
   }
-  .span1{
+  .span1 {
     display: none;
-    @include sm{
+    @include sm {
       display: block;
     }
   }
+}
+// service--------------------------------------------------------------------------------
+#service {
+  height: 100%;
+  background: url(/img/eNplec2.jpg/) no-repeat fixed right/cover;
 }

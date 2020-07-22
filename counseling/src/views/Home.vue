@@ -1,5 +1,5 @@
 <template lang="pug">
-  #home
+  #home(:style="{height:'calc(100vh - 90px)'}")
     b-container.h-100
       b-row.align-items-center.h-100
         b-col.box.d-flex.flex-column(cols="12" sm="6")

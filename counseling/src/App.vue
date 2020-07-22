@@ -11,7 +11,7 @@
           span 診所專線
           span 02-89416928
   keep-alive
-    router-view(:style="{height:'calc(100vh - 90px)'}")
+    router-view
 </template>
 
 <script>
