@@ -622,6 +622,154 @@ body {
 }
 // service--------------------------------------------------------------------------------
 #service {
-  height: 100%;
-  background: url(/img/eNplec2.jpg/) no-repeat fixed right/cover;
+  height: calc(55vh - 90px);
+  @include lg{
+    height: calc(50vh - 90px);
+  }
+  @include xl{
+    height: calc(60vh - 90px);
+  }
+  @include xxl{
+    height: calc(70vh - 90px);
+  }
+  background: url(/img/eNplec2.jpg/) no-repeat fixed center/cover;
+  .img1 {
+    max-width: 35%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .img2 {
+    max-width: 35%;
+    object-fit: cover;
+    object-position: center;
+  }
+  p {
+    color: #a9a9a9;
+  }
+  %professioncol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .professioncol1 {
+    @extend %professioncol;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    h1 {
+      font-size: 38px;
+      padding: 0.8rem 0 0.8rem 0;
+    }
+    p {
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+  .professioncol2 {
+    @extend %professioncol;
+    padding-bottom: 1.5rem;
+    .img2{
+      padding-top: 1rem;
+    }
+    p {
+      text-align: center;
+    }
+    p:nth-of-type(odd) {
+      font-size: 18px;
+      color: #b5c7d3;
+      padding-top: 1.2rem;
+    }
+    p:nth-of-type(even) {
+      font-size: 14px;
+    }
+  }
+  .professionrow{
+    height:100%;
+  }
+  @include sm {
+    .professioncol1 > p {
+      width: 70%;
+    }
+    .professioncol1{
+      padding-bottom: 0;
+    }
+    .professioncol2{
+      padding-bottom: 0;
+    }
+    .professionrow{
+      height:80%;
+    }
+    .img1 {
+      max-width: 25%;
+    }
+    .img2 {
+      max-width: 65%;
+    }
+  }
+  @include md {
+    .professioncol1 > p {
+      width: 50%;
+    }
+    .professioncol2{
+      padding-bottom: 20rem;
+      height: 20%;
+    }
+    .professionrow{
+      height:70%;
+    }
+    .img1 {
+      max-width: 10%;
+    }
+  }
+  @include lg {
+    .professioncol2{
+      padding-bottom: 0;
+      height: 30%;
+    }
+    .professionrow{
+      height:70%;
+    }
+    .img1 {
+      max-width: 16%;
+    }
+    .img2 {
+      max-width: 45%;
+    }
+  }
+  @include xl {
+    .professioncol2{
+      padding-bottom: 3rem;
+      height: 50%;
+    }
+    .professionrow{
+      height:80%;
+    }
+    .img1 {
+      max-width: 15%;
+    }
+    .img2 {
+      max-width: 40%;
+    }
+  }
+  @include xxl {
+    .professionrow{
+      height: 85vh;
+    }
+    .professioncol1{
+      h1{
+        padding: 1rem 0 1rem 0;
+      }
+    }
+    .professioncol2{
+      padding-bottom: 0;
+      height: 30%;
+    }
+    .img1 {
+      max-width: 18%;
+    }
+    .img2 {
+      max-width: 35%;
+    }
+  }
+  // ---service Description---------------------------------------
 }

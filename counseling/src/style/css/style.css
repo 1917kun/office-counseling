@@ -840,6 +840,189 @@ body {
 }
 
 #service {
+  height: calc(55vh - 90px);
+  background: url(/img/eNplec2.jpg/) no-repeat fixed center/cover;
+}
+
+@media (min-width: 992px) {
+  #service {
+    height: calc(50vh - 90px);
+  }
+}
+
+@media (min-width: 1200px) {
+  #service {
+    height: calc(60vh - 90px);
+  }
+}
+
+@media (min-width: 1500px) {
+  #service {
+    height: calc(70vh - 90px);
+  }
+}
+
+#service .img1 {
+  max-width: 35%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+#service .img2 {
+  max-width: 35%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+#service p {
+  color: #a9a9a9;
+}
+
+#service .professioncol1, #service .professioncol2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#service .professioncol1 {
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
+}
+
+#service .professioncol1 h1 {
+  font-size: 38px;
+  padding: 0.8rem 0 0.8rem 0;
+}
+
+#service .professioncol1 p {
+  text-align: center;
+  font-size: 18px;
+}
+
+#service .professioncol2 {
+  padding-bottom: 1.5rem;
+}
+
+#service .professioncol2 .img2 {
+  padding-top: 1rem;
+}
+
+#service .professioncol2 p {
+  text-align: center;
+}
+
+#service .professioncol2 p:nth-of-type(odd) {
+  font-size: 18px;
+  color: #b5c7d3;
+  padding-top: 1.2rem;
+}
+
+#service .professioncol2 p:nth-of-type(even) {
+  font-size: 14px;
+}
+
+#service .professionrow {
   height: 100%;
-  background: url(/img/eNplec2.jpg/) no-repeat fixed right/cover;
+}
+
+@media (min-width: 576px) {
+  #service .professioncol1 > p {
+    width: 70%;
+  }
+  #service .professioncol1 {
+    padding-bottom: 0;
+  }
+  #service .professioncol2 {
+    padding-bottom: 0;
+  }
+  #service .professionrow {
+    height: 80%;
+  }
+  #service .img1 {
+    max-width: 25%;
+  }
+  #service .img2 {
+    max-width: 65%;
+  }
+}
+
+@media (min-width: 768px) {
+  #service .professioncol1 > p {
+    width: 50%;
+  }
+  #service .professioncol2 {
+    padding-bottom: 20rem;
+    height: 20%;
+  }
+  #service .professionrow {
+    height: 70%;
+  }
+  #service .img1 {
+    max-width: 10%;
+  }
+}
+
+@media (min-width: 992px) {
+  #service .professioncol2 {
+    padding-bottom: 0;
+    height: 30%;
+  }
+  #service .professionrow {
+    height: 70%;
+  }
+  #service .img1 {
+    max-width: 16%;
+  }
+  #service .img2 {
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #service .professioncol2 {
+    padding-bottom: 3rem;
+    height: 50%;
+  }
+  #service .professionrow {
+    height: 80%;
+  }
+  #service .img1 {
+    max-width: 15%;
+  }
+  #service .img2 {
+    max-width: 40%;
+  }
+}
+
+@media (min-width: 1500px) {
+  #service .professionrow {
+    height: 85vh;
+  }
+  #service .professioncol1 h1 {
+    padding: 1rem 0 1rem 0;
+  }
+  #service .professioncol2 {
+    padding-bottom: 0;
+    height: 30%;
+  }
+  #service .img1 {
+    max-width: 18%;
+  }
+  #service .img2 {
+    max-width: 35%;
+  }
 }
