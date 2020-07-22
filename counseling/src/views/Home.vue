@@ -1,5 +1,5 @@
 <template lang="pug">
-  #home(:style="{height:'calc(100vh - 90px)'}")
+  #home
     b-container.h-100
       b-row.align-items-center.h-100
         b-col.box.d-flex.flex-column(cols="12" sm="6")
@@ -9,12 +9,13 @@
             .btn.mr-2 傾心服務
             .btn 線上預約
         b-col(cols="0" sm="6")
+      //- homeservice-----------------------------------------------------------
     b-container
       b-row
-        b-col.box2.d-flex.flex-column.align-items-center
-          span OUR SERVICES
-          span 傾心專業服務
-          span.text-center 溫柔的傾聽,讓你接受真正的自己，<br>並擁有接受不完美的勇氣
+      b-col.box2.d-flex.flex-column.align-items-center
+        span OUR SERVICES
+        span 傾心專業服務
+        span.text-center 溫柔的傾聽,讓你接受真正的自己，<br>並擁有接受不完美的勇氣
     b-container#homeservice
       b-row.justify-content-center.text-center
         b-col.box3(v-for="(homeservicedata,index) in homeservicedatas" :key="index" cols="12" sm="4" md="4")

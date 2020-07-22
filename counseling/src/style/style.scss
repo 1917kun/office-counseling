@@ -78,7 +78,16 @@ body {
 }
 // ---home--------------------------------------------
 #home {
-  height: 100%;
+  height: calc(60vh - 90px);
+  @include sm {
+    height: calc(55vh - 90px);
+  }
+  @include lg {
+    height: calc(60vh - 90px);
+  }
+  @include xl {
+    height: calc(100vh - 90px);
+  }
   background: url(/img/heart.jpg/) no-repeat fixed center/cover;
   .box {
     align-items: center;
@@ -97,7 +106,19 @@ body {
     }
   }
   .box2 {
-    padding: 8rem 0 6rem 0;
+    padding: 6rem 0 4rem 0;
+    @include sm {
+      padding: 8rem 0 6rem 0;
+    }
+    @include lg {
+      padding: 6rem 0 4rem 0;
+    }
+    @include xl {
+      padding: 4rem 0 1rem 0;
+    }
+    @include xxl {
+      padding: 8rem 0 6rem 0;
+    }
     span:nth-child(1) {
       font-size: 18px;
       color: rgb(233, 160, 64);
@@ -163,12 +184,18 @@ body {
       color: #a9a9a9;
     }
     @include sm {
-      padding: 2rem;
+      padding: 1rem;
     }
     @include md {
       padding: 4rem;
     }
     @include lg {
+      padding: 3rem;
+    }
+    @include xl {
+      padding: 6rem;
+    }
+    @include xxl {
       padding: 6rem;
     }
   }
@@ -623,13 +650,13 @@ body {
 // service--------------------------------------------------------------------------------
 #service {
   height: calc(55vh - 90px);
-  @include lg{
+  @include lg {
     height: calc(50vh - 90px);
   }
-  @include xl{
+  @include xl {
     height: calc(60vh - 90px);
   }
-  @include xxl{
+  @include xxl {
     height: calc(70vh - 90px);
   }
   background: url(/img/eNplec2.jpg/) no-repeat fixed center/cover;
@@ -668,7 +695,7 @@ body {
   .professioncol2 {
     @extend %professioncol;
     padding-bottom: 1.5rem;
-    .img2{
+    .img2 {
       padding-top: 1rem;
     }
     p {
@@ -681,23 +708,28 @@ body {
     }
     p:nth-of-type(even) {
       font-size: 14px;
+      width: 60%;
     }
   }
-  .professionrow{
-    height:100%;
+  .professionrow {
+    height: 100%;
   }
   @include sm {
     .professioncol1 > p {
       width: 70%;
     }
-    .professioncol1{
+    .professioncol1 {
       padding-bottom: 0;
     }
-    .professioncol2{
-      padding-bottom: 0;
+    .professioncol2 {
+      padding-top: 1rem;
+      padding-bottom: 2rem;
+      p:nth-of-type(even) {
+        width: 100%;
+      }
     }
-    .professionrow{
-      height:80%;
+    .professionrow {
+      height: 80%;
     }
     .img1 {
       max-width: 25%;
@@ -710,24 +742,28 @@ body {
     .professioncol1 > p {
       width: 50%;
     }
-    .professioncol2{
-      padding-bottom: 20rem;
+    .professioncol2 {
+      padding-bottom: 0;
       height: 20%;
+      p:nth-of-type(even) {
+        width: 60%;
+      }
     }
-    .professionrow{
-      height:70%;
+    .professionrow {
+      height: 70%;
     }
     .img1 {
       max-width: 10%;
     }
   }
   @include lg {
-    .professioncol2{
-      padding-bottom: 0;
+    .professioncol2 {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
       height: 30%;
     }
-    .professionrow{
-      height:70%;
+    .professionrow {
+      height: 70%;
     }
     .img1 {
       max-width: 16%;
@@ -737,12 +773,13 @@ body {
     }
   }
   @include xl {
-    .professioncol2{
-      padding-bottom: 3rem;
+    .professioncol2 {
+      padding-top: 2rem;
+      padding-bottom: 4rem;
       height: 50%;
     }
-    .professionrow{
-      height:80%;
+    .professionrow {
+      height: 80%;
     }
     .img1 {
       max-width: 15%;
@@ -752,16 +789,16 @@ body {
     }
   }
   @include xxl {
-    .professionrow{
+    .professionrow {
       height: 85vh;
     }
-    .professioncol1{
-      h1{
-        padding: 1rem 0 1rem 0;
+    .professioncol1 {
+      h1 {
+        padding: 1rem 0 2rem 0;
       }
     }
-    .professioncol2{
-      padding-bottom: 0;
+    .professioncol2 {
+      padding-bottom: 2ewm;
       height: 30%;
     }
     .img1 {
@@ -772,4 +809,36 @@ body {
     }
   }
   // ---service Description---------------------------------------
+  .servicebox1 {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span:nth-child(1) {
+      font-size: 18px;
+      color: rgb(233, 160, 64);
+    }
+    span:nth-child(2) {
+      font-size: 38px;
+      color: rgb(75, 127, 201);
+    }
+  }
+  .servicebox2 {
+    color: #4b7fc9;
+    div:nth-child(1) {
+      font-size: 100px;
+      color: #809ec9;
+      opacity: 0.2;
+      font-family: fantasy;
+    }
+    div:nth-child(2) {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    p {
+      text-justify: inter-word;
+      color: #a9a9a9;
+    }
+  }
 }
