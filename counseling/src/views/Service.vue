@@ -23,8 +23,9 @@
     b-container(:style="{background:'white'}")#service
       b-row.justify-content-center.text-center
         b-col.servicebox2(v-for="(servicedata,index) in servicedatas" :key="index" cols="12" sm="4" md="4")
-          div {{servicedata.index}}
-          div {{servicedata.title}}
+          .servicebox3
+            div {{servicedata.index}}
+            div {{servicedata.title}}
           p {{servicedata.des}}
           a(href="#") 閱讀更多
 </template>

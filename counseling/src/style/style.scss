@@ -825,7 +825,31 @@ body {
     }
   }
   .servicebox2 {
+    // color: #4b7fc9;
+    // position: relative;
+    // div:nth-child(1) {
+    //   font-size: 100px;
+    //   color: #809ec9;
+    //   opacity: 0.2;
+    //   font-family: fantasy;
+    //   position: absolute;
+    // }
+    // div:nth-child(2) {
+    //   font-size: 18px;
+    //   font-weight: 700;
+    // }
+    p {
+      text-justify: inter-word;
+      color: #a9a9a9;
+      padding-top: 5rem;
+    }
+  }
+  .servicebox3 {
     color: #4b7fc9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
     div:nth-child(1) {
       font-size: 100px;
       color: #809ec9;
@@ -835,10 +859,6 @@ body {
     div:nth-child(2) {
       font-size: 18px;
       font-weight: 700;
-    }
-    p {
-      text-justify: inter-word;
-      color: #a9a9a9;
     }
   }
 }

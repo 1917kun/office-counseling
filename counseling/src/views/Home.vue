@@ -97,7 +97,7 @@
                   span 留言
                 span
                   font-awesome-icon(:icon="['fab', 'gratipay']")
-    //- footer---------------------------------------------------
+      //- footer---------------------------------------------------
     b-container.homefooter
       b-row.homefooterrow
         b-col.homefootercol1(cols="12" sm="6")

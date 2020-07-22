@@ -1118,23 +1118,34 @@ body {
   color: #4b7fc9;
 }
 
-#service .servicebox2 {
-  color: #4b7fc9;
+#service .servicebox2 p {
+  text-justify: inter-word;
+  color: #a9a9a9;
+  padding-top: 5rem;
 }
 
-#service .servicebox2 div:nth-child(1) {
+#service .servicebox3 {
+  color: #4b7fc9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#service .servicebox3 div:nth-child(1) {
   font-size: 100px;
   color: #809ec9;
   opacity: 0.2;
   font-family: fantasy;
 }
 
-#service .servicebox2 div:nth-child(2) {
+#service .servicebox3 div:nth-child(2) {
   font-size: 18px;
   font-weight: 700;
-}
-
-#service .servicebox2 p {
-  text-justify: inter-word;
-  color: #a9a9a9;
 }
