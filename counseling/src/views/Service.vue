@@ -48,16 +48,43 @@
       b-row.servicechargesrow
         b-col.servicechargescol(cols="12").p-0
           img.servicechargesimg(src="https://picsum.photos/1920/1080/?random=33")
+    //- footer------------------------------------------------------------------
+    b-container.homefooter
+      b-row.homefooterrow
+        b-col.homefootercol1(cols="12" sm="6")
+          .homefootericon
+            .h2.mb-0
+                b-icon(icon='wifi')
+                b-icon(icon='cup')
+            div
+              font-awesome-icon(:icon="['fab', 'facebook']")
+              font-awesome-icon(:icon="['fab', 'line']")
+              font-awesome-icon(:icon="['fab', 'instagram']")
+          .embed-responsive.embed-responsive-21by9.homemap(v-for="(homefooter,index) in homefooters" :key="index")
+            iframe(:src='homefooter.imgsrc' width='' frameborder='0' allowfullscreen)
+        b-col.homefootercol2(cols="12" sm="6" v-for="(homefooter,index) in homefooters" :key="index")
+          img.homefooterimg(:src='homefooter.src' width="100%")
+          .homefootertext
+            p
+              span 電子信箱
+              span anleader911@gmai.com
+            p
+              span 傾心診所
+              span (新北市泰山區)
+            p
+              span 聯絡專線
+              span 02-23651675
+            p
+              span 診所地址
+              span 新北市泰山區貴子里致遠新村55之1號
+            p(style="color:#a9a9a9;") 傾心電子報
+          .homefootersubscription
+            b-input(placeholder="電子信箱")
+            b-button(squared ) 訂閱
+          span.lab Copyright © 2020 傾心診所
     b-container
-      b-row
-        b-col
-          p 45554545645456465445656
-          p 45554545645456465445656
-          p 45554545645456465445656
-          p 45554545645456465445656
-          p 45554545645456465445656
-          p 45554545645456465445656
-          p 45554545645456465445656
+      .row.justify-content-center
+        span.span1 Copyright © 2020 傾心診所
 </template>
 
 <script>
@@ -117,6 +144,12 @@ export default {
           title: '多元諮商',
           des: '為因應當今世代已慢慢走向多元社會,考慮有些多元族群們需要心理師的幫助,傾心在此方面也不落人後,建立了相當完善的諮商體系。',
           link: '閱讀更多'
+        }
+      ],
+      homefooters: [
+        {
+          src: 'https://picsum.photos/1920/1080/?random=14',
+          imgsrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7080213475365!2d121.41715431500656!3d25.043980983967728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1591237554076!5m2!1szh-TW!2stw'
         }
       ]
     }
