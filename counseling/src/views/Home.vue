@@ -6,8 +6,8 @@
           img(src="https://picsum.photos/1920/1080/?random=2")
           p 傾心諮商，讓你的煩惱與憂愁得以安放。
           b-col.p-0.d-flex.justify-content-center.justify-content-sm-start
-            .btn.mr-2 傾心服務
-            .btn 線上預約
+            .btn.mr-3.homebt 傾心服務
+            .btn.homebt 線上預約
         b-col(cols="0" sm="6")
       //- homeservice-----------------------------------------------------------
     b-container
@@ -55,7 +55,7 @@
         div.homenews.text-center
           //- p.m-0 NEWS
           p.thenew 最新消息
-        b-card.overflow-hidden(no-body v-for="(homenew,index) in homenews" :key="index" style='max-width: 85%;')
+        b-card.overflow-hidden(no-body v-for="(homenew,index) in homenews" :key="index" style='max-width: 100%;')
           b-row(no-gutters)
             b-col(md='6')
               b-card-img.homenewsimg(:src='homenew.newssrc')

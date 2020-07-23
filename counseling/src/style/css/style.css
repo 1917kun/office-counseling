@@ -174,6 +174,30 @@ body {
   color: #a9a9a9;
 }
 
+@media (min-width: 576px) {
+  #home .homebt {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #home .homebt {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #home .homebt {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  #home .homebt {
+    font-size: 3.5rem;
+  }
+}
+
 #home .btn:nth-child(odd) {
   border: 1px solid #b5c7d3;
   color: var(--classblue);
@@ -205,8 +229,7 @@ body {
 
 #home .box3 {
   color: #4b7fc9;
-  padding: 6rem;
-  padding-bottom: 2rem;
+  padding: 4rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -225,8 +248,14 @@ body {
   color: #809ec9;
   opacity: 0.2;
   font-family: fantasy;
-  top: 1.75rem;
+  top: 0.2rem;
   vertical-align: baseline;
+}
+
+@media (min-width: 576px) {
+  #home .box3 div:nth-child(1) {
+    top: 1.75rem;
+  }
 }
 
 #home .box3 div:nth-child(2) {
@@ -236,37 +265,13 @@ body {
 
 #home .box3 p {
   text-justify: inter-word;
-  padding-top: 5rem;
+  padding-top: 8rem;
   color: #a9a9a9;
 }
 
 @media (min-width: 576px) {
   #home .box3 {
-    padding: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  #home .box3 {
-    padding: 4rem;
-  }
-}
-
-@media (min-width: 992px) {
-  #home .box3 {
-    padding: 3rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  #home .box3 {
-    padding: 6rem;
-  }
-}
-
-@media (min-width: 1500px) {
-  #home .box3 {
-    padding: 6rem;
+    padding: 6rem 2rem 3rem 2rem;
   }
 }
 
@@ -405,7 +410,7 @@ body {
 
 #home .abouttext span:nth-child(2) {
   color: #4b7fc9;
-  font-size: 38px;
+  font-size: 42px;
   padding-bottom: 1rem;
 }
 
@@ -413,7 +418,7 @@ body {
   color: #7f7f7f;
   margin: 0;
   padding-bottom: 1rem;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media (min-width: 576px) {
@@ -703,19 +708,7 @@ body {
 }
 
 #home .homearticle {
-  width: 85%;
-}
-
-@media (min-width: 576px) {
-  #home .homearticle {
-    width: 105%;
-  }
-}
-
-@media (min-width: 992px) {
-  #home .homearticle {
-    width: 85%;
-  }
+  width: 100%;
 }
 
 #home .card-footer {
@@ -1092,20 +1085,21 @@ body {
 }
 
 #service .servicebox1 {
-  height: 15vh;
+  height: 20vh;
+  padding-top: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #service .servicebox1 span:nth-child(1) {
@@ -1116,36 +1110,60 @@ body {
 #service .servicebox1 span:nth-child(2) {
   font-size: 38px;
   color: #4b7fc9;
+  padding-bottom: 1rem;
 }
 
-#service .servicebox2 p {
-  text-justify: inter-word;
-  color: #a9a9a9;
-  padding-top: 5rem;
-}
-
-#service .servicebox3 {
+#service .box4 {
   color: #4b7fc9;
+  padding: 4rem;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-#service .servicebox3 div:nth-child(1) {
+#service .box4 div {
+  position: absolute;
+}
+
+#service .box4 div:nth-child(1) {
   font-size: 100px;
   color: #809ec9;
   opacity: 0.2;
   font-family: fantasy;
+  top: 0.2rem;
+  vertical-align: baseline;
 }
 
-#service .servicebox3 div:nth-child(2) {
+@media (min-width: 576px) {
+  #service .box4 div:nth-child(1) {
+    top: 2rem;
+  }
+}
+
+#service .box4 div:nth-child(2) {
   font-size: 18px;
   font-weight: 700;
+}
+
+#service .box4 p {
+  text-justify: inter-word;
+  padding-top: 5rem;
+  color: #a9a9a9;
+}
+
+#service .box4 a:nth-of-type(1) {
+  color: #809ec9;
+  text-decoration: underline;
+}
+
+@media (min-width: 576px) {
+  #service .box4 {
+    padding: 6rem 2rem 3rem 2rem;
+  }
 }

@@ -133,6 +133,20 @@ body {
       color: #a9a9a9;
     }
   }
+  .homebt{
+    @include sm{
+      font-size: 1.2rem;
+    }
+    @include lg{
+      font-size: 2.8rem;
+    }
+    @include xl{
+      font-size: 3.5rem;
+    }
+    @include xxl{
+      font-size: 3.5rem;
+    }
+  }
   .btn {
     &:nth-child(odd) {
       border: 1px solid #b5c7d3;
@@ -158,8 +172,7 @@ body {
   }
   .box3 {
     color: #4b7fc9;
-    padding: 6rem;
-    padding-bottom: 2rem;
+    padding: 4rem;
     position: relative;
     display: flex;
     justify-content: center;
@@ -171,7 +184,10 @@ body {
       color: #809ec9;
       opacity: 0.2;
       font-family: fantasy;
-      top: 1.75rem;
+      top: 0.2rem;
+      @include sm {
+        top: 1.75rem;
+      }
       vertical-align: baseline;
     }
     div:nth-child(2) {
@@ -180,23 +196,11 @@ body {
     }
     p {
       text-justify: inter-word;
-      padding-top: 5rem;
+      padding-top: 8rem;
       color: #a9a9a9;
     }
     @include sm {
-      padding: 1rem;
-    }
-    @include md {
-      padding: 4rem;
-    }
-    @include lg {
-      padding: 3rem;
-    }
-    @include xl {
-      padding: 6rem;
-    }
-    @include xxl {
-      padding: 6rem;
+      padding: 6rem 2rem 3rem 2rem;
     }
   }
   .btn2 {
@@ -284,14 +288,14 @@ body {
     }
     span:nth-child(2) {
       color: #4b7fc9;
-      font-size: 38px;
+      font-size: 42px;
       padding-bottom: 1rem;
     }
     p {
       color: #7f7f7f;
       margin: 0;
       padding-bottom: 1rem;
-      font-size: 14px;
+      font-size: 16px;
     }
     div {
       @include sm {
@@ -507,13 +511,7 @@ body {
   }
   // homearticle--------------------------------------------------------
   .homearticle {
-    width: 85%;
-    @include sm {
-      width: 105%;
-    }
-    @include lg {
-      width: 85%;
-    }
+    width: 100%;
   }
   .card-footer {
     background: white;
@@ -810,11 +808,12 @@ body {
   }
   // ---service Description---------------------------------------
   .servicebox1 {
-    height: 15vh;
+    height: 20vh;
+    padding-top: 5rem;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     span:nth-child(1) {
       font-size: 18px;
       color: rgb(233, 160, 64);
@@ -822,43 +821,45 @@ body {
     span:nth-child(2) {
       font-size: 38px;
       color: rgb(75, 127, 201);
+      padding-bottom: 1rem;
     }
   }
-  .servicebox2 {
-    // color: #4b7fc9;
-    // position: relative;
-    // div:nth-child(1) {
-    //   font-size: 100px;
-    //   color: #809ec9;
-    //   opacity: 0.2;
-    //   font-family: fantasy;
-    //   position: absolute;
-    // }
-    // div:nth-child(2) {
-    //   font-size: 18px;
-    //   font-weight: 700;
-    // }
-    p {
-      text-justify: inter-word;
-      color: #a9a9a9;
-      padding-top: 5rem;
-    }
-  }
-  .servicebox3 {
+  .box4 {
     color: #4b7fc9;
+    padding: 4rem;
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    // align-items: center;
+    flex-wrap: wrap;
+    div {
+      position: absolute;
+    }
     div:nth-child(1) {
       font-size: 100px;
       color: #809ec9;
       opacity: 0.2;
       font-family: fantasy;
+      top: 0.2rem;
+      @include sm {
+        top: 2rem;
+      }
+      vertical-align: baseline;
     }
     div:nth-child(2) {
       font-size: 18px;
       font-weight: 700;
+    }
+    p {
+      text-justify: inter-word;
+      padding-top: 5rem;
+      color: #a9a9a9;
+    }
+    a:nth-of-type(1) {
+      color: #809ec9;
+      text-decoration: underline;
+    }
+    @include sm {
+      padding: 6rem 2rem 3rem 2rem;
     }
   }
 }

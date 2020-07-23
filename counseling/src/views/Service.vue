@@ -15,19 +15,18 @@
             p {{service.span}}
             p {{service.text}}
     //- -----------------------------------------------------------
-    b-container(fluid)(:style="{background:'lightgreen'}")
+    b-container(fluid)(:style="{background:'white'}")
       b-row
         b-col.servicebox1
           span SERVICES
           span 傾心專業服務
-    b-container(:style="{background:'white'}")#service
+    b-container
       b-row.justify-content-center.text-center
-        b-col.servicebox2(v-for="(servicedata,index) in servicedatas" :key="index" cols="12" sm="4" md="4")
-          .servicebox3
-            div {{servicedata.index}}
-            div {{servicedata.title}}
+        b-col.box4(v-for="(servicedata,index) in servicedatas" :key="index" cols="12" sm="4" md="4")
+          div {{servicedata.index}}
+          div {{servicedata.title}}
           p {{servicedata.des}}
-          a(href="#") 閱讀更多
+          a(href="#") {{servicedata.link}}
 </template>
 
 <script>
@@ -55,32 +54,38 @@ export default {
         {
           index: '1',
           title: '憂鬱症',
-          des: '憂鬱情緒持續過久使生活受到影響，藉由評估給予心理、藥物治療，能夠改善憂鬱症的影響，並提升生活品質。'
+          des: '憂鬱情緒過久使生活受到影響，藉由評估給予心理、藥物治療，能夠改善憂鬱症的影響，並提升生活品質。',
+          link: '閱讀更多'
         },
         {
           index: '2',
           title: '壓力與失眠',
-          des: '難以入睡、多夢或是睡眠品質不佳，傾心會了解困擾你的是生理或心理因素並提供藥物或正念訓練。'
+          des: '難以入睡、多夢或是睡眠品質不佳，傾心會了解困擾你的是生理或心理因素，並提供藥物或正念訓練。',
+          link: '閱讀更多'
         },
         {
           index: '3',
           title: '兒童與青少年',
-          des: '學習與學業是華人社會的重點，在傾心診所裡的諮商師，將會與家長與學生一起面對這個重大議題。'
+          des: '學習與學業總是華人社會的重點，在傾心診所裡的諮商師，將會與家長與學生一起面對這個重大議題。',
+          link: '閱讀更多'
         },
         {
           index: '4',
           title: '伴侶及婚姻',
-          des: '在伴侶/夫妻之間，因各式各樣的問題發生衝突,伴侶諮商就是要協助雙方打破負向循環，找出核心問題後打造更健康的關係。'
+          des: '在伴侶/夫妻之間，因各式各樣的問題發生衝突,伴侶諮商就是要協助伴侶雙方打破負向循環，找出核心問題後打造更健康的關係。',
+          link: '閱讀更多'
         },
         {
           index: '5',
           title: '心理諮商',
-          des: '針對個案的各種困擾，同時提供藥物、心理諮商、團體諮商甚至是卡片探索，結合各種方式，進行恰當精準的心理治療。'
+          des: '傾心針對個案的各種困擾，同時提供藥物、心理諮商、團體諮商甚至是卡片探索，藉由各種方式的相輔相成，進行恰當精準的心理治療。',
+          link: '閱讀更多'
         },
         {
           index: '6',
           title: '多元諮商',
-          des: '為因應當今世代已慢慢走向多元社會,考慮有些族群需要心理師的幫助,傾心在此方面也不落人後,建立了相當完善的諮商體系。'
+          des: '為因應當今世代已慢慢走向多元社會,考慮有些多元族群們需要心理師的幫助,傾心在此方面也不落人後,建立了相當完善的諮商體系。',
+          link: '閱讀更多'
         }
       ]
     }
