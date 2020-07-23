@@ -133,18 +133,18 @@ body {
       color: #a9a9a9;
     }
   }
-  .homebt{
-    @include sm{
+  .homebt {
+    @include sm {
       font-size: 1.2rem;
     }
-    @include lg{
+    @include lg {
       font-size: 2.8rem;
     }
-    @include xl{
+    @include xl {
       font-size: 3.5rem;
     }
-    @include xxl{
-      font-size: 3.5rem;
+    @include xxl {
+      font-size: 2rem;
     }
   }
   .btn {
@@ -163,9 +163,9 @@ body {
       color: white;
       transition: 0.5s;
       &:hover {
-        background-color: var(--dark5);
-        border: 1px solid var(--dark5);
-        color: var(--comhusk);
+        background-color: var(--comhusk);
+        border: 1px solid var(--comhusk);
+        color: var(--dark3);
         transition: 0.5s;
       }
     }
@@ -239,9 +239,9 @@ body {
       color: white;
       transition: 0.5s;
       &:hover {
-        background-color: var(--dark5);
-        border: 1px solid var(--dark5);
-        color: var(--comhusk);
+        background-color: var(--comhusk);
+        border: 1px solid var(--comhusk);
+        color: var(--dark3);
         transition: 0.5s;
         cursor: pointer;
       }
@@ -312,9 +312,9 @@ body {
       transition: 0.5s;
       border: 1px solid transparent;
       &:hover {
-        background-color: var(--dark5);
-        border: 1px solid var(--dark5);
-        color: var(--comhusk);
+        background-color: var(--comhusk);
+        border: 1px solid var(--comhusk);
+        color: var(--dark3);
         transition: 0.5s;
         cursor: pointer;
       }
@@ -394,9 +394,9 @@ body {
     background-color: #b5c7d3;
     transition: 0.5s;
     &:hover {
-      background-color: var(--dark5);
-      border: 1px solid var(--dark5);
-      color: var(--comhusk);
+      background-color: var(--comhusk);
+      border: 1px solid var(--comhusk);
+      color: var(--dark3);
       transition: 0.5s;
       cursor: pointer;
     }
@@ -424,20 +424,24 @@ body {
     }
     .thenew {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       &::before {
         content: "";
         width: 100%;
-        height: 25%;
+        height: 10%;
         background: #f5ba6dd8;
         position: absolute;
-        bottom: 10%;
+        bottom: 40%;
         z-index: -1;
       }
       &::after {
         content: "NEWS";
-        position: absolute;
-        bottom: 10%;
-        right: -19%;
+        // position: absolute;
+        // bottom: -10%;
+        // right: 35%;
         font-size: 10px;
         color: #e9a040;
       }
@@ -860,6 +864,132 @@ body {
     }
     @include sm {
       padding: 6rem 2rem 3rem 2rem;
+    }
+  }
+  .servicereservationrow {
+    height: 100%;
+    @include lg {
+      height: 51.55vmin;
+    }
+    @include xl {
+      height: 51.65vmin;
+    }
+    @include xxl {
+      height: 60.5vmin;
+    }
+    padding-top: 1rem;
+  }
+  .servicereservationimg {
+    padding-left: 0;
+    background: url(/img/2223.jpg) no-repeat center/cover;
+    height: 50vmin;
+    position: relative;
+    @include lg {
+      height: 100%;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #809ec9;
+      opacity: 0.8;
+    }
+  }
+  .servicereservationtext {
+    height: 100%;
+    background: rgb(230, 229, 229);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    @include lg {
+      padding: 0;
+    }
+    span:nth-child(1) {
+      color: #e9a040;
+      font-size: 18px;
+    }
+    span:nth-child(2) {
+      color: #4b7fc9;
+      font-size: 42px;
+      padding-bottom: 1rem;
+    }
+    p {
+      color: #7f7f7f;
+      margin: 0;
+      padding-bottom: 1rem;
+      font-size: 16px;
+    }
+    div {
+      @include sm {
+        width: 70%;
+      }
+    }
+    .btn5 {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      padding: 12px;
+      background-color: #b5c7d3;
+      color: white;
+      transition: 0.5s;
+      border: 1px solid transparent;
+      &:hover {
+        background-color: var(--comhusk);
+        border: 1px solid var(--comhusk);
+        color: var(--dark3);
+        transition: 0.5s;
+        cursor: pointer;
+      }
+      @include sm {
+        width: 30%;
+        padding: 10px;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+      }
+      @include lg {
+        width: 40%;
+      }
+      @include xl {
+        width: 30%;
+      }
+      @include xxl {
+        width: 20%;
+      }
+    }
+  }
+  .servicereservationtextinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include xl {
+      align-items: flex-start;
+    }
+  }
+  .servicereservationtextinner2 {
+    padding-top: 1.5rem;
+    ol {
+      width: 100%;
+    }
+  }
+  // charges-----------------------------------------
+  .servicechargesimg{
+    height: 80%;
+    @include sm{
+      height: 60%;
+    }
+    @include lg{
+      height: 60%;
+    }
+    @include xl{
+      height: 60%;
+    }
+    @include xxl{
+      height: 65%;
     }
   }
 }

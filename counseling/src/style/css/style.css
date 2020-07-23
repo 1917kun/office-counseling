@@ -194,7 +194,7 @@ body {
 
 @media (min-width: 1500px) {
   #home .homebt {
-    font-size: 3.5rem;
+    font-size: 2rem;
   }
 }
 
@@ -220,9 +220,9 @@ body {
 }
 
 #home .btn:nth-child(even):hover {
-  background-color: var(--dark5);
-  border: 1px solid var(--dark5);
-  color: var(--comhusk);
+  background-color: var(--comhusk);
+  border: 1px solid var(--comhusk);
+  color: var(--dark3);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -336,9 +336,9 @@ body {
 }
 
 #home .btn2:nth-child(even):hover {
-  background-color: var(--dark5);
-  border: 1px solid var(--dark5);
-  color: var(--comhusk);
+  background-color: var(--comhusk);
+  border: 1px solid var(--comhusk);
+  color: var(--dark3);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
@@ -446,9 +446,9 @@ body {
 }
 
 #home .abouttext .btn3:hover {
-  background-color: var(--dark5);
-  border: 1px solid var(--dark5);
-  color: var(--comhusk);
+  background-color: var(--comhusk);
+  border: 1px solid var(--comhusk);
+  color: var(--dark3);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
@@ -573,9 +573,9 @@ body {
 }
 
 #home .btn4:hover {
-  background-color: var(--dark5);
-  border: 1px solid var(--dark5);
-  color: var(--comhusk);
+  background-color: var(--comhusk);
+  border: 1px solid var(--comhusk);
+  color: var(--dark3);
   -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
@@ -604,23 +604,33 @@ body {
 
 #home .homenews .thenew {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #home .homenews .thenew::before {
   content: "";
   width: 100%;
-  height: 25%;
+  height: 10%;
   background: #f5ba6dd8;
   position: absolute;
-  bottom: 10%;
+  bottom: 40%;
   z-index: -1;
 }
 
 #home .homenews .thenew::after {
   content: "NEWS";
-  position: absolute;
-  bottom: 10%;
-  right: -19%;
   font-size: 10px;
   color: #e9a040;
 }
@@ -1165,5 +1175,216 @@ body {
 @media (min-width: 576px) {
   #service .box4 {
     padding: 6rem 2rem 3rem 2rem;
+  }
+}
+
+#service .servicereservationrow {
+  height: 100%;
+  padding-top: 1rem;
+}
+
+@media (min-width: 992px) {
+  #service .servicereservationrow {
+    height: 51.55vmin;
+  }
+}
+
+@media (min-width: 1200px) {
+  #service .servicereservationrow {
+    height: 51.65vmin;
+  }
+}
+
+@media (min-width: 1500px) {
+  #service .servicereservationrow {
+    height: 60.5vmin;
+  }
+}
+
+#service .servicereservationimg {
+  padding-left: 0;
+  background: url(/img/2223.jpg) no-repeat center/cover;
+  height: 50vmin;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  #service .servicereservationimg {
+    height: 100%;
+  }
+}
+
+#service .servicereservationimg::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #809ec9;
+  opacity: 0.8;
+}
+
+#service .servicereservationtext {
+  height: 100%;
+  background: #e6e5e5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+}
+
+@media (min-width: 992px) {
+  #service .servicereservationtext {
+    padding: 0;
+  }
+}
+
+#service .servicereservationtext span:nth-child(1) {
+  color: #e9a040;
+  font-size: 18px;
+}
+
+#service .servicereservationtext span:nth-child(2) {
+  color: #4b7fc9;
+  font-size: 42px;
+  padding-bottom: 1rem;
+}
+
+#service .servicereservationtext p {
+  color: #7f7f7f;
+  margin: 0;
+  padding-bottom: 1rem;
+  font-size: 16px;
+}
+
+@media (min-width: 576px) {
+  #service .servicereservationtext div {
+    width: 70%;
+  }
+}
+
+#service .servicereservationtext .btn5 {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 12px;
+  background-color: #b5c7d3;
+  color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border: 1px solid transparent;
+}
+
+#service .servicereservationtext .btn5:hover {
+  background-color: var(--comhusk);
+  border: 1px solid var(--comhusk);
+  color: var(--dark3);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+@media (min-width: 576px) {
+  #service .servicereservationtext .btn5 {
+    width: 30%;
+    padding: 10px;
+    margin: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (min-width: 992px) {
+  #service .servicereservationtext .btn5 {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #service .servicereservationtext .btn5 {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1500px) {
+  #service .servicereservationtext .btn5 {
+    width: 20%;
+  }
+}
+
+#service .servicereservationtextinner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1200px) {
+  #service .servicereservationtextinner {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+#service .servicereservationtextinner2 {
+  padding-top: 1.5rem;
+}
+
+#service .servicereservationtextinner2 ol {
+  width: 100%;
+}
+
+#service .servicechargesimg {
+  height: 80%;
+}
+
+@media (min-width: 576px) {
+  #service .servicechargesimg {
+    height: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  #service .servicechargesimg {
+    height: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #service .servicechargesimg {
+    height: 60%;
+  }
+}
+
+@media (min-width: 1500px) {
+  #service .servicechargesimg {
+    height: 65%;
   }
 }
