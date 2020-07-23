@@ -83,7 +83,6 @@
       //- homearticle-------------------------------------------
       .container.d-flex.flex-column.align-items-center.mt-5.homearticleback
         div.homenews.text-center
-          span.m-0(style='color: #e9a040;') Posts
           p.thearticle 熱門文章
         div.homearticle
           b-card-group(deck)

@@ -409,14 +409,6 @@ body {
   }
   // homenews----------------------------------------------------------
   .homenews {
-    // p:nth-child(1) {
-    //   color: #e9a040;
-    //   font-size: 18px;
-    // }
-    // p:nth-child(2) {
-    //   color: #4b7fc9;
-    //   font-size: 38px;
-    // }
     padding-bottom: 2rem;
     p {
       color: #4b7fc9;
@@ -439,9 +431,27 @@ body {
       }
       &::after {
         content: "NEWS";
-        // position: absolute;
-        // bottom: -10%;
-        // right: 35%;
+        font-size: 10px;
+        color: #e9a040;
+      }
+    }
+    .thearticle {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 10%;
+        background: #f5ba6dd8;
+        position: absolute;
+        bottom: 40%;
+        z-index: -1;
+      }
+      &::after {
+        content: "Posts";
         font-size: 10px;
         color: #e9a040;
       }
@@ -892,7 +902,7 @@ body {
       position: absolute;
       width: 100%;
       height: 100%;
-      background: #809ec9;
+      background: #809ec980;
       opacity: 0.8;
     }
   }
@@ -977,19 +987,77 @@ body {
     }
   }
   // charges-----------------------------------------
-  .servicechargesimg{
-    height: 80%;
-    @include sm{
-      height: 60%;
+  .servicecharges {
+    height: 100%;
+  }
+  .servicechargesrow {
+    height: 100%;
+  }
+  .servicechargescol {
+    height: 100%;
+  }
+  .servicechargesimg {
+    width: 100%;
+    height: 100%;
+  }
+  @include sm {
+    .servicecharges {
+      height: 100%;
     }
-    @include lg{
-      height: 60%;
+    .servicechargesrow {
+      height: 100%;
     }
-    @include xl{
-      height: 60%;
+    .servicechargescol {
+      height: 100%;
     }
-    @include xxl{
-      height: 65%;
+    .servicechargesimg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include lg {
+    .servicecharges {
+      height: 100%;
+    }
+    .servicechargesrow {
+      height: 100%;
+    }
+    .servicechargescol {
+      height: 100%;
+    }
+    .servicechargesimg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include xl {
+    .servicecharges {
+      height: 100%;
+    }
+    .servicechargesrow {
+      height: 100%;
+    }
+    .servicechargescol {
+      height: 100%;
+    }
+    .servicechargesimg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include xxl {
+    .servicecharges {
+      height: 100%;
+    }
+    .servicechargesrow {
+      height: 100%;
+    }
+    .servicechargescol {
+      height: 100%;
+    }
+    .servicechargesimg {
+      width: 100%;
+      height: 100%;
     }
   }
 }

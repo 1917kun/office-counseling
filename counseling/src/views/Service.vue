@@ -45,9 +45,19 @@
               li 4.為維護診所品質，還未到號前可以至我們的休憩區等待。
     //- Charges-----------------------------------------------------------------
     b-container.servicecharges(fluid)
-      b-row.h-50
-        b-col(cols="12").p-0
-          img.servicechargesimg(src="https://picsum.photos/1920/1080/?random=33" width="100%")
+      b-row.servicechargesrow
+        b-col.servicechargescol(cols="12").p-0
+          img.servicechargesimg(src="https://picsum.photos/1920/1080/?random=33")
+    b-container
+      b-row
+        b-col
+          p 45554545645456465445656
+          p 45554545645456465445656
+          p 45554545645456465445656
+          p 45554545645456465445656
+          p 45554545645456465445656
+          p 45554545645456465445656
+          p 45554545645456465445656
 </template>
 
 <script>

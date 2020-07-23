@@ -635,6 +635,39 @@ body {
   color: #e9a040;
 }
 
+#home .homenews .thearticle {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#home .homenews .thearticle::before {
+  content: "";
+  width: 100%;
+  height: 10%;
+  background: #f5ba6dd8;
+  position: absolute;
+  bottom: 40%;
+  z-index: -1;
+}
+
+#home .homenews .thearticle::after {
+  content: "Posts";
+  font-size: 10px;
+  color: #e9a040;
+}
+
 #home .homenewsimg {
   width: 100%;
   height: 100%;
@@ -1219,7 +1252,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #809ec9;
+  background: #809ec980;
   opacity: 0.8;
 }
 
@@ -1361,30 +1394,83 @@ body {
   width: 100%;
 }
 
+#service .servicecharges {
+  height: 100%;
+}
+
+#service .servicechargesrow {
+  height: 100%;
+}
+
+#service .servicechargescol {
+  height: 100%;
+}
+
 #service .servicechargesimg {
-  height: 80%;
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: 576px) {
+  #service .servicecharges {
+    height: 100%;
+  }
+  #service .servicechargesrow {
+    height: 100%;
+  }
+  #service .servicechargescol {
+    height: 100%;
+  }
   #service .servicechargesimg {
-    height: 60%;
+    width: 100%;
+    height: 100%;
   }
 }
 
 @media (min-width: 992px) {
+  #service .servicecharges {
+    height: 100%;
+  }
+  #service .servicechargesrow {
+    height: 100%;
+  }
+  #service .servicechargescol {
+    height: 100%;
+  }
   #service .servicechargesimg {
-    height: 60%;
+    width: 100%;
+    height: 100%;
   }
 }
 
 @media (min-width: 1200px) {
+  #service .servicecharges {
+    height: 100%;
+  }
+  #service .servicechargesrow {
+    height: 100%;
+  }
+  #service .servicechargescol {
+    height: 100%;
+  }
   #service .servicechargesimg {
-    height: 60%;
+    width: 100%;
+    height: 100%;
   }
 }
 
 @media (min-width: 1500px) {
+  #service .servicecharges {
+    height: 100%;
+  }
+  #service .servicechargesrow {
+    height: 100%;
+  }
+  #service .servicechargescol {
+    height: 100%;
+  }
   #service .servicechargesimg {
-    height: 65%;
+    width: 100%;
+    height: 100%;
   }
 }
