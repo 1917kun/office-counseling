@@ -49,42 +49,7 @@
         b-col.servicechargescol(cols="12").p-0
           img.servicechargesimg(src="https://picsum.photos/1920/1080/?random=33")
     //- footer------------------------------------------------------------------
-    b-container.homefooter
-      b-row.homefooterrow
-        b-col.homefootercol1(cols="12" sm="6")
-          .homefootericon
-            .h2.mb-0
-                b-icon(icon='wifi')
-                b-icon(icon='cup')
-            div
-              font-awesome-icon(:icon="['fab', 'facebook']")
-              font-awesome-icon(:icon="['fab', 'line']")
-              font-awesome-icon(:icon="['fab', 'instagram']")
-          .embed-responsive.embed-responsive-21by9.homemap(v-for="(homefooter,index) in homefooters" :key="index")
-            iframe(:src='homefooter.imgsrc' width='' frameborder='0' allowfullscreen)
-        b-col.homefootercol2(cols="12" sm="6" v-for="(homefooter,index) in homefooters" :key="index")
-          img.homefooterimg(:src='homefooter.src' width="100%")
-          .homefootertext
-            p
-              span 電子信箱
-              span anleader911@gmai.com
-            p
-              span 傾心診所
-              span (新北市泰山區)
-            p
-              span 聯絡專線
-              span 02-23651675
-            p
-              span 診所地址
-              span 新北市泰山區貴子里致遠新村55之1號
-            p(style="color:#a9a9a9;") 傾心電子報
-          .homefootersubscription
-            b-input(placeholder="電子信箱")
-            b-button(squared ) 訂閱
-          span.lab Copyright © 2020 傾心診所
-    b-container
-      .row.justify-content-center
-        span.span1 Copyright © 2020 傾心診所
+
 </template>
 
 <script>

@@ -772,163 +772,6 @@ body {
   padding-left: 0.5rem;
 }
 
-.bi-wifi, .bi-cup {
-  color: #809ec9;
-  border: 1px solid #809ec9;
-}
-
-.fa-facebook, .fa-line, .fa-instagram {
-  color: #b9b7b7;
-  font-size: 2rem;
-}
-
-@media (min-width: 576px) {
-  .homemap {
-    height: 63%;
-  }
-}
-
-@media (min-width: 768px) {
-  .homemap {
-    height: 55%;
-  }
-}
-
-@media (min-width: 992px) {
-  .homemap {
-    height: 59%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .homemap {
-    height: 52.5%;
-  }
-}
-
-@media (min-width: 1500px) {
-  .homemap {
-    height: 47.5%;
-  }
-}
-
-.homefooter {
-  font-size: 14px;
-  padding-top: 2rem;
-}
-
-@media (min-width: 576px) {
-  .homefooter {
-    max-width: 80%;
-  }
-}
-
-@media (min-width: 992px) {
-  .homefooter {
-    max-width: 60%;
-  }
-}
-
-@media (min-width: 576px) {
-  .homefooterrow {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-  }
-}
-
-.homefootercol1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.homefootercol1 div:nth-child(1) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-@media (min-width: 576px) {
-  .homefootercol1 .homefootericon {
-    padding-top: 5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .homefootercol1 .homefootericon {
-    padding-top: 7rem;
-  }
-}
-
-@media (min-width: 992px) {
-  .homefootercol1 .homefootericon {
-    padding-top: 6rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .homefootercol1 .homefootericon {
-    padding-top: 6rem;
-  }
-}
-
-.homefootercol2 .homefooterimg {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  height: 30%;
-}
-
-.homefootercol2 .homefootertext span:nth-of-type(odd) {
-  color: #4b7fc9;
-}
-
-.homefootercol2 .homefootertext span:nth-of-type(even) {
-  color: #a9a9a9;
-}
-
-.homefootercol2 .homefootersubscription {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.homefootercol2 .homefootersubscription .form-control {
-  width: 70%;
-}
-
-.homefootercol2 .lab {
-  display: block;
-  text-align: center;
-  padding-top: 1rem;
-}
-
-@media (min-width: 576px) {
-  .homefootercol2 .lab {
-    display: none;
-  }
-}
-
-.span1 {
-  display: none;
-}
-
-@media (min-width: 576px) {
-  .span1 {
-    display: block;
-  }
-}
-
 #service {
   height: calc(55vh - 90px);
   background: url(/img/eNplec2.jpg/) no-repeat fixed center/cover;
@@ -1472,5 +1315,112 @@ body {
   #service .servicechargesimg {
     width: 100%;
     height: 100%;
+  }
+}
+
+.bi-wifi, .bi-cup {
+  color: #809ec9;
+  border: 1px solid #809ec9;
+}
+
+.fa-facebook, .fa-line, .fa-instagram {
+  color: #b9b7b7;
+  font-size: 2rem;
+}
+
+.map {
+  height: 100%;
+}
+
+.footer {
+  font-size: 14px;
+  padding-top: 2rem;
+}
+
+@media (min-width: 576px) {
+  .footer {
+    max-width: 80%;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 576px) {
+  .footerrow {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+}
+
+.footercol1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footercol1 div:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footercol2 .footerimg {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  height: 30%;
+}
+
+.footercol2 .footertext span:nth-of-type(odd) {
+  color: #4b7fc9;
+}
+
+.footercol2 .footertext span:nth-of-type(even) {
+  color: #a9a9a9;
+}
+
+.footercol2 .footersubscription {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footercol2 .footersubscription .form-control {
+  width: 70%;
+}
+
+.footercol2 .lab {
+  display: block;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+@media (min-width: 576px) {
+  .footercol2 .lab {
+    display: none;
+  }
+}
+
+.span1 {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .span1 {
+    display: block;
   }
 }
