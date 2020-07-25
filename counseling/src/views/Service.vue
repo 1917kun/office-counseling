@@ -2,8 +2,8 @@
   #service
     b-container.h-100
     //- Professional ---------------------------------------------
-    b-container.professiontop(fluid)(:style="{background:'#809ec925'}")
-      b-container.professioncontainer.d-flex.justify-content-center
+    b-container(fluid)(:style="{background:'#809ec925'}")
+      b-container.d-flex.justify-content-center
         b-row.professionrow
           b-col.professioncol1(cols="12")
             img.img1(src="https://picsum.photos/1920/1080/?random=1")
@@ -44,10 +44,8 @@
               li 3.現場掛號需耐心等待，且初診需由心理師做初診評估，時間可能較久。
               li 4.為維護診所品質，還未到號前可以至我們的休憩區等待。
     //- Charges-----------------------------------------------------------------
-    b-container.servicecharges(fluid)
-      b-row.servicechargesrow
-        b-col.servicechargescol(cols="12").p-0
-          img.servicechargesimg(src="https://picsum.photos/1920/1080/?random=33")
+    b-container(fluid).p-0.servicecharges
+      img.servicechargesimg(src="https://picsum.photos/1920/1080/?random=33")
     //- footer---------------------------------------------------
     b-container.footer
       b-row.footerrow

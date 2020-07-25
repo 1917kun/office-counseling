@@ -574,7 +574,7 @@ body {
   .professioncol1 {
     @extend %professioncol;
     padding-top: 3rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
     h1 {
       font-size: 38px;
       padding: 0.8rem 0 0.8rem 0;
@@ -611,7 +611,7 @@ body {
       width: 70%;
     }
     .professioncol1 {
-      padding-bottom: 0;
+      padding-bottom: 2rem;
     }
     .professioncol2 {
       padding-top: 1rem;
@@ -868,86 +868,20 @@ body {
   }
   // charges-----------------------------------------
   .servicecharges {
-    height: 100%;
-  }
-  .servicechargesrow {
-    height: 100%;
-  }
-  .servicechargescol {
-    height: 100%;
-  }
-  .servicechargesimg {
-    width: 100%;
-    height: 100%;
-  }
-  @include sm {
-    .servicecharges {
-      height: 100%;
-    }
-    .servicechargesrow {
-      height: 100%;
-    }
-    .servicechargescol {
-      height: 100%;
-    }
-    .servicechargesimg {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  @include lg {
-    .servicecharges {
-      height: 100%;
-    }
-    .servicechargesrow {
-      height: 100%;
-    }
-    .servicechargescol {
-      height: 100%;
-    }
-    .servicechargesimg {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  @include xl {
-    .servicecharges {
-      height: 100%;
-    }
-    .servicechargesrow {
-      height: 100%;
-    }
-    .servicechargescol {
-      height: 100%;
-    }
-    .servicechargesimg {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  @include xxl {
-    .servicecharges {
-      height: 100%;
-    }
-    .servicechargesrow {
-      height: 100%;
-    }
-    .servicechargescol {
-      height: 100%;
-    }
-    .servicechargesimg {
-      width: 100%;
-      height: 100%;
+    margin: 0;
+    img {
+      max-width: 100%;
+      object-fit: cover;
+      object-position: center;
     }
   }
 }
-
 
 //-----------footer-----------------------------------------------
 %faicon {
   color: rgb(185, 183, 183);
   font-size: 2rem;
-  margin-right: 1rem
+  margin-right: 1rem;
 }
 .fa-facebook {
   @extend %faicon;
@@ -959,11 +893,11 @@ body {
   @extend %faicon;
 }
 
-.map{
+.map {
   height: 100%;
 }
 .footer {
-  .logotext{
+  .logotext {
     font-size: 2rem;
   }
   font-size: 14px;
@@ -1020,5 +954,85 @@ body {
   @include sm {
     display: block;
     margin: 1rem 0 1rem 0;
+  }
+}
+// --team-----------------------------
+#team {
+  height: calc(35vh - 90px);
+  @include lg {
+    height: calc(30vh - 90px);
+  }
+  @include xl {
+    height: calc(40vh - 90px);
+  }
+  @include xxl {
+    height: calc(45vh - 90px);
+  }
+  background: url(/img/team.svg) no-repeat fixed center/cover;
+  .teamtop {
+    span:nth-child(1) {
+      font-size: 18px;
+    }
+    span:nth-child(2) {
+      font-size: 38px;
+    }
+  }
+  .dean {
+    padding: 10% 0 8% 0;
+    @include sm {
+      padding: 5% 0 3% 0;
+    }
+    @include lg {
+      padding: 3% 0 3% 0;
+    }
+    @include xl {
+      padding: 3% 0 1% 0;
+    }
+    @include xxl {
+      padding: 3% 0 1% 0;
+    }
+  }
+  .team {
+    padding: 0 5% 0 5%;
+    @include sm {
+      padding: 0 1% 0 1%;
+    }
+    @include lg {
+      padding: 0 5% 0 5%;
+    }
+    @include xl {
+      padding: 0 8% 0 8%;
+    }
+    @include xxl {
+      padding: 0 10% 0 10%;
+    }
+  }
+  .teammenber {
+    span:nth-of-type(1) {
+      font-size: 21px;
+      color: rgb(75, 127, 201);
+    }
+    span:nth-of-type(2) {
+      font-size: 14px;
+      color: #a9a9a9;
+    }
+    padding: 0 0 5% 0;
+    @include sm {
+      padding: 0 2% 0 2%;
+    }
+    @include lg {
+      padding: 0 0 3% 0;
+    }
+    @include xl {
+      padding: 0 0 3% 0;
+    }
+    @include xxl {
+      padding: 0 0 3% 0;
+    }
+  }
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
