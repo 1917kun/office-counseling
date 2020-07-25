@@ -12,10 +12,10 @@
       //- homeservice-----------------------------------------------------------
     b-container
       b-row
-      b-col.box2.d-flex.flex-column.align-items-center
-        span OUR SERVICES
-        span 傾心專業服務
-        span.text-center 溫柔的傾聽,讓你接受真正的自己，<br>並擁有接受不完美的勇氣
+        b-col.box2.d-flex.flex-column.align-items-center
+          span OUR SERVICES
+          span 傾心專業服務
+          span.text-center 溫柔的傾聽,讓你接受真正的自己，<br>並擁有接受不完美的勇氣
     b-container#homeservice
       b-row.justify-content-center.text-center
         b-col.box3(v-for="(homeservicedata,index) in homeservicedatas" :key="index" cols="12" sm="4" md="4")
@@ -53,7 +53,6 @@
     div(style="background:#809ec925; padding-bottom:6rem; padding-top:2rem;")
       .container.d-flex.flex-column.align-items-center.mt-5.homenewsback
         div.homenews.text-center
-          //- p.m-0 NEWS
           p.thenew 最新消息
         b-card.overflow-hidden(no-body v-for="(homenew,index) in homenews" :key="index" style='max-width: 100%;')
           b-row(no-gutters)
@@ -106,7 +105,7 @@
           div
             p
               img(:src='footer.logoimg' width="84" height="57")
-              span.logotext(:style="{color:'#0F4C81',fontsize:'30px'}") 傾心診所
+              span.logotext(:style="{color:'#0F4C81'}") 傾心診所
           .footertext
             p
               span 診所地址
