@@ -947,12 +947,7 @@ body {
 %faicon {
   color: rgb(185, 183, 183);
   font-size: 2rem;
-}
-.bi-wifi {
-  @extend %bicon;
-}
-.bi-cup {
-  @extend %bicon;
+  margin-right: 1rem
 }
 .fa-facebook {
   @extend %faicon;
@@ -968,6 +963,9 @@ body {
   height: 100%;
 }
 .footer {
+  .logotext{
+    font-size: 2rem;
+  }
   font-size: 14px;
   padding-top: 2rem;
   @include sm {
@@ -1021,5 +1019,6 @@ body {
   display: none;
   @include sm {
     display: block;
+    margin: 1rem 0 1rem 0;
   }
 }

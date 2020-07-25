@@ -1318,14 +1318,10 @@ body {
   }
 }
 
-.bi-wifi, .bi-cup {
-  color: #809ec9;
-  border: 1px solid #809ec9;
-}
-
 .fa-facebook, .fa-line, .fa-instagram {
   color: #b9b7b7;
   font-size: 2rem;
+  margin-right: 1rem;
 }
 
 .map {
@@ -1335,6 +1331,10 @@ body {
 .footer {
   font-size: 14px;
   padding-top: 2rem;
+}
+
+.footer .logotext {
+  font-size: 2rem;
 }
 
 @media (min-width: 576px) {
@@ -1422,5 +1422,6 @@ body {
 @media (min-width: 576px) {
   .span1 {
     display: block;
+    margin: 1rem 0 1rem 0;
   }
 }

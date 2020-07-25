@@ -103,10 +103,10 @@
           .embed-responsive.embed-responsive-21by9.map(v-for="(footer,index) in footers" :key="index")
             iframe(:src='footer.imgsrc' width='' frameborder='0' allowfullscreen)
         b-col.footercol2(cols="12" sm="6" v-for="(footer,index) in footers" :key="index")
-          div.p-3
+          div
             p
               img(:src='footer.logoimg' width="84" height="57")
-              strong(:style="{color:'#0F4C81'}") 傾心診所
+              span.logotext(:style="{color:'#0F4C81',fontsize:'30px'}") 傾心診所
           .footertext
             p
               span 診所地址
@@ -128,11 +128,10 @@
           span.lab Copyright © 2020 傾心診所
     b-container
       .row.justify-content-center
-        pan.span1 Copyright © 2020 傾心診所
+        span.span1 Copyright © 2020 傾心診所
 </template>
 
 <script>
-
 export default {
   data () {
     return {
