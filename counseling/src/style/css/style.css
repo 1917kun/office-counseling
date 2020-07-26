@@ -1489,3 +1489,109 @@ body {
   -o-object-position: center;
      object-position: center;
 }
+
+#column {
+  height: calc(35vh - 90px);
+  background: url(/img/column.svg) no-repeat fixed center/cover;
+}
+
+@media (min-width: 992px) {
+  #column {
+    height: calc(30vh - 90px);
+  }
+}
+
+@media (min-width: 1200px) {
+  #column {
+    height: calc(40vh - 90px);
+  }
+}
+
+@media (min-width: 1500px) {
+  #column {
+    height: calc(45vh - 90px);
+  }
+}
+
+#column .columntop span:nth-child(1) {
+  font-size: 18px;
+}
+
+#column .columntop span:nth-child(2) {
+  font-size: 38px;
+}
+
+#column .test .col-4 {
+  position: relative;
+  cursor: pointer;
+}
+
+#column .test .col-4 .box {
+  max-width: 90%;
+  overflow: hidden;
+}
+
+#column .test .col-4:hover img {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
+}
+
+#column .test .col-4 .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 40px;
+  color: white;
+  padding-bottom: 58px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#column .test .col-4 .text .end {
+  border-top: 1px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10px;
+}
+
+#column .test .col-4 .text .end .item1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#column .test .col-4 .text .end .item1 p {
+  margin-bottom: 0;
+}
+
+#column .test img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  -webkit-transition: -webkit-transform 5s;
+  transition: -webkit-transform 5s;
+  transition: transform 5s;
+  transition: transform 5s, -webkit-transform 5s;
+}
