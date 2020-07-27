@@ -29,9 +29,9 @@ const caseSchema = new Schema(
       // 最大長度，自訂錯誤訊息
       maxlength: [12, '名字最大 12 個字'],
       // 必填欄位，自訂錯誤訊息
-      required: [true, '名字必填'],
+      required: [true, '名字必填']
       // 避免重複，只能設定 true，無法自訂錯誤訊息，除非使用插件
-      unique: '名字重複'
+      // unique: '名字重複'
     },
     // password: {
     //   type: String,
@@ -46,9 +46,10 @@ const caseSchema = new Schema(
     //   required: [true, '年齡必填']
     // },
     phone: {
-      type: Number,
+      type: String,
       min: [6, '必須大於 6碼'],
-      required: [true, '電話必填']
+      required: [true, '電話必填'],
+      unique: '號碼重複'
     },
     email: {
       type: String,
