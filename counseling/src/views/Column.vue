@@ -5,19 +5,61 @@
         b-col.columntop.d-flex.flex-column
           span.text-center(:style="{color:'#FFFFFF'}") EVENTS & CLASSES
           span.text-center(:style="{color:'#ef8c52',fontweight:'bolder'}") 傾心活動＆講座
-    b-container.test.mt-5
+    //-column-----------------------------------------------------------------------------
+    b-container
       b-row
-        b-col(cols="4" v-for="(column,index) in columns" :key="index").pb-5
-          .box.m-auto
-            img(:src="column.src")
-            .text
-              h5 {{ column.title }}
-              .end
-                .item1
-                  font-awesome-icon(:icon="['fas', 'eye']").mr-2
-                  p.mr-5 {{ column.num }}
-                  p {{ column.leavemessage }}
-                font-awesome-icon(:icon="['fab', 'gratipay']")
+        b-col.columnhover(cols="12" sm="6" md="4"  v-for="(column,index) in columns" :key="index")
+          b-card(:img-src="column.src" overlay text-variant="white")
+            b-card-text.text
+              div.texttop
+                span 傾心
+                span 2020年7月27日．1分鐘
+              div.textbottom
+                div
+                  h5 {{ column.title }}
+                div.textbottomend
+                  div.endtop
+                    font-awesome-icon(:icon="['fas', 'eye']").mr-2
+                    p.mr-4 {{ column.num }}
+                    p {{ column.leavemessage }}
+                  span
+                    | {{column.like}}
+                    font-awesome-icon(:icon="['fab', 'gratipay']")
+    //- footer-----------------------------------------------------------------------------
+    hr
+    b-container.footer
+      b-row.footerrow
+        b-col.footercol1(cols="12" sm="6")
+          .embed-responsive.embed-responsive-21by9.map(v-for="(footer,index) in footers" :key="index")
+            iframe(:src='footer.imgsrc' width='' frameborder='0' allowfullscreen)
+        b-col.footercol2(cols="12" sm="6" v-for="(footer,index) in footers" :key="index")
+          div
+            p
+              img(:src='footer.logoimg' width="84" height="57")
+              span.logotext(:style="{color:'#0F4C81',fontsize:'30px'}") 傾心診所
+          .footertext
+            p
+              span 診所地址
+              span 新北市泰山區貴子里致遠新村55之1號
+            p
+              span 聯絡專線
+              span 02-23651675
+            p
+              span 電子信箱
+              span anleader911@gmai.com
+            p
+              font-awesome-icon(:icon="['fab', 'facebook']")
+              font-awesome-icon(:icon="['fab', 'line']")
+              font-awesome-icon(:icon="['fab', 'instagram']")
+            p(style="color:#a9a9a9;") 傾心電子報
+          .footersubscription
+            b-input(placeholder="電子信箱")
+            b-button(squared ) 訂閱
+          span.lab Copyright © 2020 傾心診所
+    b-container
+      .row.justify-content-center
+        span.span1 Copyright © 2020 傾心診所
+
 </template>
 <script>
 export default {
@@ -28,6 +70,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '456',
+          like: '4',
           leavemessage: '留言'
 
         },
@@ -35,6 +78,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '25',
+          like: '3',
           leavemessage: '留言'
 
         },
@@ -42,6 +86,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '887',
+          like: '5',
           leavemessage: '留言'
 
         },
@@ -49,6 +94,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '471',
+          like: '7',
           leavemessage: '留言'
 
         },
@@ -56,6 +102,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '782',
+          like: '41',
           leavemessage: '留言'
 
         },
@@ -63,6 +110,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '374',
+          like: '52',
           leavemessage: '留言'
 
         },
@@ -70,6 +118,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '546',
+          like: '13',
           leavemessage: '留言'
 
         },
@@ -77,6 +126,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '397',
+          like: '45',
           leavemessage: '留言'
 
         },
@@ -84,6 +134,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '985',
+          like: '7',
           leavemessage: '留言'
 
         },
@@ -91,6 +142,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '564',
+          like: '35',
           leavemessage: '留言'
 
         },
@@ -98,6 +150,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '374',
+          like: '23',
           leavemessage: '留言'
 
         },
@@ -105,6 +158,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '568',
+          like: '46',
           leavemessage: '留言'
 
         },
@@ -112,6 +166,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '255',
+          like: '12',
           leavemessage: '留言'
 
         },
@@ -119,6 +174,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '131',
+          like: '19',
           leavemessage: '留言'
 
         },
@@ -126,6 +182,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '687',
+          like: '42',
           leavemessage: '留言'
 
         },
@@ -133,6 +190,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '575',
+          like: '75',
           leavemessage: '留言'
 
         },
@@ -140,6 +198,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '332',
+          like: '66',
           leavemessage: '留言'
 
         },
@@ -147,6 +206,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '874',
+          like: '77',
           leavemessage: '留言'
 
         },
@@ -154,6 +214,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '331',
+          like: '54',
           leavemessage: '留言'
 
         },
@@ -161,6 +222,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '465',
+          like: '25',
           leavemessage: '留言'
 
         },
@@ -168,6 +230,7 @@ export default {
           src: 'https://picsum.photos/1920/1920/?random=51',
           title: '榮格心理學與藝術治療：平衡人生的光與影',
           num: '321',
+          like: '22',
           leavemessage: '留言'
 
         }
