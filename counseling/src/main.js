@@ -9,11 +9,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faAngleRight, faCrown, faEye, faHeart, faWifi, faCoffee, faBabyCarriage } from '@fortawesome/free-solid-svg-icons'
 import { faGratipay, faFacebook, faInstagram, faLine } from '@fortawesome/free-brands-svg-icons'
+import Lightbox from 'vue-easy-lightbox'
 import './plugins/bootstrap-vue'
 import './style/css/style.css'
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
+Vue.use(Lightbox)
 library.add(faAngleRight, faCrown, faEye, faHeart, faGratipay, faWifi, faCoffee, faBabyCarriage, faFacebook, faInstagram, faLine)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false

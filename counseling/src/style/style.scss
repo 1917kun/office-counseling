@@ -1119,3 +1119,24 @@ body {
     background-color: rgba(0, 0, 0, 0.45);
   }
 }
+#reserve{
+  height: calc(35vh - 90px);
+  @include lg {
+    height: calc(30vh - 90px);
+  }
+  @include xl {
+    height: calc(40vh - 90px);
+  }
+  @include xxl {
+    height: calc(45vh - 90px);
+  }
+  background: url(/img/reservation.svg) no-repeat fixed center/cover;
+  .teamtop {
+    span:nth-child(1) {
+      font-size: 18px;
+    }
+    span:nth-child(2) {
+      font-size: 38px;
+    }
+  }
+}
