@@ -2,7 +2,7 @@
 import validator from 'validator'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-// 引用重複驗證錯誤訊息插件
+// 引用重複驗證錯誤訊息插件,unique只能接true但是使用這套件可以自訂錯誤訊息
 import beautifyUnique from 'mongoose-beautiful-unique-validation'
 // 引用將 _id 欄位顯示為 id 的插件
 import idPlugin from 'mongoose-id'
@@ -25,13 +25,13 @@ const caseSchema = new Schema(
       // 資料類型是文字
       type: String,
       // 最小長度，自訂錯誤訊息
-      minlength: [2, '使用者名稱最小 4 個字'],
+      minlength: [2, '名字最小 4 個字'],
       // 最大長度，自訂錯誤訊息
-      maxlength: [12, '使用者名稱最大 12 個字'],
+      maxlength: [12, '名字最大 12 個字'],
       // 必填欄位，自訂錯誤訊息
-      required: [true, '使用者名稱必填'],
+      required: [true, '名字必填'],
       // 避免重複，只能設定 true，無法自訂錯誤訊息，除非使用插件
-      unique: '使用者名稱重複'
+      unique: '名字重複'
     },
     // password: {
     //   type: String,
@@ -68,7 +68,7 @@ const caseSchema = new Schema(
       type: String,
       minlength: [10, '最少 10 個字'],
       maxlength: [300, '最多 300 個字'],
-      required: [true, '請先告訴我們']
+      required: [true, '請先告訴我們喔']
     },
     type: {
 
