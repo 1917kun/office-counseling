@@ -44,7 +44,7 @@
               li 3.現場掛號需耐心等待，且初診需由心理師做初診評估，時間可能較久。
               li 4.為維護診所品質，還未到號前可以至我們的休憩區等待。
     //- Charges-----------------------------------------------------------------
-    b-container(fluid).p-0.servicecharges
+    b-container#Charges(fluid).p-0.servicecharges
       img.servicechargesimg(src="https://picsum.photos/1920/1080/?random=33")
     //- footer---------------------------------------------------
     b-container.footer

@@ -625,7 +625,7 @@ body {
   height: 10%;
   background: #f5ba6dd8;
   position: absolute;
-  bottom: 40%;
+  bottom: 35%;
   z-index: -1;
 }
 
@@ -658,7 +658,7 @@ body {
   height: 10%;
   background: #f5ba6dd8;
   position: absolute;
-  bottom: 40%;
+  bottom: 35%;
   z-index: -1;
 }
 
@@ -1656,4 +1656,48 @@ body {
 
 #reserve .teamtop span:nth-child(2) {
   font-size: 38px;
+}
+
+#reserve .explain {
+  font-size: 14px;
+}
+
+#reserve .explain .col-12 {
+  padding: 2rem 2rem 2rem 2rem;
+  color: #7f7f7f;
+}
+
+@media (min-width: 576px) {
+  #reserve .explain .col-12 {
+    padding: 2rem 0 2rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  #reserve .explain .col-12 {
+    padding: 2rem 0 2rem 0;
+  }
+}
+
+#reserve .explain p {
+  margin: 0;
+}
+
+#reserve .explain strong {
+  font-size: 1.25rem;
+  margin: 1rem 0 1rem 0;
+  color: #4b7fc9;
+}
+
+#reserve .explain div:nth-of-type(1) {
+  padding-top: 1rem;
+}
+
+#reserve .explain div:nth-of-type(1) span:last-child {
+  color: #4b7fc9;
+}
+
+#reserve .explain div:nth-of-type(2) span:last-child {
+  color: #d4d4d4;
+  cursor: pointer;
 }
