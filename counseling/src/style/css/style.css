@@ -198,6 +198,41 @@ body {
   }
 }
 
+#home .ourservicestext {
+  font-size: 38px;
+  color: #4b7fc9;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#home .ourservicestext::before {
+  content: "";
+  width: 100%;
+  height: 10%;
+  background: #f5ba6dd8;
+  position: absolute;
+  bottom: 35%;
+  z-index: -1;
+}
+
+#home .ourservicestext::after {
+  content: "Pofessional";
+  font-size: 10px;
+  color: #e9a040;
+}
+
 #home .btn:nth-child(odd) {
   border: 1px solid #b5c7d3;
   color: var(--classblue);
@@ -414,7 +449,7 @@ body {
   padding-bottom: 1rem;
 }
 
-#home .abouttext p {
+#home .abouttext p:not(.aboutus) {
   color: #7f7f7f;
   margin: 0;
   padding-bottom: 1rem;
@@ -422,27 +457,28 @@ body {
 }
 
 @media (min-width: 576px) {
-  #home .abouttext div {
+  #home .abouttext div:not(.aboutUs) {
     width: 70%;
   }
 }
 
 #home .abouttext .btn3 {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 12px;
   background-color: #b5c7d3;
   color: white;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   border: 1px solid transparent;
+  width: auto !important;
 }
 
 #home .abouttext .btn3:hover {
@@ -456,35 +492,44 @@ body {
 
 @media (min-width: 576px) {
   #home .abouttext .btn3 {
-    width: 20%;
     padding: 10px;
     margin: 0;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
 }
 
-@media (min-width: 768px) {
-  #home .abouttext .btn3 {
-    width: 20%;
-    padding: 10px;
-  }
+#home .aboutus {
+  font-size: 38px;
+  color: #4b7fc9;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media (min-width: 992px) {
-  #home .abouttext .btn3 {
-    width: 20%;
-  }
+#home .aboutus::before {
+  content: "";
+  width: 100%;
+  height: 10%;
+  background: #f5ba6dd8;
+  position: absolute;
+  bottom: 35%;
+  z-index: -1;
 }
 
-@media (min-width: 1200px) {
-  #home .abouttext .btn3 {
-    width: 20%;
-  }
+#home .aboutus::after {
+  content: "ABOUT US";
+  font-size: 10px;
+  color: #e9a040;
 }
 
 #home .carousel {
@@ -986,17 +1031,42 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 1;
 }
 
-#service .servicebox1 span:nth-child(1) {
-  font-size: 18px;
-  color: #e9a040;
-}
-
-#service .servicebox1 span:nth-child(2) {
+#service .servicebox1 .servicetext {
   font-size: 38px;
   color: #4b7fc9;
-  padding-bottom: 1rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#service .servicebox1 .servicetext::before {
+  content: "";
+  width: 100%;
+  height: 10%;
+  background: #f5ba6dd8;
+  position: absolute;
+  bottom: 35%;
+  z-index: -1;
+}
+
+#service .servicebox1 .servicetext::after {
+  content: "Pofessional";
+  font-size: 10px;
+  color: #e9a040;
 }
 
 #service .box4 {
@@ -1124,17 +1194,6 @@ body {
   }
 }
 
-#service .servicereservationtext span:nth-child(1) {
-  color: #e9a040;
-  font-size: 18px;
-}
-
-#service .servicereservationtext span:nth-child(2) {
-  color: #4b7fc9;
-  font-size: 42px;
-  padding-bottom: 1rem;
-}
-
 #service .servicereservationtext p {
   color: #7f7f7f;
   margin: 0;
@@ -1142,14 +1201,7 @@ body {
   font-size: 16px;
 }
 
-@media (min-width: 576px) {
-  #service .servicereservationtext div {
-    width: 70%;
-  }
-}
-
 #service .servicereservationtext .btn5 {
-  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1162,6 +1214,7 @@ body {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   border: 1px solid transparent;
+  width: auto !important;
 }
 
 #service .servicereservationtext .btn5:hover {
@@ -1171,38 +1224,6 @@ body {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
-}
-
-@media (min-width: 576px) {
-  #service .servicereservationtext .btn5 {
-    width: 30%;
-    padding: 10px;
-    margin: 0;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-@media (min-width: 992px) {
-  #service .servicereservationtext .btn5 {
-    width: 40%;
-  }
-}
-
-@media (min-width: 1200px) {
-  #service .servicereservationtext .btn5 {
-    width: 30%;
-  }
-}
-
-@media (min-width: 1500px) {
-  #service .servicereservationtext .btn5 {
-    width: 20%;
-  }
 }
 
 #service .servicereservationtextinner {
@@ -1227,6 +1248,42 @@ body {
         -ms-flex-align: start;
             align-items: flex-start;
   }
+}
+
+#service .servicereservationtextinner .reservationtext {
+  font-size: 38px;
+  color: #4b7fc9;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  z-index: 1;
+}
+
+#service .servicereservationtextinner .reservationtext::before {
+  content: "";
+  width: 100%;
+  height: 10%;
+  background: #f5ba6dd8;
+  position: absolute;
+  bottom: 50%;
+  z-index: -1;
+}
+
+#service .servicereservationtextinner .reservationtext::after {
+  content: "Pofessional";
+  font-size: 10px;
+  color: #e9a040;
 }
 
 #service .servicereservationtextinner2 {
@@ -1700,4 +1757,47 @@ body {
 #reserve .explain div:nth-of-type(2) span:last-child {
   color: #d4d4d4;
   cursor: pointer;
+}
+
+#reserve .formmethod {
+  font-style: italic;
+}
+
+#reserve .time {
+  font-size: 14px;
+}
+
+#reserve .time .col-12 {
+  padding: 2rem 2rem 2rem 2rem;
+  color: #7f7f7f;
+}
+
+@media (min-width: 576px) {
+  #reserve .time .col-12 {
+    padding: 2rem 0 2rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  #reserve .time .col-12 {
+    padding: 2rem 0 2rem 0;
+  }
+}
+
+#reserve .time p {
+  margin: 0;
+}
+
+#reserve .time strong {
+  font-size: 1.25rem;
+  margin: 1rem 0 1rem 0;
+  color: #4b7fc9;
+}
+
+#reserve .time img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }

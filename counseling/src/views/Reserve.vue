@@ -18,22 +18,80 @@
             span (費用說明)
           p *請注意未滿20歲，建議由家長陪同看診，或是持家長同意書。
     //----form---------------------------------------------------------------------------------
-    div
-      b-form(@submit='onSubmit' @reset='onReset' v-if='show')
-        b-form-group#input-group-1(label='Email address:' label-for='input-1' description='We\'ll never share your email with anyone else.')
-          b-form-input#input-1(v-model='form.email' type='email' required placeholder='Enter email')
-        b-form-group#input-group-2(label='Your Name:' label-for='input-2')
-          b-form-input#input-2(v-model='form.name' required placeholder='Enter name')
-        b-form-group#input-group-3(label='Food:' label-for='input-3')
-          b-form-select#input-3(v-model='form.food' :options='foods' required)
-        b-form-group#input-group-4
-          b-form-checkbox-group#checkboxes-4(v-model='form.checked')
-            b-form-checkbox(value='me') Check me out
-            b-form-checkbox(value='that') Check that out
-        b-button(type='submit' variant='primary') Submit
-        b-button(type='reset' variant='danger') Reset
-        b-card.mt-3(header='Form Data Result')
-          pre.m-0 {{ form }}
+    b-container
+      b-row.justify-content-center
+        b-col(cols="12" md="8" lg="6").p-0
+          b-form(@submit='onSubmit' @reset='onReset' v-if='show')
+            //-名字
+            b-form-group#input-group-1(label='名字:' label-for='input-1')
+              b-form-input#input-1(v-model='form.name' required placeholder='')
+            //-年齡
+            b-form-group#input-group-2(label='年齡:' label-for='input-2')
+              b-form-input#input-2(v-model='form.age' required placeholder='')
+            //-電話
+            b-form-group#input-group-3(label='聯絡電話:'  label-for='input-3')
+              b-form-input#input-3(v-model='form.number' required placeholder='')
+            //-Email
+            b-form-group#input-group-4(label='Email:' label-for='input-4' description='')
+              b-form-input#input-4(v-model='form.email' type='email' required placeholder='')
+            //-煩惱的事
+            b-form-group#input-group-5(label="你/妳煩惱的事:" label-for="textarea" description="")
+              b-form-textarea#textarea(v-model="form.worry" placeholder="寫下你/妳煩惱的事" size="lg")
+            //-方式選擇
+            label.formmethod *請選擇想要的服務類型:
+            b-form-checkbox-group(v-model='form.checked' :options="options" value-field="item" text-field="name")
+            //-日期選擇
+            b-form-group#input-group-5
+              label.formmethod *請選擇日期:
+              b-form-datepicker#date(v-model="form.value" )
+            div.d-flex.justify-content-center
+              b-button.mr-3(type='submit' variant='primary') 預約
+              b-button(type='reset' variant='danger') 取消
+            b-card.mt-3(header='Form Data Result')
+              pre.m-0 {{ form }}
+      //-門診時間 ----------------------------------------------------------
+    b-container.time
+      b-row.justify-content-center
+        b-col(cols="12" md="8" lg="6")
+          strong 傾心門診時間
+          div.mb-3
+            span 請注意傾心的門診時間。
+          div
+            img(src="https://picsum.photos/1920/1080/?random=66")
+      //- footer-----------------------------------------------------------
+    hr
+    b-container.footer
+      b-row.footerrow
+        b-col.footercol1(cols="12" sm="6")
+          .embed-responsive.embed-responsive-21by9.map(v-for="(footer,index) in footers" :key="index")
+            iframe(:src='footer.imgsrc' width='' frameborder='0' allowfullscreen)
+        b-col.footercol2(cols="12" sm="6" v-for="(footer,index) in footers" :key="index")
+          div
+            p
+              img(:src='footer.logoimg' width="84" height="57")
+              span.logotext(:style="{color:'#0F4C81',fontsize:'30px'}") 傾心診所
+          .footertext
+            p
+              span 診所地址
+              span 新北市泰山區貴子里致遠新村55之1號
+            p
+              span 聯絡專線
+              span 02-23651675
+            p
+              span 電子信箱
+              span anleader911@gmai.com
+            p
+              font-awesome-icon(:icon="['fab', 'facebook']")
+              font-awesome-icon(:icon="['fab', 'line']")
+              font-awesome-icon(:icon="['fab', 'instagram']")
+            p(style="color:#a9a9a9;") 傾心電子報
+          .footersubscription
+            b-input(placeholder="電子信箱")
+            b-button(squared ) 訂閱
+          span.lab Copyright © 2020 傾心診所
+    b-container
+      .row.justify-content-center
+        span.span1 Copyright © 2020 傾心診所
 </template>
 
 <script>
@@ -41,13 +99,26 @@ export default {
   data () {
     return {
       form: {
-        email: '',
         name: '',
-        food: null,
+        age: '',
+        number: '',
+        email: '',
+        worry: '',
+        value: '',
         checked: []
       },
-      foods: [{ text: 'Select One', value: null }, 'Carrots', 'Beans', 'Tomatoes', 'Corn'],
-      show: true
+      show: true,
+      options: [
+        { item: 'A', name: '醫生看診(藥物協助)' },
+        { item: 'B', name: '心理諮商(專業會談)' },
+        { item: 'C', name: '線上心理諮商' }
+      ],
+      footers: [
+        {
+          logoimg: '/img/logo.svg',
+          imgsrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7080213475365!2d121.41715431500656!3d25.043980983967728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7bec9ad74b1%3A0xa639904a89f26435!2z5Yue5YuV6YOo5Yue5YuV5Yqb55m85bGV572y5YyX5Z-65a6c6Iqx6YeR6aas5YiG572y5rOw5bGx6IG35qWt6KiT57e05aC0!5e0!3m2!1szh-TW!2stw!4v1591237554076!5m2!1szh-TW!2stw'
+        }
+      ]
     }
   },
   methods: {
@@ -58,9 +129,11 @@ export default {
     onReset (evt) {
       evt.preventDefault()
       // Reset our form values
-      this.form.email = ''
       this.form.name = ''
-      this.form.food = null
+      this.form.age = ''
+      this.form.number = ''
+      this.form.email = ''
+      this.form.worry = ''
       this.form.checked = []
       // Trick to reset/clear native browser form validation state
       this.show = false

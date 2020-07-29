@@ -13,9 +13,9 @@
     b-container
       b-row
         b-col.box2.d-flex.flex-column.align-items-center
-          span OUR SERVICES
-          span 傾心專業服務
-          span.text-center 溫柔的傾聽,讓你接受真正的自己，<br>並擁有接受不完美的勇氣
+          div.text-center
+            p.ourservicestext 傾心專業服務
+          p(:style="{color:'#a9a9a9'}").text-center 溫柔的傾聽,讓你接受真正的自己，<br>並擁有接受不完美的勇氣
     b-container#homeservice
       b-row.justify-content-center.text-center
         b-col.box3(v-for="(homeservicedata,index) in homeservicedatas" :key="index" cols="12" sm="4" md="4")
@@ -32,12 +32,12 @@
       b-row.aboutrow
         b-col(cols="12" lg="6").aboutimg
         b-col(cols="12" lg="6").abouttext
-          span ABOUT US
-          span 關於傾心
+          div.aboutUs.text-center
+            p.aboutus 關於傾心
           div
             p 每個人內心都是一個小小孩,在面對這洶湧湍急的社會,往往不知所措。長輩、家人、朋友、情人、等各種在你身邊的人,有時沒有一個人能在夜深人靜的時刻裡,靜靜聽你訴說你的苦,然而傾心,能給予你最剛好的照顧,照顧你/妳那徬徨不安的心。
             p 無論是進行心理諮商治療、藥物治療、伴侶與婚姻等的團體課程，我們都能以最適合您的方式來幫助您，還請您仔細閱讀我們的網站，如有需要請在頁面預約我們的團隊。
-          .btn3 了解更多
+          .btn3.align-self-center 了解更多
       //- carousel-------------------------------------------------------------
     .container
       b-carousel#carousel-1(v-model='slide' :interval='3000' controls indicators background='white' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')

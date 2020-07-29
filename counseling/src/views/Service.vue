@@ -18,8 +18,8 @@
     b-container(fluid)(:style="{background:'white'}")
       b-row
         b-col.servicebox1
-          span SERVICES
-          span 傾心專業服務
+          div.text-center
+            p.servicetext 傾心專業服務
     b-container
       b-row.justify-content-center.text-center
         b-col.box4(v-for="(servicedata,index) in servicedatas" :key="index" cols="12" sm="4" md="4")
@@ -33,9 +33,9 @@
         b-col(cols="12" lg="6").servicereservationimg
         b-col(cols="12" lg="6").servicereservationtext
           div.servicereservationtextinner
-            span RESERVATION
-            span 初診預約
-            .btn5 線上預約
+            div
+              p.reservationtext 初診預約
+          .btn5.align-self-start 線上預約
           div.servicereservationtextinner2
             p 注意事項:
             ol
