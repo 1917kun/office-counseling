@@ -40,15 +40,17 @@
           .btn3.align-self-center 了解更多
       //- carousel-------------------------------------------------------------
     .container
-      b-carousel#carousel-1(v-model='slide' :interval='3000' controls indicators background='white' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
+      p.carouseltitle.text-center.p-o 傾心診所醫師＆心理師
+      b-carousel#carousel-1(v-model='slide' :interval='0' controls indicators background='white' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
         b-carousel-slide(v-for="(homecarousel,index) in homecarousels" :key="index")
-          p {{homecarousel.title}}
-          hr
-          p {{homecarousel.doctor}}
-          img.carousimg(:src="homecarousel.src" width="200" height="200")
-          p {{homecarousel.p1}}
-          p {{homecarousel.p2}}
-          .btn4 了解更多
+          b-col(cols="12" sm="6")
+            div
+              img.carousimg(:src="homecarousel.src")
+          b-col(cols="12" sm="6")
+            p {{homecarousel.doctor}}
+            p {{homecarousel.p1}}
+            p {{homecarousel.p2}}
+            .btn4 了解更多
       //-homenews-------------------------------------------------------
     div(style="background:#809ec925; padding-bottom:6rem; padding-top:2rem;")
       .container.d-flex.flex-column.align-items-center.mt-5.homenewsback
@@ -170,28 +172,24 @@ export default {
       ],
       homecarousels: [
         {
-          title: '傾心診所醫師&心理師',
           doctor: 'xxx心理師醫師',
           src: 'https://picsum.photos/1920/1080/?random=6',
           p1: '主治項目',
           p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
         },
         {
-          title: '傾心診所醫師&心理師',
           doctor: 'xxx心理師醫師',
           src: 'https://picsum.photos/1920/1080/?random=7',
           p1: '主治項目',
           p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
         },
         {
-          title: '傾心診所醫師&心理師',
           doctor: 'xxx心理師醫師',
           src: 'https://picsum.photos/1920/1080/?random=8',
           p1: '主治項目',
           p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
         },
         {
-          title: '傾心診所醫師&心理師',
           doctor: 'xxx心理師醫師',
           src: 'https://picsum.photos/1920/1080/?random=9',
           p1: '主治項目',

@@ -32,17 +32,18 @@
       b-row.servicereservationrow
         b-col(cols="12" lg="6").servicereservationimg
         b-col(cols="12" lg="6").servicereservationtext
-          div.servicereservationtextinner
-            div
-              p.reservationtext 初診預約
-          .btn5.align-self-start 線上預約
-          div.servicereservationtextinner2
-            p 注意事項:
-            ol
-              li 1.一般門診：可健保或自費看診。
-              li 2.初診需視當天心理師或醫師的時段而定，請先至我們網站查詢。
-              li 3.現場掛號需耐心等待，且初診需由心理師做初診評估，時間可能較久。
-              li 4.為維護診所品質，還未到號前可以至我們的休憩區等待。
+          div.ser
+            div.servicereservationtextinner
+              div
+                p.reservationtext 初診預約
+            .btn5 線上預約
+            div.servicereservationtextinner2
+              p 注意事項:
+              ol
+                li 1.一般門診：可健保或自費看診。
+                li 2.初診需視當天心理師或醫師的時段而定，請先至我們網站查詢。
+                li 3.現場掛號需耐心等待，且初診需由心理師做初診評估，時間可能較久。
+                li 4.為維護診所品質，還未到號前可以至我們的休憩區等待。
     //- Charges-----------------------------------------------------------------
     b-container#Charges(fluid).p-0.servicecharges
       img.servicechargesimg(src="https://picsum.photos/1920/1080/?random=33")
