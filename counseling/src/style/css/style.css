@@ -1951,3 +1951,8 @@ body {
 #reserve .sumit button:nth-child(1) {
   margin-right: 2rem;
 }
+
+#reserve .remarks {
+  color: #a9a9a9;
+  font-style: italic;
+}

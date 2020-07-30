@@ -39,11 +39,15 @@
               b-form-textarea#textarea(v-model="form.worry" placeholder="寫下你/妳煩惱的事" size="lg")
             //-方式選擇
             label.formmethod *請選擇想要的服務類型:
-            b-form-checkbox-group(v-model='form.checked' :options="options" value-field="item" text-field="name")
+            b-form-radio-group(v-model='form.selected' :options="options" name="radio-options-slots")
             //-日期選擇
             b-form-group#input-group-5
               label.formmethod *請選擇日期:
-              b-form-datepicker#date(v-model="form.value" today-button reset-button close-button dark dropup )
+              b-form-datepicker#date(v-model="form.value" today-button reset-button close-button dropright )
+              div.d-flex.flex-column
+                label.formmethod *請選擇時段:
+                span.remarks 如非線上諮商請在預約時間前五分鐘到達，感謝您的配合
+              b-form-timepicker#time(v-model="form.timevalue" now-button reset-button locale="zh"  @context="onContext" dropright)
             div.sumit.d-flex.justify-content-center
               b-button(type='submit' variant='primary') 預約
               b-button(type='reset' variant='danger') 取消
@@ -105,13 +109,14 @@ export default {
         email: '',
         worry: '',
         value: '',
-        checked: []
+        selected: '',
+        timevalue: ''
       },
       show: true,
       options: [
-        { item: 'A', name: '醫生看診(藥物協助)' },
-        { item: 'B', name: '心理諮商(專業會談)' },
-        { item: 'C', name: '線上心理諮商' }
+        { text: '醫生看診(藥物協助)', value: 'A' },
+        { text: '心理諮商(專業會談)', value: 'B' },
+        { text: '線上心理諮商', value: 'C' }
       ],
       footers: [
         {
@@ -140,6 +145,9 @@ export default {
       this.$nextTick(() => {
         this.show = true
       })
+    },
+    onContext (ctx) {
+      this.context = ctx
     }
   }
 }
