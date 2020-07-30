@@ -5,7 +5,7 @@
         b-col.teamtop.d-flex.flex-column
           span.text-center(:style="{color:'#e9a040'}") DOCTOR & COUNSELOR
           span.text-center(:style="{color:'#4b7fc9',fontweight:'bolder'}") 傾心醫師&心理師
-    b-container
+    b-container.people
       b-row.dean
         b-col.teammenber(cols="12").d-flex.flex-column.align-items-center
           div

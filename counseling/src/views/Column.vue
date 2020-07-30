@@ -6,7 +6,7 @@
           span.text-center(:style="{color:'#FFFFFF'}") EVENTS & CLASSES
           span.text-center(:style="{color:'#ef8c52',fontweight:'bolder'}") 傾心活動＆講座
     //-column-----------------------------------------------------------------------------
-    b-container
+    b-container.columns
       b-row
         b-col.columnhover(cols="12" sm="6" md="4"  v-for="(column,index) in columns" :key="index")
           b-card(:img-src="column.src" overlay text-variant="white")

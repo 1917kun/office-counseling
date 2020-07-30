@@ -1009,7 +1009,7 @@ body {
     font-size: 2rem;
   }
   font-size: 14px;
-  padding-top: 2rem;
+  padding: 4rem 0;
   @include sm {
     max-width: 80%;
   }
@@ -1084,6 +1084,9 @@ body {
     span:nth-child(2) {
       font-size: 38px;
     }
+  }
+  .people{
+    margin-bottom: 5rem;
   }
   .dean {
     padding: 10% 0 8% 0;
@@ -1192,6 +1195,9 @@ body {
         margin: 0;
       }
     }
+  }
+  .columns{
+    margin-bottom: 5rem;
   }
   .columnhover {
     padding: 1rem 1.25rem 2rem 1.25rem;

@@ -1434,7 +1434,7 @@ body {
 
 .footer {
   font-size: 14px;
-  padding-top: 2rem;
+  padding: 4rem 0;
 }
 
 .footer .logotext {
@@ -1559,6 +1559,10 @@ body {
 
 #team .teamtop span:nth-child(2) {
   font-size: 38px;
+}
+
+#team .people {
+  margin-bottom: 5rem;
 }
 
 #team .dean {
@@ -1746,6 +1750,10 @@ body {
 
 #column .text .endtop p {
   margin: 0;
+}
+
+#column .columns {
+  margin-bottom: 5rem;
 }
 
 #column .columnhover {
