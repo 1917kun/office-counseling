@@ -40,8 +40,9 @@
           .btn3.align-self-center 了解更多
       //- carousel-------------------------------------------------------------
     .container
-      p.carouseltitle.text-center.p-o 傾心診所醫師＆心理師
-      b-carousel#carousel-1(v-model='slide' :interval='0' controls indicators background='white' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
+      div.d-flex.justify-content-center
+          p.carouseltitle.text-center.p-o 傾心診所醫師＆心理師
+      b-carousel#carousel-1(v-model='slide' :interval='3000' controls indicators background='white' img-width='1024' img-height='480'  @sliding-start='onSlideStart' @sliding-end='onSlideEnd')
         b-carousel-slide(v-for="(homecarousel,index) in homecarousels" :key="index")
           b-col(cols="12" sm="6")
             div
