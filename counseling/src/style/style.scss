@@ -1085,7 +1085,7 @@ body {
       font-size: 38px;
     }
   }
-  .people{
+  .people {
     margin-bottom: 5rem;
   }
   .dean {
@@ -1196,7 +1196,7 @@ body {
       }
     }
   }
-  .columns{
+  .columns {
     margin-bottom: 5rem;
   }
   .columnhover {
@@ -1288,6 +1288,7 @@ body {
   }
   .formmethod {
     font-style: italic;
+    padding: 1.25rem 0;
   }
   .time {
     .col-12 {
@@ -1313,6 +1314,22 @@ body {
       max-width: 100%;
       object-fit: cover;
       object-position: center;
+    }
+  }
+  .custom-control-inline {
+    margin-right: 10rem;
+    margin-bottom: 0.5rem;
+    @include sm {
+      margin-right: 0.7rem;
+    }
+    @include xl{
+      margin-right: 2rem;
+    }
+  }
+  .sumit{
+    margin-top: 3rem;
+    button:nth-child(1){
+      margin-right: 2rem;
     }
   }
 }

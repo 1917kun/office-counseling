@@ -1885,6 +1885,7 @@ body {
 
 #reserve .formmethod {
   font-style: italic;
+  padding: 1.25rem 0;
 }
 
 #reserve .time {
@@ -1924,4 +1925,29 @@ body {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+
+#reserve .custom-control-inline {
+  margin-right: 10rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 576px) {
+  #reserve .custom-control-inline {
+    margin-right: 0.7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  #reserve .custom-control-inline {
+    margin-right: 2rem;
+  }
+}
+
+#reserve .sumit {
+  margin-top: 3rem;
+}
+
+#reserve .sumit button:nth-child(1) {
+  margin-right: 2rem;
 }

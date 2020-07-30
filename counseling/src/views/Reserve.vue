@@ -43,9 +43,9 @@
             //-日期選擇
             b-form-group#input-group-5
               label.formmethod *請選擇日期:
-              b-form-datepicker#date(v-model="form.value" )
-            div.d-flex.justify-content-center
-              b-button.mr-3(type='submit' variant='primary') 預約
+              b-form-datepicker#date(v-model="form.value" today-button reset-button close-button dark dropup )
+            div.sumit.d-flex.justify-content-center
+              b-button(type='submit' variant='primary') 預約
               b-button(type='reset' variant='danger') 取消
             b-card.mt-3(header='Form Data Result')
               pre.m-0 {{ form }}
