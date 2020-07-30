@@ -12,10 +12,13 @@ import { faGratipay, faFacebook, faInstagram, faLine } from '@fortawesome/free-b
 import Lightbox from 'vue-easy-lightbox'
 import './plugins/bootstrap-vue'
 import './style/css/style.css'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.use(Lightbox)
+Vue.use(VueAxios, axios)
 library.add(faAngleRight, faCrown, faEye, faHeart, faGratipay, faWifi, faCoffee, faBabyCarriage, faFacebook, faInstagram, faLine)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false

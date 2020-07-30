@@ -103,13 +103,13 @@ export default {
   data () {
     return {
       form: {
-        name: '',
-        age: '',
-        number: '',
-        email: '',
-        worry: '',
-        value: '',
-        selected: '',
+        name: 'aaaa',
+        age: '22',
+        number: '097710017',
+        email: 'sdaasd@gmail.com',
+        worry: 'assdaasdasdasdasdasdsdadasd',
+        value: 'asdasd',
+        selected: 'B',
         timevalue: ''
       },
       show: true,
@@ -129,6 +129,19 @@ export default {
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
+      this.axios.post('http://localhost:3000/order', {
+        name: this.form.name,
+        age: this.form.age,
+        number: this.form.number,
+        email: this.form.email,
+        worry: this.form.worry
+      })
+        .then(res => {
+          console.log(res)
+        })
+        .catch(err => {
+          console.log(err.response.data)
+        })
       alert(JSON.stringify(this.form))
     },
     onReset (evt) {

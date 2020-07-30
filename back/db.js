@@ -11,7 +11,7 @@ dotenv.config()
 const Schema = mongoose.Schema
 
 // 連接資料庫
-mongoose.connect(process.env.dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DBURL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // 引用插件
 mongoose.plugin(beautifyUnique)
@@ -45,7 +45,7 @@ const caseSchema = new Schema(
       // max: [99, '請輸入有效年齡'],
       required: [true, '年齡必填']
     },
-    phone: {
+    number: {
       type: String,
       min: [6, '必須大於 6碼'],
       required: [true, '電話必填'],
@@ -65,14 +65,11 @@ const caseSchema = new Schema(
         message: '信箱格式錯誤'
       }
     },
-    event: {
+    worry: {
       type: String,
       minlength: [10, '最少 10 個字'],
       maxlength: [300, '最多 300 個字'],
       required: [true, '請先告訴我們喔']
-    },
-    type: {
-      
     }
   },
   {
@@ -85,8 +82,10 @@ const caseSchema = new Schema(
 // mongoose.model('資料表名稱', Schema)
 // 資料表名稱必須為複數，結尾加 s
 const cases = mongoose.model('cases', caseSchema)
+const connection = mongoose.connection
 
 // 匯出變數
 export default {
-  cases
+  cases,
+  connection
 }
