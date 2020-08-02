@@ -614,6 +614,12 @@ body {
   }
 }
 
+@media (min-width: 1500px) {
+  #home .carousel-item {
+    height: 40vh;
+  }
+}
+
 #home .carousel-item .carousel-caption {
   z-index: 0;
   padding-top: 2rem;

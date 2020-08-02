@@ -51,8 +51,6 @@
             div.sumit.d-flex.justify-content-center
               b-button(type='submit' variant='primary') 預約
               b-button(type='reset' variant='danger') 取消
-            b-card.mt-3(header='Form Data Result')
-              pre.m-0 {{ form }}
       //-門診時間 ----------------------------------------------------------
     b-container.time
       b-row.justify-content-center

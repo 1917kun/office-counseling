@@ -422,6 +422,9 @@ body {
     @include xl {
       height: 30vh;
     }
+    @include xxl{
+      height: 40vh;
+    }
     text-shadow: none;
     background: white !important;
     .carousel-caption {
