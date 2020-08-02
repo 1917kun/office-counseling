@@ -27,7 +27,7 @@
               b-form-input#input-1(v-model='form.name' required placeholder='')
             //-年齡
             b-form-group#input-group-2(label='年齡:' label-for='input-2')
-              b-form-input#input-2(v-model='form.age' required placeholder='')
+              b-form-input#input-2(v-model='form.age' type="number" required placeholder='')
             //-電話
             b-form-group#input-group-3(label='聯絡電話:'  label-for='input-3')
               b-form-input#input-3(v-model='form.number' required placeholder='')
@@ -36,20 +36,20 @@
               b-form-input#input-4(v-model='form.email' type='email' required placeholder='')
             //-煩惱的事
             b-form-group#input-group-5(label="你/妳煩惱的事:" label-for="textarea" description="")
-              b-form-textarea#textarea(v-model="form.worry" placeholder="寫下你/妳煩惱的事" size="lg")
+              b-form-textarea#textarea(v-model="form.worry" required placeholder="寫下你/妳煩惱的事" size="lg")
             //-方式選擇
             label.formmethod *請選擇想要的服務類型:
             b-form-radio-group(v-model='form.selected' :options="options" name="radio-options-slots")
             //-日期選擇
             b-form-group#input-group-5
               label.formmethod *請選擇日期:
-              b-form-datepicker#date(v-model="form.value" today-button reset-button close-button dropright )
+              b-form-datepicker#date(v-model="form.date" required today-button reset-button close-button dropright )
               div.d-flex.flex-column
                 label.formmethod *請選擇時段:
                 span.remarks 如非線上諮商請在預約時間前五分鐘到達，感謝您的配合
-              b-form-timepicker#time(v-model="form.timevalue" now-button reset-button locale="zh"  @context="onContext" dropright)
+              b-form-timepicker#time(v-model="form.time" required now-button reset-button locale="zh"  @context="onContext" dropright)
             div.sumit.d-flex.justify-content-center
-              b-button(type='submit' variant='primary') 預約
+              b-button(type='submit' variant='primary' :disabled="disabled") 預約
               b-button(type='reset' variant='danger') 取消
       //-門診時間 ----------------------------------------------------------
     b-container.time
@@ -101,20 +101,20 @@ export default {
   data () {
     return {
       form: {
-        name: 'aaaa',
-        age: '22',
-        number: '097710017',
-        email: 'sdaasd@gmail.com',
-        worry: 'assdaasdasdasdasdasdsdadasd',
-        value: 'asdasd',
-        selected: 'B',
-        timevalue: ''
+        name: '',
+        age: null,
+        number: '',
+        email: '',
+        worry: '',
+        selected: '醫生看診(藥物協助)',
+        date: '',
+        time: ''
       },
       show: true,
       options: [
-        { text: '醫生看診(藥物協助)', value: 'A' },
-        { text: '心理諮商(專業會談)', value: 'B' },
-        { text: '線上心理諮商', value: 'C' }
+        { text: '醫生看診(藥物協助)', value: '醫生看診(藥物協助)' },
+        { text: '心理諮商(專業會談)', value: '心理諮商(專業會談)' },
+        { text: '線上心理諮商', value: '線上心理諮商' }
       ],
       footers: [
         {
@@ -124,21 +124,20 @@ export default {
       ]
     }
   },
+  computed: {
+    disabled () {
+      return (this.form.date.length === 0 || this.form.time.length === 0)
+    }
+  },
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
-      this.axios.post('http://localhost:3000/order', {
-        name: this.form.name,
-        age: this.form.age,
-        number: this.form.number,
-        email: this.form.email,
-        worry: this.form.worry
-      })
+      this.axios.post('http://localhost:3000/order', this.form)
         .then(res => {
-          console.log(res)
+          console.log(res.data.result)
         })
         .catch(err => {
-          console.log(err.response.data)
+          console.log(err.response.data.message)
         })
       alert(JSON.stringify(this.form))
     },

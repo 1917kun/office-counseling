@@ -70,6 +70,18 @@ const caseSchema = new Schema(
       minlength: [10, '最少 10 個字'],
       maxlength: [300, '最多 300 個字'],
       required: [true, '請先告訴我們喔']
+    },
+    date: {
+      type: String,
+      required: true
+    },
+    time: {
+      type: String,
+      required: true
+    },
+    selected: {
+      type: String,
+      required: true
     }
   },
   {

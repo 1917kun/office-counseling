@@ -1962,3 +1962,7 @@ body {
   color: #a9a9a9;
   font-style: italic;
 }
+
+#backpage table {
+  table-layout: fixed;
+}

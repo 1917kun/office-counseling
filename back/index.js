@@ -67,7 +67,10 @@ app.post('/order', async (req, res) => {
       age: req.body.age,
       number: req.body.number,
       email: req.body.email,
-      worry: req.body.worry
+      worry: req.body.worry,
+      date: req.body.date,
+      time: req.body.time,
+      selected: req.body.selected
     })
     res.status(200)
     res.send({ success: true, message: '', result })
@@ -84,6 +87,15 @@ app.post('/order', async (req, res) => {
       res.status(500)
       res.send({ success: false, message: '伺服器錯誤' })
     }
+  }
+})
+
+app.get('/order', async (req, res) => {
+  try {
+    const result = await db.cases.find()
+    res.send({ success: true, message: '', result })
+  } catch (error) {
+    res.status(500).send({ success: false, message: '伺服器錯誤' })
   }
 })
 

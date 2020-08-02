@@ -46,6 +46,14 @@ const routes = [
     }
   },
   {
+    path: '/back',
+    name: 'Backpage',
+    component: () => import(/* webpackChunkName: "NotFound" */ '../views/Backpage.vue'),
+    meta: {
+      title: '後台'
+    }
+  },
+  {
     path: '*',
     name: 'NotFound',
     component: () => import(/* webpackChunkName: "NotFound" */ '../views/NotFound.vue'),
@@ -53,13 +61,12 @@ const routes = [
       title: '找不到頁面喔'
     }
   }
-
 ]
 
 const router = new VueRouter({
   routes
 })
 router.afterEach((to, from) => {
-  document.write = to.meta.title
+  document.title = to.meta.title
 })
 export default router
