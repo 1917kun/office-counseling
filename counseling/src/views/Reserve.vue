@@ -23,20 +23,20 @@
         b-col(cols="12" md="8" lg="6").p-0
           b-form(@submit='onSubmit' @reset='onReset' v-if='show')
             //-名字
-            b-form-group#input-group-1(label='名字:' label-for='input-1')
-              b-form-input#input-1(v-model='form.name' required placeholder='')
+            b-form-group#input-group-1(label='名字:' label-for='input-1' :invalid-feedback='nameinvalidFeedback' :valid-feedback='namevalidFeedback' :state="namestate")
+              b-form-input#input-1(v-model='form.name' required placeholder='' :state="namestate")
             //-年齡
-            b-form-group#input-group-2(label='年齡:' label-for='input-2')
-              b-form-input#input-2(v-model='form.age' type="number" required placeholder='')
+            b-form-group#input-group-2(label='年齡:' label-for='input-2' :invalid-feedback='ageinvalidFeedback' :valid-feedback='agevalidFeedback' :state="agestate")
+              b-form-input#input-2(v-model='form.age' type="number" required placeholder='' :state="agestate")
             //-電話
-            b-form-group#input-group-3(label='聯絡電話:'  label-for='input-3')
-              b-form-input#input-3(v-model='form.number' required placeholder='')
+            b-form-group#input-group-3(label='聯絡電話:'  label-for='input-3' :invalid-feedback='phoneinvalidFeedback' :valid-feedback='phonevalidFeedback' :state="phonestate")
+              b-form-input#input-3(v-model='form.number' type='number' required placeholder='' :state="phonestate")
             //-Email
-            b-form-group#input-group-4(label='Email:' label-for='input-4' description='')
-              b-form-input#input-4(v-model='form.email' type='email' required placeholder='')
+            b-form-group#input-group-4(label='Email:' label-for='input-4' description='' :invalid-feedback='emailinvalidFeedback' :valid-feedback='emailvalidFeedback' :state="emailstate")
+              b-form-input#input-4(v-model='form.email' type='email' required placeholder='' :state="emailstate")
             //-煩惱的事
-            b-form-group#input-group-5(label="你/妳煩惱的事:" label-for="textarea" description="")
-              b-form-textarea#textarea(v-model="form.worry" required placeholder="寫下你/妳煩惱的事" size="lg")
+            b-form-group#input-group-5(label="你/妳煩惱的事:" label-for="textarea" description="" :invalid-feedback='worryinvalidFeedback' :valid-feedback='worryvalidFeedback' :state="worrystate")
+              b-form-textarea#textarea(v-model="form.worry" required placeholder="寫下你/妳煩惱的事" size="lg" :state="worrystate")
             //-方式選擇
             label.formmethod *請選擇想要的服務類型:
             b-form-radio-group(v-model='form.selected' :options="options" name="radio-options-slots")
@@ -51,7 +51,7 @@
             div.sumit.d-flex.justify-content-center
               b-button(type='submit' variant='primary' :disabled="disabled") 預約
               b-button(type='reset' variant='danger') 取消
-      //-門診時間 ----------------------------------------------------------
+    //-門診時間 ----------------------------------------------------------
     b-container.time
       b-row.justify-content-center
         b-col(cols="12" md="8" lg="6")
@@ -102,7 +102,7 @@ export default {
     return {
       form: {
         name: '',
-        age: null,
+        age: '',
         number: '',
         email: '',
         worry: '',
@@ -126,7 +126,81 @@ export default {
   },
   computed: {
     disabled () {
-      return (this.form.date.length === 0 || this.form.time.length === 0)
+      return (this.form.name.length === 0 || this.form.age.length === 0 || this.form.email.length === 0 || this.form.time.number === 0 || this.form.email.length === 0 || this.form.worry.length === 0 || this.form.date.length === 0 || this.form.time.length === 0)
+    },
+    // name-----------------------------------
+    namestate () {
+      return (this.form.name.length === 0) ? null : isNaN(this.form.name) === true
+    },
+    nameinvalidFeedback () {
+      return (!isNaN(this.form.name)) ? '請輸入文字' : ''
+    },
+    namevalidFeedback () {
+      return this.state === true ? '感謝您的填寫' : ''
+    },
+    // age------------------------------------
+    agestate () {
+      if (this.form.age.length === 0) {
+        return null
+      } else if (this.form.age > 0 && this.form.age < 99) {
+        return true
+      } else {
+        return false
+      }
+    },
+    ageinvalidFeedback () {
+      return (this.form.age > 99 || this.form.age < 0) ? '請輸入正確年齡' : ''
+    },
+    agevalidFeedback () {
+      return this.agestate === true ? '感謝您的填寫' : ''
+    },
+    // phone-----------------------------------------------
+    phonestate () {
+      if (this.form.number.length === 0) {
+        return null
+      } else if (this.form.number.length > 6) {
+        return true
+      } else {
+        return false
+      }
+    },
+    phoneinvalidFeedback () {
+      return (this.phonestate === false || isNaN(this.form.number)) ? '請輸入正確電話號碼' : ''
+    },
+    phonevalidFeedback () {
+      return this.phonestate === true ? '感謝您的填寫' : ''
+    },
+    // email------------------------------------------------
+    emailstate () {
+      if (this.form.email.length === 0) {
+        return null
+      } else if (this.form.email.includes('@')) {
+        return true
+      } else {
+        return false
+      }
+    },
+    emailinvalidFeedback () {
+      return (this.emailstate === false) ? '請輸入正確信箱' : ''
+    },
+    emailvalidFeedback () {
+      return this.emailstate === true ? '感謝您的填寫' : ''
+    },
+    // worry-------------------------------------------------
+    worrystate () {
+      if (this.form.worry.length === 0) {
+        return null
+      } else if (this.form.worry.length <= 10) {
+        return false
+      } else {
+        return true
+      }
+    },
+    worryinvalidFeedback () {
+      return this.worrystate === false ? '請輸入至少10個字' : ''
+    },
+    worryvalidFeedback () {
+      return this.worrystate === true ? '感謝您的填寫' : ''
     }
   },
   methods: {
@@ -139,7 +213,7 @@ export default {
         .catch(err => {
           console.log(err.response.data.message)
         })
-      alert(JSON.stringify(this.form))
+      this.$swal({ icon: 'success', title: '預約成功!', confirmButtonText: 'Cool' })
     },
     onReset (evt) {
       evt.preventDefault()

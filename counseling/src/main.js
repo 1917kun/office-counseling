@@ -9,11 +9,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faAngleRight, faCrown, faEye, faHeart, faWifi, faCoffee, faBabyCarriage } from '@fortawesome/free-solid-svg-icons'
 import { faGratipay, faFacebook, faInstagram, faLine } from '@fortawesome/free-brands-svg-icons'
+import VueSweetalert2 from 'vue-sweetalert2'
 import Lightbox from 'vue-easy-lightbox'
-import './plugins/bootstrap-vue'
-import './style/css/style.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import './plugins/bootstrap-vue'
+import './style/css/style.css'
+import 'sweetalert2/dist/sweetalert2.min.css'
 
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
@@ -22,6 +24,8 @@ Vue.use(VueAxios, axios)
 library.add(faAngleRight, faCrown, faEye, faHeart, faGratipay, faWifi, faCoffee, faBabyCarriage, faFacebook, faInstagram, faLine)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
+
+Vue.use(VueSweetalert2)
 new Vue({
   router,
   store,

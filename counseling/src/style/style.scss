@@ -1341,7 +1341,27 @@ body {
   }
 }
 #backpage{
+  position: relative;
   table{
     table-layout: fixed;
   }
+  ul{
+    position: absolute;
+    top:80vh;
+    right: 45vw;
+  }
+  .b-table-details{
+    color: #656d74;
+    background: #eaeff1;
+  }
+  .b-table-has-details{
+    background: #eaeff1;
+  }
+  tbody > tr{
+    font-size: 1.2rem;
+  }
+  // thead > tr > th
+  // {
+  //   text-align: center;
+  // }
 }

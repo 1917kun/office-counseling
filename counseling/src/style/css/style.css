@@ -1963,6 +1963,29 @@ body {
   font-style: italic;
 }
 
+#backpage {
+  position: relative;
+}
+
 #backpage table {
   table-layout: fixed;
+}
+
+#backpage ul {
+  position: absolute;
+  top: 80vh;
+  right: 45vw;
+}
+
+#backpage .b-table-details {
+  color: #656d74;
+  background: #eaeff1;
+}
+
+#backpage .b-table-has-details {
+  background: #eaeff1;
+}
+
+#backpage tbody > tr {
+  font-size: 1.2rem;
 }

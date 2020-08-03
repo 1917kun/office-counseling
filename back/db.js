@@ -27,7 +27,7 @@ const caseSchema = new Schema(
       // 最小長度，自訂錯誤訊息
       minlength: [2, '名字最多 2 個字'],
       // 最大長度，自訂錯誤訊息
-      maxlength: [20, '名字最多 20 個字'],
+      // maxlength: [20, '名字最多 20 個字'],
       // 必填欄位，自訂錯誤訊息
       required: [true, '名字必填']
       // 避免重複，只能設定 true，無法自訂錯誤訊息，除非使用插件
@@ -68,7 +68,7 @@ const caseSchema = new Schema(
     worry: {
       type: String,
       minlength: [10, '最少 10 個字'],
-      maxlength: [300, '最多 300 個字'],
+      // maxlength: [300, '最多 300 個字'],
       required: [true, '請先告訴我們喔']
     },
     date: {
