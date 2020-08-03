@@ -14,7 +14,7 @@
 export default {
   data () {
     return {
-      perPage: 10,
+      perPage: 5,
       currentPage: 1,
       items: [],
       fields: [
