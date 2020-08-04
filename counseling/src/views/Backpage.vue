@@ -1,50 +1,67 @@
-<template lang="pug">
-  #backpage
-    b-container.mt-5(fluid).overflow-auto
-      p.mt-3 目前頁面: {{ currentPage }}
-      b-table#my-table(:items='items' :per-page='perPage' :current-page='currentPage' small :fields="fields")
-        template(v-slot:row-details="row")
-          | {{ row.item.worry }}
-        template(v-slot:cell(worry)="row")
-          b-button(@click="row.toggleDetails") 詳細資料
-      b-pagination(v-model='currentPage' :total-rows='rows' :per-page='perPage' aria-controls='my-table' pills align="center")
+<template>
+  <div id="back" class="bg-dark" style="padding-top:20px">
+    <h1 class="text-center text-white">後臺管理</h1>
+    <div class="container">
+      <div class="row justify-content-center">
+        <vs-button class="" @click="active=!active" color="primary" type="filled">立即管理</vs-button>
+      </div>
+      <vs-sidebar
+        position-left
+        parent="body"
+        default-index="1"
+        color="primary"
+        class="sidebarx"
+        spacer
+        v-model="active"
+      >
+        <div class="header-sidebar text-center" slot="header">
+          <vs-avatar
+            size="120px"
+            src=""/>
+          <h4></h4>
+        </div>
+        <vs-sidebar-item to="/cases"  index="1">
+          <h4>個案資料管理</h4>
+        </vs-sidebar-item>
+        <vs-sidebar-item to="/member"  index="2">
+          <h4>人事資料管理</h4>
+        </vs-sidebar-item>
+      </vs-sidebar>
+    </div>
+    <div class="container-fluid p-0">
+      <router-view></router-view>
+    </div>
+  </div>
 </template>
-
 <script>
 export default {
-  data () {
-    return {
-      perPage: 5,
-      currentPage: 1,
-      items: [],
-      fields: [
-        { key: 'name', label: '姓名' },
-        { key: 'age', label: '年齡' },
-        { key: 'number', label: '電話' },
-        { key: 'email', label: 'E-mail' },
-        { key: 'worry', label: '煩惱' },
-        { key: 'selected', label: '類型' },
-        { key: 'date', label: '日期' },
-        { key: 'time', label: '時間' }
-      ]
-    }
-  },
-  computed: {
-    rows () {
-      return this.items.length
-    }
-  },
-  methods: {
-    getData () {
-      this.axios.get('http://localhost:3000/order')
-        .then(res => {
-          this.items = res.data.result
-        })
-    }
-  },
-  mounted () {
-    this.getData()
-    setInterval(this.getData, 1000 * 60)
-  }
+  data: () => ({
+    active: false
+  })
 }
 </script>
+
+<style lang="scss">
+.header-sidebar
+  display flex
+  align-items center
+  justify-content center
+  flex-direction column
+  width 100%
+  h4
+    display flex
+    align-items center
+    justify-content center
+    width 100%
+    > button
+      margin-left 10px
+.footer-sidebar
+  display flex
+  align-items center
+  justify-content space-between
+  width 100%
+  > button
+      border 0px solid rgba(0,0,0,0) !important
+      border-left 1px solid rgba(0,0,0,.07) !important
+      border-radius 0px !important
+</>

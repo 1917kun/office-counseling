@@ -1340,16 +1340,17 @@ body {
     font-style: italic;
   }
 }
-#backpage{
-  position: relative;
+#cases{
+  // position: relative;
+  background: white;
   table{
     table-layout: fixed;
   }
-  ul{
-    position: absolute;
-    top:80vh;
-    right: 45vw;
-  }
+  // ul{
+  //   position: absolute;
+  //   top:80vh;
+  //   right: 45vw;
+  // }
   .b-table-details{
     color: #656d74;
     background: #eaeff1;
@@ -1358,10 +1359,13 @@ body {
     background: #eaeff1;
   }
   tbody > tr{
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   // thead > tr > th
   // {
   //   text-align: center;
   // }
+}
+#back{
+  height: calc(100vh - 90px);
 }

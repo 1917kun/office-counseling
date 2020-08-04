@@ -1963,29 +1963,27 @@ body {
   font-style: italic;
 }
 
-#backpage {
-  position: relative;
+#cases {
+  background: white;
 }
 
-#backpage table {
+#cases table {
   table-layout: fixed;
 }
 
-#backpage ul {
-  position: absolute;
-  top: 80vh;
-  right: 45vw;
-}
-
-#backpage .b-table-details {
+#cases .b-table-details {
   color: #656d74;
   background: #eaeff1;
 }
 
-#backpage .b-table-has-details {
+#cases .b-table-has-details {
   background: #eaeff1;
 }
 
-#backpage tbody > tr {
-  font-size: 1.2rem;
+#cases tbody > tr {
+  font-size: 1rem;
+}
+
+#back {
+  height: calc(100vh - 90px);
 }

@@ -90,14 +90,33 @@ const caseSchema = new Schema(
   }
 )
 
+const fileSchema = new Schema({
+  user: {
+    type: String,
+    required: [true, '沒有使用者名稱']
+  },
+  description: {
+    type: String,
+    maxlength: [200, '說明必須兩百個字以下']
+  },
+  name: {
+    type: String,
+    required: [true, '沒有檔案名稱']
+  }
+}, {
+  versionKey: false
+})
+
 // 建立 Model
 // mongoose.model('資料表名稱', Schema)
 // 資料表名稱必須為複數，結尾加 s
 const cases = mongoose.model('cases', caseSchema)
+const files = mongoose.model('files', fileSchema)
 const connection = mongoose.connection
 
 // 匯出變數
 export default {
   cases,
+  files,
   connection
 }

@@ -48,6 +48,33 @@ const routes = [
   {
     path: '/back',
     name: 'Backpage',
+    component: () => import(/* webpackChunkName: "back" */ '../views/Backpage.vue'),
+    meta: {
+      title: '後台'
+    },
+    children: [
+      {
+        path: '/cases',
+        name: 'Cases',
+        component: () => import(/* webpackChunkName: "cases" */ '../views/Cases.vue'),
+        meta: {
+          title: '個案管理'
+        }
+      },
+      {
+        path: '/member',
+        name: 'Member',
+        component: () => import(/* webpackChunkName: "member" */ '../views/Member.vue'),
+        meta: {
+          login: true,
+          title: '人員管理'
+        }
+      }
+    ]
+  },
+  {
+    path: '/back',
+    name: 'B',
     component: () => import(/* webpackChunkName: "NotFound" */ '../views/Backpage.vue'),
     meta: {
       title: '後台'
