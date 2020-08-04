@@ -91,10 +91,6 @@ const caseSchema = new Schema(
 )
 
 const fileSchema = new Schema({
-  user: {
-    type: String,
-    required: [true, '沒有使用者名稱']
-  },
   description: {
     type: String,
     maxlength: [200, '說明必須兩百個字以下']

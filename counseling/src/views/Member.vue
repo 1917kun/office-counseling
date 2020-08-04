@@ -29,15 +29,15 @@
       b-row
           b-col(cols="12" md="6" lg="3" v-for="(image, idx) in images" :key="idx")
             b-card
-              b-card-img(:src="image.src" v-pswp="image")
-              b-card-body
-                b-btn(v-if="image.edit" variant="danger" @click="cancel(image)") 取消
-                b-btn(v-else variant="success" @click="edit(image)") 編輯
-                b-btn(v-if="image.edit" variant="success" @click="update(image)") 更新
-                b-btn(v-else variant="danger" @click="del(image, idx)") 刪除
-                hr
-                pre(v-if="!image.edit") {{ image.title }}
-                b-form-textarea(v-else v-model="image.model")
+              b-card-img(:src="image.name" v-pswp="image")
+              //- b-card-body
+              //-   b-btn(v-if="image.edit" variant="danger" @click="cancel(image)") 取消
+              //-   b-btn(v-else variant="success" @click="edit(image)") 編輯
+              //-   b-btn(v-if="image.edit" variant="success" @click="update(image)") 更新
+              //-   b-btn(v-else variant="danger" @click="del(image, idx)") 刪除
+              //-   hr
+              //-   pre(v-if="!image.edit") {{ image.title }}
+              //-   b-form-textarea(v-else v-model="image.model")
 </template>
 
 <script>
@@ -85,8 +85,7 @@ export default {
         const fd = new FormData()
         fd.append('image', this.file)
         fd.append('description', this.description)
-
-        this.axios.post(process.env.VUE_APP_APIURL + '/file', fd, {
+        this.axios.post('http://localhost:3000/file', fd, {
           // 因為 axios 預設是送 json，所以要自己設定成 formdata
           headers: {
             'Content-Type': 'multipart/form-data'
@@ -104,7 +103,7 @@ export default {
           this.file = null
           this.description = ''
         }).catch(error => {
-          alert(error.response.data.message)
+          console.log(error)
         })
       }
     },
@@ -137,17 +136,12 @@ export default {
     }
   },
   mounted () {
-    this.axios.get(process.env.VUE_APP_APIURL + '/member/' + this.user)
+    this.axios.get(process.env.VUE_APP_APIURL + '/member')
       .then(response => {
-        this.images = response.data.result.map(d => {
-          return {
-            title: d.description,
-            src: process.env.VUE_APP_APIURL + '/file/' + d.name,
-            _id: d._id,
-            edit: false,
-            model: d.name
-          }
-        })
+        this.images = response.data.result
+        for (const i of this.images) {
+          i.name = process.env.VUE_APP_APIURL + '/file/' + i.name
+        }
       })
       .catch(() => {
         alert('發生錯誤')

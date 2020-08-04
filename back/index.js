@@ -8,9 +8,12 @@ import cors from 'cors'
 // import md5 from 'md5'
 // 資料庫檔案
 import db from './db.js'
-
+import multer from 'multer'
+import path from 'path'
+import FTPStorage from 'multer-ftp'
 import connectMongo from 'connect-mongo'
 import session from 'express-session'
+import fs from 'fs'
 
 const app = express()
 
@@ -44,14 +47,23 @@ app.use(bodyParser.json())
 
 // 設定跨域套件
 app.use(cors({
-  // origin 為請求來源網域, callback 為是否允許的回應
   origin (origin, callback) {
-    // 允許任何來源網域的請求
-    callback(null, true)
-    // 若要拒絕請求則是
-    // callback(new Error('cors error'), false)
+    // 直接開網頁，不是 ajax 時，origin 是 undefined
+    if (origin === undefined) {
+      callback(null, true)
+    } else {
+      if (process.env.ALLOW_CORS === 'true') {
+        // 開發環境，允許
+        callback(null, true)
+      } else if (origin.includes('github')) {
+        // 非開發環境，但是從 github 過來，允許
+        callback(null, true)
+      } else {
+        // 不是開發也不是從 github 過來，拒絕
+        callback(new Error('Not allowed'), false)
+      }
+    }
   },
-  // 允許跨域認證
   credentials: true
 }))
 
@@ -99,6 +111,136 @@ app.get('/order', async (req, res) => {
   }
 })
 
+let storage
+if (process.env.FTP === 'false') {
+  // 開發環境將上傳檔案放本機
+  storage = multer.diskStorage({
+    destination (req, file, cb) {
+      cb(null, 'images/')
+    },
+    filename (req, file, cb) {
+      cb(null, Date.now() + path.extname(file.originalname))
+    }
+  })
+} else {
+  // heroku 將上傳檔案放伺服器
+  storage = new FTPStorage({
+    // 上傳伺服器的路徑
+    basepath: '/',
+    // FTP 設定
+    ftp: {
+      host: process.env.FTP_HOST,
+      secure: false,
+      user: process.env.FTP_USER,
+      password: process.env.FTP_PASSWORD
+    },
+    destination (req, file, options, cb) {
+      cb(null, options.basepath + Date.now() + path.extname(file.originalname))
+    }
+  })
+}
+
+const upload = multer({
+  storage,
+  fileFilter (req, file, cb) {
+    if (!file.mimetype.includes('image')) {
+      // 觸發 multer 錯誤，不接受檔案
+      // LIMIT_FORMAT 是自訂的錯誤 CODE，跟內建的錯誤 CODE 格式統一
+      cb(new multer.MulterError('LIMIT_FORMAT'), false)
+    } else {
+      cb(null, true)
+    }
+  },
+  limits: {
+    fileSize: 1024 * 1024
+  }
+})
+
+app.get('/member', async (req, res) => {
+  try {
+    const result = await db.files.find()
+    res.send({ success: true, message: '', result })
+  } catch (error) {
+    console.log(error)
+    res.status(500).send({ success: false, message: '伺服器錯誤' })
+  }
+})
+
+app.post('/file', async (req, res) => {
+  if (!req.headers['content-type'].includes('multipart/form-data')) {
+    res.status(400)
+    res.send({ success: false, message: '格式不符' })
+    return
+  }
+  // 有一個上傳進來的檔案，欄位是 image
+  // req，進來的東西
+  // res，要出去的東西
+  // err，檔案上傳的錯誤
+  // upload.single(欄位)(req, res, 上傳完畢的 function)
+  upload.single('image')(req, res, async error => {
+    if (error instanceof multer.MulterError) {
+      // 上傳錯誤
+      let message = ''
+      if (error.code === 'LIMIT_FILE_SIZE') {
+        message = '檔案太大'
+      } else {
+        message = '格式不符'
+      }
+      res.status(400)
+      res.send({ success: false, message })
+    } else if (error) {
+      res.status(500)
+      res.send({ success: false, message: '伺服器錯誤' })
+    } else {
+      try {
+        let name = ''
+        if (process.env.FTP === 'true') {
+          name = path.basename(req.file.path)
+        } else {
+          name = req.file.filename
+        }
+        const result = await db.files.create(
+          {
+            user: req.session.user,
+            description: req.body.description,
+            name
+          }
+        )
+        res.status(200)
+        res.send({ success: true, message: '', name, _id: result._id })
+      } catch (error) {
+        if (error.name === 'ValidationError') {
+          // 資料格式錯誤
+          const key = Object.keys(error.errors)[0]
+          const message = error.errors[key].message
+          res.status(400)
+          res.send({ success: false, message })
+        } else {
+          console.log(error)
+          // 伺服器錯誤
+          res.status(500)
+          res.send({ success: false, message: '伺服器錯誤' })
+        }
+      }
+    }
+  })
+})
+
+app.get('/file/:name', async (req, res) => {
+  if (process.env.FTP === 'false') {
+    const path = process.cwd() + '/images/' + req.params.name
+    const exists = fs.existsSync(path)
+    if (exists) {
+      res.status(200)
+      res.sendFile(path)
+    } else {
+      res.status(404)
+      res.send({ success: false, message: '找不到圖片' })
+    }
+  } else {
+    res.redirect('http://' + process.env.FTP_HOST + '/' + process.env.FTP_USER + '/' + req.params.name)
+  }
+})
 // 啟動網頁伺服器
 app.listen(process.env.PORT, () => {
   console.log('已啟動')

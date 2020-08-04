@@ -16,9 +16,9 @@
       b-row.team
         b-col.teammenber(cols="12" sm="4" v-for="(team,index) in teams" :key="index").d-flex.flex-column.align-items-center
           div.pic(@click="showImg(index)")
-            img(:src='team.src' width="256px" height="214px")
-          span.pt-2 {{team.name}}
-          span {{team.position}}
+            img(:src='team.name' width="256px" height="214px")
+          span.pt-2 {{team.description}}
+          //- span {{team.position}}
         vue-easy-lightbox(:visible='visible' :imgs='teams' :index='index' @hide='handleHide')
     //- footer---------------------------------------------------
     hr
@@ -63,111 +63,111 @@ export default {
       visible: false,
       index: 0,
       teams: [
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=51',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=52',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=53',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        },
-        {
-          src: 'https://picsum.photos/1920/1080/?random=50',
-          name: 'XXX',
-          position: '心理醫師'
-        }
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=51',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=52',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=53',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // },
+        // {
+        //   src: 'https://picsum.photos/1920/1080/?random=50',
+        //   name: 'XXX',
+        //   position: '心理醫師'
+        // }
       ],
       footers: [
         {
@@ -185,6 +185,18 @@ export default {
     handleHide () {
       this.visible = false
     }
+  },
+  mounted () {
+    this.axios.get(process.env.VUE_APP_APIURL + '/member')
+      .then(response => {
+        this.teams = response.data.result
+        for (const i of this.teams) {
+          i.name = process.env.VUE_APP_APIURL + '/file/' + i.name
+        }
+      })
+      .catch(() => {
+        alert('發生錯誤')
+      })
   }
 }
 </script>
