@@ -19,7 +19,7 @@
             img(:src='team.name' width="256px" height="214px")
           span.pt-2 {{team.description}}
           //- span {{team.position}}
-        vue-easy-lightbox(:visible='visible' :imgs='teams' :index='index' @hide='handleHide')
+        vue-easy-lightbox(:visible='visible' :imgs='team' :index='index' @hide='handleHide')
     //- footer---------------------------------------------------
     hr
     b-container.footer

@@ -20,6 +20,7 @@
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-easy-lightbox": "^0.14.0",
+    "vue-pswipe": "^0.15.0",
     "vue-router": "^3.2.0",
     "vue-sweetalert2": "^3.0.6",
     "vuesax": "^3.11.17",

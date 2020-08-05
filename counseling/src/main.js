@@ -14,6 +14,7 @@ import Lightbox from 'vue-easy-lightbox'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Vuesax from 'vuesax'
+import Photoswipe from 'vue-pswipe'
 import 'vuesax/dist/vuesax.css'
 import './plugins/bootstrap-vue'
 import './style/css/style.css'
@@ -27,6 +28,7 @@ Vue.use(Vuesax)
 library.add(faAngleRight, faCrown, faEye, faHeart, faGratipay, faWifi, faCoffee, faBabyCarriage, faFacebook, faInstagram, faLine)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
+Vue.use(Photoswipe)
 
 Vue.use(VueSweetalert2)
 new Vue({

@@ -6,7 +6,7 @@
       b-container.d-flex.justify-content-center
         b-row.professionrow
           b-col.professioncol1(cols="12")
-            img.img1(src="https://picsum.photos/1920/1080/?random=1")
+            img.img1(src="/img/logo.699cef0b.svg")
             h1(:style="{color:'#a9a9a9'}") 傾心的專業協助
             p 一般人進入諮商診所後往往因緊張而不知道該如何開口尋求幫助,本診所將會由醫師或是心理師,為您進行第一次會談評估,再建議最適合您的諮商或治療方式。
             p 無論是進行藥物治療、心理會談治療、給兒童的團體訓練課程，我們都有完整的醫療團隊提供。
@@ -46,7 +46,7 @@
                 li 4.為維護診所品質，還未到號前可以至我們的休憩區等待。
     //- Charges-----------------------------------------------------------------
     b-container#Charges(fluid).p-0.servicecharges
-      img.servicechargesimg(src="https://picsum.photos/1920/1080/?random=33")
+      img.servicechargesimg(src="/img/charge.png")
     //- footer---------------------------------------------------
     b-container.footer
       b-row.footerrow
@@ -88,17 +88,17 @@ export default {
     return {
       services: [
         {
-          src: 'https://picsum.photos/1920/1080/?random=55',
+          src: '/img/1.jpg',
           span: '評估機制',
           text: '提供完整的評估與治療，只要會談完第一次，後續會為您安排適切的協助模式。'
         },
         {
-          src: 'https://picsum.photos/1920/1080/?random=56',
+          src: '/img/2.jpg',
           span: '藥物＆心理諮商',
           text: '提供完整的評估與治療，只要會談完第一次，後續會為您安排適切的協助模式。'
         },
         {
-          src: 'https://picsum.photos/1920/1080/?random=57',
+          src: '/img/3.jpg',
           span: '團體課程',
           text: '提供完整的評估與治療，只要會談完第一次，後續會為您安排適切的協助模式。'
         }

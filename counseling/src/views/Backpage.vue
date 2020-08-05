@@ -1,5 +1,5 @@
 <template>
-  <div id="back" class="bg-dark" style="padding-top:20px">
+  <div id="back" class="" style="padding-top:3rem">
     <h1 class="text-center text-white">後臺管理</h1>
     <div class="container">
       <div class="row justify-content-center">
@@ -17,15 +17,16 @@
         <div class="header-sidebar text-center" slot="header">
           <vs-avatar
             size="120px"
-            src=""/>
-          <h4></h4>
+            src="/img/manager.jpg"/>
         </div>
-        <vs-sidebar-item to="/cases"  index="1">
+        <div class="manage">
+        <vs-sidebar-item to="/cases"  index="1" class="case">
           <h4>個案資料管理</h4>
         </vs-sidebar-item>
-        <vs-sidebar-item to="/member"  index="2">
+        <vs-sidebar-item to="/member"  index="2" class="case">
           <h4>人事資料管理</h4>
         </vs-sidebar-item>
+        </div>
       </vs-sidebar>
     </div>
     <div class="container-fluid p-0">
@@ -41,7 +42,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="stylus">
 .header-sidebar
   display flex
   align-items center
