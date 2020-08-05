@@ -173,51 +173,51 @@ export default {
       ],
       homecarousels: [
         {
-          doctor: 'xxx心理師醫師',
-          src: 'https://picsum.photos/1920/1080/?random=6',
+          doctor: '麗莎諮商心理師',
+          src: '/img/home/1.jpg',
           p1: '主治項目',
           p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
         },
         {
-          doctor: 'xxx心理師醫師',
-          src: 'https://picsum.photos/1920/1080/?random=7',
+          doctor: '約翰臨床心理師',
+          src: '/img/home/2.jpg',
           p1: '主治項目',
-          p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
+          p2: '憂鬱症･焦慮症･恐慌症･失眠、一般精神疾病･認知行為治療'
         },
         {
-          doctor: 'xxx心理師醫師',
-          src: 'https://picsum.photos/1920/1080/?random=8',
+          doctor: '溫蒂諮商心理師',
+          src: '/img/home/3.jpg',
           p1: '主治項目',
-          p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
+          p2: '親子關係･兒童與青少年心理･情感創傷、憂鬱･焦慮･家庭關係與自我探索'
         },
         {
-          doctor: 'xxx心理師醫師',
-          src: 'https://picsum.photos/1920/1080/?random=9',
+          doctor: '奥蒂莉亚醫師',
+          src: '/img/home/4.jpg',
           p1: '主治項目',
-          p2: '憂鬱症、兒童與青少年、人際關係與自我成長、生涯探索'
+          p2: '憂鬱症･焦慮症･恐慌･睡眠障礙失智症･老年身心醫學'
         }
       ],
       homenews: [
         {
           title: '2020/8/7薩提爾模式婚姻伴侶治療',
           time: '2020年7月16日．1分鐘',
-          newssrc: 'https://picsum.photos/1920/1080/?random=10',
+          newssrc: '/img/home/column1.jpg',
           sta: '456次瀏覽'
         }
       ],
       homearticles: [
         {
-          src: 'https://picsum.photos/1920/1080/?random=11',
+          src: '/img/home/article1.jpg',
           title: '《也許你該找人聊聊》：記得沙特那句「他人即地獄」嗎？有時候自己即地獄',
           sta: '468'
         },
         {
-          src: 'https://picsum.photos/1920/1080/?random=12',
+          src: '/img/home/article2.jpg',
           title: '【你是在安慰？還是在「講道理」？--《關係黑洞》】',
           sta: '758'
         },
         {
-          src: 'https://picsum.photos/1920/1080/?random=13',
+          src: '/img/home/article3.jpg',
           title: '我就是不想說，因為你不會懂：怎樣應對「逃避依附」的沉默',
           sta: '4825'
         }

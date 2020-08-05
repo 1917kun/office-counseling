@@ -7,6 +7,11 @@ import beautifyUnique from 'mongoose-beautiful-unique-validation'
 // 引用將 _id 欄位顯示為 id 的插件
 import idPlugin from 'mongoose-id'
 
+mongoose.set('useCreateIndex', true)
+mongoose.set('useUnifiedTopology', true)
+mongoose.set('useNewUrlParser', true)
+mongoose.set('useFindAndModify', false)
+
 dotenv.config()
 const Schema = mongoose.Schema
 

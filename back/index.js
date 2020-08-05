@@ -68,6 +68,7 @@ app.use(cors({
 }))
 
 app.post('/order', async (req, res) => {
+  console.log('object')
   if (!req.headers['content-type'].includes('application/json')) {
     res.status(400)
     res.send({ success: false, message: '格式不符' })
