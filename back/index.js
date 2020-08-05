@@ -203,7 +203,8 @@ app.post('/file', async (req, res) => {
           {
             user: req.session.user,
             description: req.body.description,
-            name
+            name,
+            text: req.body.position
           }
         )
         res.status(200)
@@ -224,6 +225,76 @@ app.post('/file', async (req, res) => {
       }
     }
   })
+})
+
+app.delete('/file/:id', async (req, res) => {
+  try {
+    // 檢查相片擁有者是不是本人
+    let result = await db.files.findById(req.params.id)
+    if (result.user !== req.session.user) {
+      res.status(403)
+      res.send({ success: false, message: '無權限' })
+      return
+    }
+    // findByIdAndUpdate 預設回傳的是更新前的資料
+    // 設定 new true 後會變成回傳新的資料
+    result = await db.files.findByIdAndRemove(req.params.id)
+    if (result === null) {
+      res.status(404)
+      res.send({ success: true, message: '找不到資料' })
+    } else {
+      res.status(200)
+      res.send({ success: true, message: '', result })
+    }
+  } catch (error) {
+    if (error.name === 'CastError') {
+      // ID 格式不是 MongoDB 的格式
+      res.status(400)
+      res.send({ success: false, message: 'ID 格式錯誤' })
+    } else {
+      // 伺服器錯誤
+      res.status(500)
+      res.send({ success: false, message: '伺服器錯誤' })
+    }
+  }
+})
+
+app.patch('/file/:id', async (req, res) => {
+  if (!req.headers['content-type'].includes('application/json')) {
+    res.status(400)
+    res.send({ success: false, message: '格式不符' })
+    return
+  }
+  try {
+    // 檢查相片擁有者是不是本人
+    let result = await db.files.findById(req.params.id)
+    // if (result.user !== req.session.user) {
+    //   res.status(403)
+    //   res.send({ success: false, message: '無權限' })
+    //   return
+    // }
+    // findByIdAndUpdate 預設回傳的是更新前的資料
+    // 設定 new true 後會變成回傳新的資料
+    result = await db.files.findByIdAndUpdate(req.params.id, req.body, { new: true })
+    res.status(200)
+    res.send({ success: true, message: '', result })
+  } catch (error) {
+    if (error.name === 'CastError') {
+      // ID 格式不是 MongoDB 的格式
+      res.status(400)
+      res.send({ success: false, message: 'ID 格式錯誤' })
+    } else if (error.name === 'ValidationError') {
+      // 資料格式錯誤
+      const key = Object.keys(error.errors)[0]
+      const message = error.errors[key].message
+      res.status(400)
+      res.send({ success: false, message })
+    } else {
+      // 伺服器錯誤
+      res.status(500)
+      res.send({ success: false, message: '伺服器錯誤' })
+    }
+  }
 })
 
 app.get('/file/:name', async (req, res) => {

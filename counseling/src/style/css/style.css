@@ -616,7 +616,7 @@ body {
 
 @media (min-width: 1500px) {
   #home .carousel-item {
-    height: 40vh;
+    height: 35vh;
   }
 }
 
@@ -637,6 +637,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 1500px) {
+  #home .carousel-item .carousel-caption {
+    padding-bottom: 2.5rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -1986,4 +1992,13 @@ body {
 
 #back {
   height: calc(100vh - 90px);
+  background: black;
+}
+
+#album {
+  background: black;
+}
+
+#album h2:nth-of-type(1) {
+  color: white;
 }

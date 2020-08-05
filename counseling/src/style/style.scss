@@ -423,7 +423,7 @@ body {
       height: 30vh;
     }
     @include xxl{
-      height: 40vh;
+      height: 35vh;
     }
     text-shadow: none;
     background: white !important;
@@ -432,6 +432,9 @@ body {
       z-index: 0;
       padding-top: 2rem;
       padding-bottom: 1rem;
+      @include xxl{
+        padding-bottom: 2.5rem;
+      }
       display: flex;
       flex-direction: column;
       @include lg {
@@ -1361,11 +1364,14 @@ body {
   tbody > tr{
     font-size: 1rem;
   }
-  // thead > tr > th
-  // {
-  //   text-align: center;
-  // }
 }
 #back{
   height: calc(100vh - 90px);
+  background: black;
+}
+#album{
+  background: black;
+  h2:nth-of-type(1){
+    color: white;
+  }
 }
