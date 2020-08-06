@@ -46,7 +46,7 @@
                 li 4.為維護診所品質，還未到號前可以至我們的休憩區等待。
     //- Charges-----------------------------------------------------------------
     b-container#Charges(fluid).p-0.servicecharges
-      img.servicechargesimg(src="/img/charge.png")
+      img.servicechargesimg(src="/img/service/charge.png")
     //- footer---------------------------------------------------
     b-container.footer
       b-row.footerrow
@@ -88,17 +88,17 @@ export default {
     return {
       services: [
         {
-          src: '/img/1.jpg',
+          src: '/img/service/1.jpg',
           span: '評估機制',
           text: '提供完整的評估與治療，只要會談完第一次，後續會為您安排適切的協助模式。'
         },
         {
-          src: '/img/2.jpg',
+          src: '/img/service/2.jpg',
           span: '藥物＆心理諮商',
           text: '提供完整的評估與治療，只要會談完第一次，後續會為您安排適切的協助模式。'
         },
         {
-          src: '/img/3.jpg',
+          src: '/img/service/3.jpg',
           span: '團體課程',
           text: '提供完整的評估與治療，只要會談完第一次，後續會為您安排適切的協助模式。'
         }
