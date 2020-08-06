@@ -3,7 +3,7 @@
     b-container.h-100
       b-row.align-items-center.h-100
         b-col.box.d-flex.flex-column(cols="12" sm="6")
-          img(src="https://picsum.photos/1920/1080/?random=2")
+          img(src="/img/logotext.svg")
           p 傾心諮商，讓你的煩惱與憂愁得以安放。
           b-col.p-0.d-flex.justify-content-center.justify-content-sm-start
             .btn.mr-3.homebt 傾心服務
